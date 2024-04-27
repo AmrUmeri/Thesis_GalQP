@@ -1,0 +1,44 @@
+%load any additional packages
+\usepackage{amssymb,amsfonts}
+\usepackage[all,arc]{xy}
+\usepackage{paralist}
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate]{topsep=0pt, leftmargin=*, itemsep=0pt, parsep=0pt}
+\usepackage{amsthm}
+\usepackage{amsmath, amscd}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{xspace}
+\usepackage{amscd}
+\usepackage[latin2,utf8]{inputenc}
+\usepackage{t1enc}
+\usepackage[mathscr]{eucal}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{pict2e}
+\usepackage{epic}
+\usepackage{MnSymbol}
+\numberwithin{equation}{section}
+\usepackage[margin=2.9cm]{geometry}
+\usepackage{epstopdf} 
+\usepackage{tensor}
+\usepackage{scalerel}
+\usepackage[tiny]{titlesec}
+\usepackage{pdfpages}
+%tikz
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+\makeatletter
+\tikzset{join/.code=\tikzset{after node path={%
+\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+edge[every join]#1(\tikzchaincurrent)\fi}}}
+\makeatother
+\tikzset{>=stealth',every on chain/.append style={join},
+         every join/.style={->}}
+\tikzstyle{labeled}=[execute at begin node=$\scriptstyle,
+   execute at end node=$]
+
+
+%
+\def\numset#1{{\\mathbb #1}}

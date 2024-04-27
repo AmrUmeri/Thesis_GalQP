@@ -1,0 +1,27 @@
+We define now the \emph{structure presheaf} on the adic spectrum of a Huber pair $(A,A\upplus)$  and denote it by $\mathcal{O}_{\spa{A}{A\upplus}}$. We will define it on the basis of rational subsets and we then extend it to the whole topology in the usual way.
+Details can be found in \cite{Huber94}. See also \cite[chapter III.6]{Morel19} 
+and see \cite[theorem IV.1.1.5]{Morel19} for a list of conditions 
+on $A$ which guarantee the structure presheaf to be a sheaf. $(A,A\upplus)$  will be called \emph{sheafy} if the structure presheaf is indeed a sheaf and $\spa{A}{A\upplus}$ will then be called \emph{affinoid adic space}. It is already known that not every Huber pair is sheafy.\\
+
+The structure presheaf $\mathcal{O}_{\spa{A}{A\upplus}}$ on $\spa{A}{A\upplus}$ is a presheaf
+of complete topological rings.
+Let $U=U(\tfrac{f_1,\dots,f_n}{g})\subseteq\spa{A}{A\upplus}$ be a rational subset and 
+set:
+\[\mathcal{O}_{\spa{A}{A\upplus}}(U) = A\langle\tfrac{f_1,\dots,f_n}{g}\rangle.\]
+If $U'\subseteq\spa{A}{A\upplus}$ is an arbitrary open subset we set:
+\[\mathcal{O}_{\spa{A}{A\upplus}}(U') = \varprojlim_{U\subseteq U'}\mathcal{O}_{\spa{A}{A\upplus}}(U).\]
+The projective limit ranges over rational subsets, which form a basis for the topology, and where we equip the ring with the projective limit topology, which indeed gives a complete topological ring. If the above formula defines a sheaf on a basis on $\spa{A}{A\upplus}$, then this is the unique way to extend it to a sheaf on the whole topology.\\
+
+We want to define now a subpresheaf
+$\:\:\mathcal{O}\upplus\!\!\!_{\spa{A}{A\upplus}}\subseteq\mathcal{O}_{\spa{A}{A\upplus}}$.
+Let $U\subseteq\spa{A}{A\upplus}$ be an arbitrary open subset. We then set:
+\[\mathcal{O}\upplus\!\!\!_{\spa{A}{A\upplus}}(U) = \{a\in\mathcal{O}_{\spa{A}{A\upplus}}(U) \:\vert\:\forall x\in U,\: \normx{a}\leq 1\}.\]
+$\mathcal{O}\upplus\!\!\!_{\spa{A}{A\upplus}}$ is a sheaf if $\mathcal{O}_{\spa{A}{A\upplus}}$ is a sheaf. Using proposition \ref{upplusprop} one can in fact prove that for rational subsets
+$U=U(\tfrac{f_1,\dots,f_n}{g})\subseteq\spa{A}{A\upplus}$ we have:
+\[(\mathcal{O}_{\spa{A}{A\upplus}}(U), \mathcal{O}\upplus\!\!\!_{\spa{A}{A\upplus}}(U)) = (A\langle\tfrac{f_1,\dots,f_n}{g}\rangle, A\langle\tfrac{f_1,\dots,f_n}{g}\rangle\upplus).\]
+
+We want to give a short discussion on stalks. The stalk is defined as an abstract ring, ignoring the topologies on the sections. Set $X=\spa{A}{A\upplus}$ and let $x\in X$ and assume that $x\in U=U(\tfrac{f_1,\dots,f_n}{g})$, a rational subset of $\spa{A}{A\upplus}$. We have already seen in the proof of proposition \ref{localizationprop2}
+that the continuous valuation $\normx{\cdot}\colon A\to\Gamma\cup\{0\}$ extends canonically to a continuous valuation $\normx{\cdot}\colon \mathcal{O}_{X}(U)\to\Gamma\cup\{0\}$. Hence it extends to a valuation on the stalk:
+\[\normx{\cdot}\colon \mathcal{O}_{X,x}\to\Gamma_{x}\cup\{0\}.\]
+The stalk $\mathcal{O}_{X,x}$  is in fact a local ring with maximal ideal
+$\mathfrak{m}_x = \ker{\normx{\cdot}}$.

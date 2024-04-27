@@ -1,0 +1,71 @@
+\section{Adic spaces: Definition and properties}
+
+ 
+Let us finally define \emph{adic spaces}. Consider the category $\mathcal{V}\:$ where the objects are triples $(X, \mathcal{O}_X, (\:{\normx{\cdot}})_{x\in X})$ consisting of
+a locally and topologically ringed space $(X, \mathcal{O}_X)$ and for every $x\in X$ an equivalence class of valuations $\normx{\cdot}$ on $\Oo_{X,x}$ such that $\ker{\normx{\cdot}}$ equals its maximal ideal.
+A morphism $(X, \mathcal{O}_X, (\:{\normx{\cdot}})_{x\in X})\to(Y, \mathcal{O}_Y, (\:{\norm{\cdot}_{y}})_{y\in Y})$ is a morphism of locally and topologically ringed spaces $f\colon (X, \mathcal{O}_X)\to(Y, \mathcal{O}_Y)$ such that the induced map on the stalks $\:\Oo_{Y,f(x)}\to\Oo_{X,x}$ are compatible with the valuations.\\
+
+
+In particular one can prove that the adic spectrum of a sheafy Huber pair $(A, A\upplus)$ is an object in $\mathcal{V}$
+and a morphism of sheafy Huber pairs $(A, A\upplus)\to(B, B\upplus)$ induces a morphism in $\mathcal{V}$.
+Completion of a Huber pair $(A, A\upplus)\to(\hat{A}, \hat{A}\upplus)$ induces an isomorphism. This is also true in a larger category of $\mathcal{V}$ which does not only contain sheaves but also presheaves.
+\clearpage
+
+
+\begin{definition}
+Consider the category $\mathcal{V}$. An object is called
+\emph{affinoid adic space} if it is isomorphic to the adic spectrum of a Huber pair. It is called
+\emph{affinoid analytic adic space} if it is isomorphic to the adic spectrum of a Huber-Tate pair.
+Moreover it is called \emph{adic space} if it is locally an affinoid adic space and it is called
+\emph{analytic adic space} if it is locally an affinoid analytic adic space. Morphisms are morphisms in $\mathcal{V}$.
+\end{definition}
+In fact affinoid analytic adic spaces consists only of analytic points. This is true since the continuous valuation spectrum of a Tate ring contains only analytic points, which can be easily verified. Later we will study \emph{perfectoid spaces}, which are main examples of analytic adic spaces, see definition \ref{definitionperfectoidspaces}. It is in fact possible that a subset of a non-analytic adic spectrum can be covered by analytic spaces.\\
+
+
+
+
+
+The functor from the category of complete sheafy Huber pairs to adic spaces $(A,A\upplus)\mapsto\spa{A}{A\upplus}$ is fully faithful:
+
+\begin{prop}
+Let $\spa{B}{B\upplus}$, $\spa{A}{A\upplus}$ be the affinoid adic spaces associated with Huber pairs $(B,B\upplus)$, $(A, A\upplus)$. 
+In particular we assume that $\mathcal{O}_{\spa{B}{B\upplus}}$, $\mathcal{O}_{\spa{A}{A\upplus}}$ are sheaves on $\spa{B}{B\upplus}$, $\spa{A}{A\upplus}$. 
+Furthermore assume that $B$ is complete.
+Then $\phi\mapsto \spaa{(\phi)}$ induces a natural correspondence:
+\[\Hom((A, A\upplus),(B, B\upplus))\xrightarrow{\sim}\Hom(\spa{B}{B\upplus},\spa{A}{A\upplus}),\]
+where the morphisms are in the category of Huber pairs and in the category $\mathcal{V}$.
+\end{prop}
+\begin{proof}
+This is \cite[proposition 2.1]{Huber94}. Set $X = \spa{A}{A\upplus}$, $Y = \spa{B}{B\upplus}$. The inverse sends $Y\to X$ to global sections
+$(\Oo_X(X),\Oo\upplus\!\!\!\!_X(X))\to(\Oo_Y(Y),\Oo\upplus\!\!\!\!_Y(Y))$. 
+Notice that $(\Oo_X(X),\Oo\upplus\!\!\!\!_X(X))=(\hat{A}, \hat{A}\upplus)$. However continuous morhpisms $A\to B$ and $\hat{A}\to B$ are canonically identified.
+\end{proof}
+
+\begin{cor}\label{cor1}
+Let $X$ be an adic space. Let $\spa{A}{A\upplus}$ be the affinoid adic space associated with the Huber pair $(A, A\upplus)$. Then there is a natural correspondence:
+\[\Hom((A, A\upplus),(\Oo_{X}(X),\Oo\upplus\!\!\!\!_X(X))\xrightarrow{\sim}\Hom(X,\spa{A}{A\upplus}).\]
+\end{cor}
+\begin{proof}
+Immediate.
+\end{proof}
+In particular the adic spectrum functor gives an anti-equivalence between complete sheafy Huber pairs and affinoid adic spaces.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

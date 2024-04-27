@@ -1,0 +1,161 @@
+\subsection{Perfectoid spaces: Pro-\'{e}tale topos and diamonds}
+Let $C$ be a complete algebraically closed non-Archimedean field extension of $\Qp$.
+$\perfc$ denotes the category of perfectoid spaces over the perfectoid space $\spa{C}{\Oo_C}$.
+We want to introduce the pro-\'{e}tale topology on $\perfc$, which is a Grothendieck topology. The key statement is that $\perfc$ is subcanonical for the pro-\'{e}tale topology. We will then define \emph{diamonds} as certain sheaves on $\perfc$ for the  pro-\'{e}tale topology.
+
+\begin{definition}
+A morphism of affinoid perfectoid spaces $\spa{B}{B\upplus}\to\spa{A}{A\upplus}$ is called \emph{affinoid pro-\'{e}tale} if
+\[(B,B\upplus) = \widehat{[\varinjlim_{i\in I}(A_i,A_i\upplus)]},\]
+
+i.e. a completion of a filtered directed system of perfectoid pairs $(A_i,A_i\upplus)$ and such that
+$\spa{A_i}{A_i\upplus}\to\spa{A}{A\upplus}$ is \'{e}tale.
+A morphism $f\colon Y\to X$ of perfectoid spaces is called \emph{pro-\'{e}tale} if for every $y\in Y$ there exists an affinoid $V\subset Y$ containing it and an affinoid $U\subset X$ such that $f(V)\subset U$ and such that $f\colon V\to U$ is affinoid pro-\'{e}tale.\\
+A morphism $f\colon Y\to X$ is called \emph{pro-\'{e}tale cover} if it is pro-\'{e}tale and if for all quasi-compact $U\subset X$ there exists a quasi-compact $V\subset Y$ such that $U=f(V).$
+Finally a familiy of morphisms of perfectoid spaces $\{Y_i\to X\}_{i\in I}$ is a pro-\'{e}tale cover if $\coprod_{i\in I}Y_i\to X$ is a pro-\'{e}tale cover.
+\end{definition}
+For example  affinoid pro-\'{e}tale covers of $\spa{C}{\Oo_C}$ are inverse limits of finitely many copies of $\spa{C}{\Oo_C}$.\\
+
+The pro-\'{e}tale covers endow $\perfc$ with a Grothendieck topology, the \emph{pro-\'{e}tale topology}. The \emph{pro-\'{e}tale site} will be denoted by $\perfcsite$.
+For a perfectoid space $X$ over $C$ we let $X_{pro-\acute{e}t}$ be the category with pro-\'{e}tale
+% pro-\'{e}tale 
+morphisms $Y\to X$ in $\perfc$ as objects and with covers given by pro-\'{e}tale covers. This is the small \emph{pro-\'{e}tale site} of $X$.
+See for example \cite{Artin62} for the definition of Grothendieck topologies, see \cite{Scholzeetcoh21} for the proof
+of the relevant statements.\\
+
+We want to discuss descent for finite \'{e}tale morphisms in $\perfc$ relative to pro-\'{e}tale coves.
+Let $X'\to X$ be a pro-\'{e}tale cover. Let $Y'\to X'$ be a finite \'{e}tale morphism.
+A \emph{descent datum} for $Y'\to X'$ relative to $X'\to X$ is an isomorphism $\phi\colon Y'\times\!_{X}X'\cong X'\times\!_{X}Y'$ of perfectoid spaces
+over $X'\times\!_{X}X'$ satisfying a cocycle condition. The descent datum is called \emph{effective} if there exists a perfectoid space $Y$ and a finite \'{e}tale morphism $Y\to X$ and an isomorphism $Y'\cong  Y\times\!_{X}X'$ such that the composite $Y'\times\!_{X}X'\cong X'\times\!_{X}Y'$
+via this isomorphism equals $\phi\colon Y'\times\!_{X}X'\cong X'\times\!_{X}Y'$.
+
+\begin{prop}\label{descentprop1}
+Descent data are effective for finite \'{e}tale morphisms in $\perfc$ relative to pro-\'{e}tale covers.
+\end{prop}
+\begin{proof}
+This is \cite[proposition 4.2.4]{Weinstein16}.
+\end{proof}
+
+
+
+Let us consider again the category $\perfc$. The pro-\'{e}tale site, i.e. the category together with the pro-\'{e}tale topology, will be denoted by $\perfcsite$. We want to define sheaves on the pro-\'{e}tale topology.\\
+
+A \emph{presheaf} on $\perfc$ is a functor $\mathcal{F}\colon\:\perfc^{op}\to\catname{Sets}.$
+A presheaf is a \emph{sheaf} if for every  pro-\'{e}tale covering $\{Y_i\to X\}_{i\in I}$ the equalizer diagram of sets
+
+%\[0 \xrightarrow{\hspace{1.05cm}} 
+\[\mathcal{F}(X)  \xrightarrow{\hspace{1.05cm}} \prod_{i\in I}\mathcal{F}(Y_i)  \substack{\xrightarrow{\hspace{1.05cm}}\\[-1.2em] \xrightarrow{\hspace{1.05cm}}}  \prod_{i,j\in I}\mathcal{F}(Y_i\times\!_{X}Y_j)\]
+is exact. $\shvperfc$ will denote the full subcategory of $\mathrm{Fun}(\perfc^{op},\catname{Sets})$ whose objects are the sheaves on $\perfcsite$. This is the \emph{pro-\'{e}tale topos}.
+Each object $X$ in $\perfc$ defines a presheaf on $\perfc$ via the Yoneda embedding $\perfc\hookrightarrow\mathrm{Fun}(\perfc^{op},\catname{Sets})$,\:\, $X\to\h{X}=\Hom_{\perfc}(-,X)$.
+These are the \emph{representable presheaves}. We will prove that $\perfcsite$ is \emph{subcanonical}, i.e. every representable presheaf is a sheaf for the pro-\'{e}tale topology. 
+In particular we have a factorization of the above embedding, \[\perfc\hookrightarrow\shvperfc.\]
+
+\begin{prop}
+$\perfcsite$ is subcanonical, i.e. every representable presheaf is a sheaf for the pro-\'{e}tale topology. 
+\end{prop}
+\begin{proof}
+Let $X$ be an object in $\perfc$. We must prove that the presheaf $\h{X}=\Hom_{\perfc}(-,X)$ in $\perfc$ is a sheaf for the pro-\'{e}tale topology. 
+We can assume that $X=\spa{A}{A\upplus}$ is affinoid perfectoid.
+For any object $Y$ in $\perfc$, there is a natural identification:\\
+$\Hom((A, A\upplus),(\mathcal{O}_{Y}(Y),\mathcal{O}\upplus\!\!\!\!_Y(Y))=\Hom(Y,X)$. See for example corollary \ref{cor1}.
+Let $\tilde{Y}\to Y$ be a pro-\'{e}tale cover. We must show exactness of the following sequence:
+\[0 \xrightarrow{\hspace{0.65cm}} \Hom(Y,X)  \xrightarrow{\hspace{0.65cm}} \Hom(\tilde{Y},X)  \substack{\xrightarrow{\hspace{0.65cm}}\\[-1.2em] \xrightarrow{\hspace{0.65cm}}}  \Hom(\tilde{Y}\times\!_{Y}\tilde{Y}, X).\]
+We need the following results: The global section functors $\mathcal{O}_{Y}$, $\mathcal{O}\upplus\!\!\!\!_Y$ are sheaves on  $Y_{pro-\acute{e}t}$. 
+See for example \cite[proposition 8.2.8]{SW20}.
+Hence we have an exact sequence:
+\[0 \xrightarrow{\hspace{0.65cm}} (\mathcal{O}_{Y}(Y),\mathcal{O}\upplus\!\!\!\!_Y(Y))  \xrightarrow{\hspace{0.65cm}} (\mathcal{O}_{Y}(\tilde{Y}),\mathcal{O}\upplus\!\!\!\!_Y(\tilde{Y}))  \substack{\xrightarrow{\hspace{0.65cm}}\\[-1.2em] \xrightarrow{\hspace{0.65cm}}}  (\mathcal{O}_{Y}(\tilde{Y}\times\!_{Y}\tilde{Y}),\mathcal{O}\upplus\!\!\!\!_Y(\tilde{Y}\times\!_{Y}\tilde{Y})).\]
+We then apply the left-exact functor $\Hom((A,A\upplus),-)$ to get the result.
+\end{proof}
+
+We want to give meaning to certain morphisms in $\perfc$ in the larger category $\mathbf{Shv}(\mathrm{Perf}_{C})$.
+\begin{definition}
+Let $\mathbb{P}$ be a property of morphisms in $\perfc$ which is preserved under base change.
+A morphism of sheaves $\mathcal{F}\to\mathcal{G}$ will have property $\mathbb{P}$ if for every object $X$ in $\perfc$ and every morphism of sheaves
+$\h{X}\to\mathcal{G}$, there is an isomorphism $\h{Y}\simeq \mathcal{F}\times_{\mathcal{G}}\h{X}$ for some object $Y$ in $\perfc$ (which is then determined up to isomorphism) 
+and if the corresponding morphism $Y\to X$ which comes from
+$\mathcal{F}\times_{\mathcal{G}}\h{X}\simeq\h{Y}\to\h{X}$ has property $\mathbb{P}$.
+\end{definition}
+
+The following propositions are then immediate:
+
+\begin{prop}
+Let $\mathbb{P}$ be a property of morphisms in $\perfc$ which is preserved under base change.
+If the morphism of sheaves $\mathcal{F}\to\mathcal{G}$ has property $\mathbb{P}$, then for any morphism of sheaves $\mathcal{H}\to\mathcal{G}$ the base change
+$\mathcal{F}\times_{\mathcal{G}}{\mathcal{H}}\to\mathcal{H}$ has property $\mathbb{P}$.
+\end{prop}
+\begin{proof}
+Immediate.
+\end{proof}
+
+\begin{prop}
+Let $X$ be an object in $\perfc$. Let $\mathbb{P}$ be a property of morphisms in $\perfc$ which is preserved under base change.
+The categories of $X$-morphisms with property $\mathbb{P}$ and the category of $\h{X}$-morphisms with property $\mathbb{P}$ are equivalent via the Yoneda embedding. 
+\end{prop}
+\begin{proof}
+The Yoneda lemma proves fully faithfulness. The lemma says that for every morphism of sheaves $\F\to\h{X}$ with property $\mathbb{P}$, the sheaf $\F$ is necessarily representable and the corresponding morphism in $\perfc$ has property $\mathbb{P}$. 
+In fact we choose the identity morphism $\h{X}\to\h{X}$ which gives a morphism $Y\to X$ with property $\mathbb{P}$ and an isomorphism 
+$\F\simeq\h{Y}$. This proves essential surjectivity.
+\end{proof}
+
+In particular we can define pro-\'{e}tale covers of sheaves on $\perfc$. For example let $\F\to\G$ be a pro-\'{e}tale cover of sheaves on $\perfc$. Applying \cite[lemma 0.12]{Johnstone77} we see that $\G=\varinjlim_{i\in I}\h{X_i}$, i.e. every sheaf on $\perfc$ can be written as a (filtered) colimit of representable objects. Moreover $\F=\varinjlim_{i\in I}\F\times_{\G}\h{X_i}=\varinjlim_{i\in I}\h{Y_i}$ with each $Y_i\to X_i$ pro-\'{e}tale cover. Proposition \ref{descentprop1} has then  the following analogue:
+\begin{prop}
+Descent data are effective for finite \'{e}tale morphisms in $\mathbf{Shv}(\mathrm{Perf}_{C})$ relative to pro-\'{e}tale covers.
+\end{prop}
+\begin{proof}
+This is \cite[lemma 4.2.9]{Weinstein16}.
+\end{proof}
+%Let $\G'\to\G$ be a pro-\'{e}tale cover of sheaves on $\perfc$. 
+%Let $\F'\to\G'$ be a finite \'{e}tale morphism equipped with a descent datum relative to $\G'\to\G$.
+%There exists a morphism of sheaves $\F\to\G$ such that $\F'\simeq\F\times_{\G}\G'$. Consider the following: Let $X\in\perfc$ with a morphism $\h{X}\to\G$. By definition there exists $X'\to X$ pro-\'{e}tale cover such that $\h{X'}\simeq \h{X}\times_{\G}\G'$. 
+%Again by definition there exists $Y'\to X'$ finite \'{e}tale such that $\h{Y'}\simeq \h{X'}\times_{\G'}\F'$.
+%This then gives a descent datum for $Y'\to X'$ relative to $X'\to X$, which is effective by proposition \ref{descentprop1}, hence descends to a finite \'{e}tale morphism
+%$Y\to X$ with $\h{Y'}\simeq \h{Y}\times_{\h{X}}\h{X'}$.
+%In particular 
+%$\h{Y'}\simeq \h{Y}\times_{\h{X}}\h{X'}\simeq  \h{Y}\times_{\h{X}}\h{X}\times_{\G}\G'\simeq  \h{Y}\times_{\G}\G'$.
+%It remains to prove that $\h{Y}\to\G$ is finite  \'{e}tale.
+%Suppose we have a morphism $\h{Z}\to\G$. We must prove that $\h{Y}\times_{\G}\h{Z}$ is representable by a finite \'{e}tale morphism of $\h{Z}$.
+%As before
+%$\h{Z'}\simeq \h{Z}\times_{\G}\G'$ for a pro-\'{e}tale cover $Z'\to Z$ and
+%$\h{W'}\simeq \h{Z'}\times_{\G'}\F'$ for a finite \'{e}tale morphism $W'\to Z'$.
+%This descends as in the previous argument to a finite \'{e}tale morphism $W\to Z$ with
+%$\h{W'}\simeq \h{W}\times_{\h{Z}}\h{Z'}$.
+%We have by arguing as before
+%$\h{W}\times_{\G}\G'\simeq\h{W'}\simeq\h{Z'}\times_{\G'}\F'\simeq (\G'\times_{\G}\h{Z})\times_{\G'}(\G'\times_{\G}\h{Y})\simeq\h{Z}\times_{\G}\h{Y}\times_{\G}\G'$.
+%Hence since $\G'\to\G$ is a pro-\'{e}tale cover, we have that $\h{W}\simeq\h{Z}\times_{\G}\h{Y}$ and $W\to Z$ finite \'{e}tale.
+%This proves that $\h{Y}\to\G$ is finite \'{e}tale.
+
+
+\begin{lemma}\label{lemma2218}
+Let $\G'\to\G$ be a morphism of sheaves on $\perfc$. Assume there exists a pro-\'{e}tale cover $\G''\to\G$
+such that $\G'\times_{\G}\G''\to\G''$ is a pro-\'{e}tale cover.
+Then descent data are effective for finite \'{e}tale morphisms of $\G'$ relative to $\G'\to\G$.
+\end{lemma}
+\begin{proof}
+Let $\F'\to\G'$ be a  finite \'{e}tale morphism equipped with a descent datum relative to $\G'\to\G$.
+Then $\F'\times_{\G}\G''\to\G'\times_{\G}\G''$ is a finite \'{e}tale morphism equipped with a descent datum relative to $\G'\times_{\G}\G''\to\G''$, hence effective since
+$\G'\times_{\G}\G''\to\G''$ is a pro-\'{e}tale cover by assumption.
+The descent datum then induces a descent datum for $\F'\times_{\G}\G''\to\G'\times_{\G}\G''$ relative to $\G'\times_{\G}\G''\to\G$,
+which is effective.
+Hence there is a finite \'{e}tale morphism $\F\to\G$ such that $\F'\times_{\G}\G'' = \F\times_{\G}\G'\times_{\G}\G''$.
+Hence
+$\F'=\F\times_{\G}\G'$, since $\G''\to\G$ is a pro-\'{e}tale cover.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

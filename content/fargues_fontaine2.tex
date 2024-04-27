@@ -1,0 +1,141 @@
+\section{Adic Fargues-Fontaine curve: Vector bundles and simple connectivity}
+As before we fix $E$ a finite extension of $\Qp$. We then have the adic space $\spa{E}{\Oo_E}$.
+We constructed the adic Fargues-Fontaine curve $\X_{F,E}$.
+It is an adic space over $\spa{E}{\Oo_E}$.
+We will write $\X=\X_{F,E}$ and $\Y=\Y_{F,E}$.\\
+
+
+
+Let $A$ be a finite \'etale $E$-algebra. Let $A\upplus$ be the integral closure of $\Oo_E$ in $A$. There is a canonical way to put a topology on $A$ such that it is a complete Tate ring and the structure map $E\to A$ is continuous. 
+$A$ will have a noetherian ring of defnition, hence $\spa{A}{A\upplus}$ is an adic space.  Moreover  by construction $\spa{A}{A\upplus}\to\spa{E}{\Oo_E}$ is a finite \'etale morphism of adic spaces. By base change we get a finite \'etale morphism $\X\times\!\!_{\spa{\!E}{\Oo_E}}\spa{A}{A\upplus}\to\X$. We want to prove that the functor sending a finite \'etale $E$-algebra to a finite \'etale $\X$-morphism is an equivalence, i.e. $\X$ is \emph{geometrically simply connected}.
+For the proof we will need the \emph{classification theorem for vector bundles} on $\X$.
+Vector bundles on $\X$ will mean locally free $\Oo_{\X}$-modules of constant finite rank.
+Recall that  $\X$ was defined as a quotient of $\Y$ by a totally discontinuous action. In particular the projection
+$\Y\to \X$ is $\varphi^\Z$-invariant and
+vector bundles $\E_\X$ on $\X$ correspond to
+$\varphi^\Z$-equivariant vector bundles  $\E_\Y$ on $\Y$. We say that a vector bundle on $\Y$ is $\varphi^\Z$-equivariant
+if there is a natural isomorphism $\varphi_{\E}\colon\varphi^\ast\E_{\Y}\xrightarrow{\sim}\E_{\Y}$. For example $\Oo_{\X}$ corresponds to $\varphi^\ast\Oo_{\Y}\xrightarrow{\sim}\Oo_{\Y}$. \\
+
+Let $k$ be the residue field of $F$ and let $L=W_{\Oo_E}(k)[\tfrac{1}{\pi}]$. For example if $k$ is an algebraic closure of $\Fq$, then $L$ is the completion of the maximal unramified extension of $E$. We have a Frobenius automorphism $\varphi_L\colon L\xrightarrow{\sim}L$.
+An $L$\emph{-isocrystal} is a pair $(V,\varphi_V)$, where $V$ is a finite-dimensional $L$-vector space with a $\varphi_L$-semilinear automorphism $\varphi_V\colon V\xrightarrow{\sim}V$.
+For example we can take  $(V,\varphi_V) = (L, \pi^n\varphi_L)$ for $n\in\Z$.
+Let $\lambda=\tfrac{d}{h}\in\Q$ with $(d,h)=1$ and $h>0$. Then we define:
+\[(V_{\lambda},\varphi_{V_{\lambda}}) = (L^h, A_\lambda\varphi_L),\]
+\vspace{1mm}
+\[A_\lambda = 	\begin{scriptsize}
+			\begin{pmatrix}
+			 & 1 &  &  &  & \\
+			&  & \ddots &  &  & \\
+			&  &  &\ddots  & & \\
+			& & &  & \ddots & \\
+			& & &  &  & 1\\
+			\pi^d & & & &  & \\
+			\end{pmatrix}
+			\end{scriptsize}
+.\]
+
+
+\vspace{5mm}
+The Dieudonn\'e-Manin classification theorem states that the category of $L$-isocrystals is semisimple with simple objects given by isomorphism classes of 
+$(V_{\lambda},\varphi_{V_{\lambda}})$ for uniquely determined $\lambda\in\Q$. See \cite[theorem 1.3]{DingOuyang-DM} for a proof.\\
+
+Let $(V,\varphi_V)$ be an $L$-isocrystal, then we let $\E_V$ be the vector bundle on $\X$ corresponding to the $\varphi$-equivariant vector bundle on $\Y$, which is
+$\Oo_\Y\otimes_{L}V$ and $\varphi_{\E_V}\coloneqq\varphi\otimes\varphi_{V}$. This sends a rational subset $U\subset\Y$ to
+$\Oo_\Y(U)\otimes_{L}V$ and is then extended in the usual way.
+For $\lambda\in\Q$ we set:
+\[\Oo(\lambda)\coloneqq \E_{V_{-\lambda}}\]
+a vector bundle on $\X$.
+We will refer to $\lambda$ as slope of the vector bundle.\\
+
+We have a classification theorem for vector bundles on $\X$.
+
+\begin{theorem}
+Let $\E$ be a vector bundle on $\X$.
+Then it is isomorphic to a vector bundle of the form $\bigoplus\limits_{i=1}^{n}\Oo(\lambda_{i})$ for a unique sequence of slopes $\lambda_1,\dots,\lambda_n\in\Q$ with $\lambda_1\leq\dots\leq\lambda_n$.
+\end{theorem}
+\begin{proof}
+Historically the classification theorem was first proven for the schematic version of the Fargues-Fontaine curve, see \cite{FF11}.
+See also \cite[th\'eor\`eme 3.5, th\'eor\`eme 3.1]{Fargues15} and \cite{KL15}. %[theorem 8.7.7]
+A recent proof for the adic curve is given in \cite[theorem II.2.14]{FS2021}.
+\end{proof}
+
+
+\begin{prop}
+\label{globalsectionprop}
+Let  $\lambda\in\Q$. Then 
+$\Gamma(\X,\Oo(\lambda))\neq0$ if and only if $\lambda\geq0$.
+\end{prop}
+\begin{proof}
+See for example \cite[corollary 13.5.5]{SW20}.
+\end{proof}
+
+Let $\spa{S}{S\upplus}\to\spa{R}{R\upplus}$ be a  finite \'etale morphism of analytic adic spaces. Then $S$ is a finite \'etale $R$-algebra and hence $R\to S$
+is locally free of finite rank for the Zariski topology on $\spec{R}$, equivalently we can find $f_1,\dots,f_n\in R$ which generate the unit ideal such that
+$S[\tfrac{1}{f_i}]$ is a free of finite rank $R[\tfrac{1}{f_i}]$-module for $i=1,\dots,n$.
+But then $S\langle\tfrac{f_1,\dots,f_n}{f_i}\rangle$ is a free of finite rank $R\langle\tfrac{f_1,\dots,f_n}{f_i}\rangle$-module for $i=1,\dots,n$.
+Notice that $\bigcup\limits_{i=1}^{n}U(\tfrac{f_1,\dots,f_n}{f_i}) = \spa{R}{R\upplus}$.  
+Hence $R\to S$ is locally free of finite rank for the topology on $\spa{R}{R\upplus}$.  
+Globalizing we see that if $f\colon Y\to X$  is a finite \'etale morphism of analytic adic spaces, then $f_\ast\Oo_{Y}$ is a locally free $\Oo_{X}$-module of finite rank.
+We can then make sense of the rank of $f\colon Y\to X$  as a locally constant function on $X$.
+
+\begin{lemma}
+\label{keylemma2}
+Let $f\colon Y\to X$  be a finite \'etale morphism of adic spaces of rank $d$.
+Let $\mathcal{F} = f_\ast\Oo_{Y}$.
+Then 
+\[(\bigwedge^d\F)^{\otimes2}\simeq\Oo_{X}\]
+as  invertible $\Oo_{X}$-modules.
+\end{lemma}
+\begin{proof}
+If $S$ is a finite \'etale $R$-algebra, then the trace map $tr_{S/R}\colon S\otimes_R S\to R$ is perfect and hence gives a self-duality of $S$ as an $R$-module. This means $S\simeq\Hom_{R}(S,R)$.
+Globalizing we have that $\mathcal{F}\simeq\Hom(\mathcal{F},\Oo_{\X})$. Taking the determinant bundle we get that
+$\bigwedge^d\mathcal{F}\simeq\bigwedge^d \Hom(\mathcal{F},\Oo_{\X}) \simeq \Hom(\bigwedge^d\mathcal{F}, \Oo_{\X})$ is a self-dual line bundle. We then use that $\bigwedge^d\mathcal{F}$ is a locally free $\Oo_{X}$-module of rank $1$.
+This proves the claim.
+\end{proof}
+
+
+
+\begin{theorem}\label{gsctheorem}
+The functors
+\[A\mapsto \X\times\!\!_{\spa{\!E}{\Oo_E}}\spa{A}{A\upplus},\]
+\[\Gamma(Y,\Oo_{Y})\leftmapsto Y\]
+give an equivalence between the category of finite \'etale $E$-algebras and the category of finite \'etale $\X$-morphisms.
+\end{theorem}
+\begin{proof}
+Let $f\colon Y\to \X$ be a  finite \'etale morphism. 
+Let $\mathcal{F} = f_\ast\Oo_{Y}$, a locally free sheaf of $\Oo_{X}$-modules of finite rank.
+Let $A=\Gamma(Y,\Oo_{Y}) = \Gamma(\X,\mathcal{F})$, an $E$-algebra since $E=\Gamma(\X,\Oo_\X)$.
+We must prove that $Y$ can be written uniquely as $\X\times\!\!_{\spa{\!E}{\Oo_E}}\spa{A}{A\upplus}$, where $A$ is a finite \'etale $E$-algebra, i.e. a product of finite extensions of $E$.
+By the classification theorem we have that $\mathcal{F}=\bigoplus\limits_{i=1}^{n}\Oo(\lambda_{i})$ for slopes  $\lambda_1,\dots,\lambda_n\in\Q$ with $\lambda_1\leq\dots\leq\lambda_n$.
+We claim that $\lambda_1,\dots,\lambda_n=0$. This means $\F$ is a trivial vector bundle. There is an equivalence of categories between the category of finite-dimensional $E$-vector spaces and trivial vector bundles on $\Oo_\X$ via
+$\mathcal{E}\to \Gamma(\X,\mathcal{E})$ and $V\to\Oo_\X\otimes_{E}V$. Hence $\F=\Oo_\X\otimes_{E}A$.
+This then implies that $A$ is a finite \'etale $E$-algebra using descent arguments, i.e. for an open cover by rational subsets $U\subseteq\X$ we have that $\Gamma(U,\mathcal{F})$ is a finite  \'etale $\Gamma(U,\Oo_{\X})$-algebra.\\
+
+To prove the claim, notice first that $\mathcal{F} = f_\ast\Oo_{Y}$ is a sheaf of  $\Oo_{X}$-algebras. 
+Hence we have a multiplication morphism $\mu\colon\mathcal{F}\otimes\mathcal{F}\to\mathcal{F}$.
+Set $\lambda=\lambda_n$.
+We claim that $\lambda\leq0$. This then forces $\F$ to be a trivial vector bundle. In fact 
+$(\wedge^d\F)^{\otimes2} = \Oo(\sum_{i=1}^n2\lambda_{i}) = \Oo_{\X}$ by lemma \ref{keylemma2}. Hence $\sum_{i=1}^n\lambda_{i}=0$ and $\lambda_1,\dots,\lambda_n=0$.
+Assume otherwise that $\lambda>0$.
+Restriction of $\mu\colon\mathcal{F}\otimes\mathcal{F}\to\mathcal{F}$ to $\Oo(\lambda)\otimes\Oo(\lambda)$ is the direct sum of morphisms
+$\mu_k\colon\Oo(\lambda)\otimes\Oo(\lambda)\to\Oo(\lambda_k)$ for $k=1,\dots,n$.
+The morphism corresponds to a global section of $\Oo(\lambda_k)\otimes\Oo(-\lambda)^{\otimes2}$, which has negative slopes hence by proposition \ref{globalsectionprop} the morphism is the zero map.
+It follows that $f^2=0$ for every $f\in\Gamma(\X,\Oo(\lambda))\subseteq\Gamma(\X,\mathcal{F})$. However $\X$ can be covered by adic spectra of reduced rings, in fact integral domains. Hence $\Gamma(\X,\mathcal{F})$ is reduced by \'etaleness and sheaf property.
+Hence $\Gamma(\X,\Oo(\lambda))=0$. By proposition \ref{globalsectionprop} this is a contradiction, hence $\lambda\leq0$.
+
+
+\end{proof}
+\clearpage
+\hfill
+\clearpage
+
+
+
+
+
+
+
+			
+
+
+

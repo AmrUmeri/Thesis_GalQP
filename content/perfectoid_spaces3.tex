@@ -1,0 +1,104 @@
+\subsubsection{Perfectoid fields}
+In this section we will define \emph{perfectoid fields}, which are complete non-Archimedean fields with additional properties and relate them to perfectoid rings. We introduce the
+\emph{almost purity theorem for perfectoid fields}, a special case of the almost purity theorem.\\
+
+Let $K$ be a non-Archimedean field. This is a topological field where the topology on $K$ is induced by a rank-$1$ valuation
+$\norm{\cdot}\colon K\to\Gamma\cup\{0\}$. The value group of the valuation is denoted by $\norm{K^\times}$.
+The assumption on the rank is equivalent to the fact that we have an order-preserving embedding 
+$\norm{K^\times}\hookrightarrow\R_{>0}$ of multiplicative groups. We will assume that the valuation is non-trivial, which means $\norm{K^\times}\neq\{1\}$. Hence the value group is a non-trivial subgroup of $\R_{>0}$.
+We will also assume that $K$ is complete.
+The ring of integers $\Oo_K$ and its maximal ideal $\mathfrak{m}_K$ correspond to $K\upcirc$ and $K\twocirc$. We can always find a non-zero element $\pu\in K$ which satisfies $\norm{\pu}<1$, i.e. a pseudo-uniformizer. Hence
+$K$ is a complete uniform Tate ring and the topology on $\Oo_K$ is the $\pu$-adic topology.\\
+
+Let us assume now that the valuation on $K$ is non-discrete, this means that the value group 
+$\norm{K^\times}$ is not of the form $\norm{x}^\Z$ for $x\in K^\times$, i.e. it is not a cyclic subgroup of $\R_{>0}$.
+See for example \cite[section 1.6]{BGR84}.
+Assume furthermore that the characteristic of the residue field of $K$ is equal to $p$, i.e. $\norm{p}<1$.
+Then we can find an element  $\pu\in K$ which satisfies $\norm{p}<\norm{\pu}<1$.
+Indeed one uses that $\norm{K^\times}$ is not of the form $\norm{p}^\Z$.
+
+
+
+
+\begin{definition}
+Let $K$ be a complete non-Archimedean field with non-discrete valuation. Then $K$ is a \emph{perfectoid field} if it satisfies the following properties:
+\begin{enumerate}
+\item $\norm{p}<1$, i.e. the \emph{residue characteristic} is $p$.
+\item The Frobenius map $\varphi\colon K\upcirc\to K\upcirc/p$, $\:a\mapsto a^p$, is surjective.
+\end{enumerate}
+\end{definition}
+
+
+We list some consequences of the definition:
+$K\twocirc$ is a flat $K\upcirc$-module since $K\twocirc$  is torsion free and $K\upcirc$ is a valuation ring. Moreover we have $(K\twocirc)^2=K\twocirc$. Hence $K\upcirc$ is not noetherian by Krull intersection theorem. That $K\upcirc$ is not noetherian follows also directly from the fact that the valuation on $K\upcirc$ is not discrete. 
+
+
+
+
+\begin{prop}
+Let $K$ be a field. Then $K$ is a perfectoid ring if and only if it is a perfectoid field.
+\end{prop}
+\begin{proof}
+If $K$ is a perfectoid ring and a field, we know from \cite[theorem 4.2]{Kedlaya19} that the topology on $K$ is given by a rank-1 valuation. Hence $K$ is a non-Archimedean field. Moreover the Frobenius map is surjective by lemma \ref{perfringequivdeflemma}. The definition of perfectoid rings implies also that $p$ is topologically nilpotent, hence 
+$\norm{p}<1$. To prove that the valuation is non-discrete, assume there exists $x\in K^\times$ with $\norm{K^\times}=\norm{x}^\Z$ and
+$\norm{p}<\norm{x}$. We can always find such an element by inverting $x\in K^\times$ when necessary.  Let $y\in K$ such that $\norm{y^p-x}\leq\norm{p}<\norm{x}$. 
+Then it follows that $\norm{y}^p=\norm{x}$ using basic properties of non-Archimedean valuations. This is a contradiction, hence the valuation is non-discrete.
+For the other direction we have already seen that $K$ is a complete uniform Tate ring and that there exists an element  $x\in K$ which satisfies
+$\norm{p}<\norm{x}<1$. It remains to prove that $p\in\pu^{p}K\upcirc$ for some element $\pu\in K$ with $\norm{\pu}<1$. This proves the claim.
+\end{proof}
+
+
+\begin{lemma}
+Let $K$ be a complete non-Archimedean field of characteristic $p$.
+% with non-discrete valuation.
+Then $K$ is a perfectoid field if and only if it is perfect.
+\end{lemma}
+\begin{proof}
+See lemma \ref{perfringplemma}. Notice also that perfect non-Archimedean fields necessarily have non-discrete valuation.
+\end{proof}
+
+
+See \cite[example 3.4]{Scholzeetcoh21} or \cite[example V.1.1.11]{Morel19}  for examples of perfectoid fields.
+In particular any algebraically closed complete non-Archimedean field is perfectoid.\\
+
+Let $K$ be a perfectoid field.
+Tilting defines a functor from perfectoid fields to perfectoid fields of characteristic $p$,
+\[K\mapsto K\tilt.\]
+As before we will call $K\tilt$ the \textit{tilt} of $K$. Explicitely the tilt is given by
+
+\[K\tilt\coloneqq \varprojlim_{a\mapsto a^p}K\upcirc[\tfrac{1}{\pu\tilt}] = K\tilt\upcirc[\tfrac{1}{\pu\tilt}],\]
+where $\pu\tilt\in K\tilt\upcirc$ with $\pu\coloneqq(\pu\tilt)\shrp\in K\upcirc$ is a pseudo-uniformizer and we can assume that 
+$\norm{p}<\norm{\pu}<1$. Notice that $K=K\upcirc[\tfrac{1}{\pu}]$ and $p\in\pu K\upcirc$.
+The multiplicative sharp-map is given by:
+$\varprojlim_{a\mapsto a^p}K\upcirc\to K\upcirc,$
+$a\mapsto a_0=a\shrp.$
+It extends to the multiplicative sharp-map given by:
+$K\tilt\to K.$\\
+
+
+Let $\norm{\cdot}_{K}\colon K\to\R_{\geq0}$ be the rank-1 valuation on $K$. We want to see how this defines a non-discrete rank-1 valuation on the tilt $K\tilt$. Explicitely we define the rank-1 valuation on $K\tilt$ by:
+\[\norm{\cdot}_{K\tilt}\colon K\tilt\to\R_{\geq0},\]
+\[a\mapsto\norm{a\shrp}_{K}.\]
+It is then immediate that the value groups are identified, i.e. $\norm{K^\times}_{K}=\norm{K^{\flat\times}}_{K\tilt}$. 
+In fact for each element $a\in K$ we can find an element $b\in K\tilt$ such that $\norm{a-b\shrp}_{K}\leq \norm{p}_{K}$ and $\norm{a}_{K}=\norm{b}_{K\tilt}$. See also \cite[proposition 3.6]{Scholze12}.\\
+
+
+Let $L$ be a finite extension of $K$ and let $L\upcirc$ be the integral closure of $K\upcirc$ in $L$.
+Since $K$ is complete, there is a unique rank-1 valuation on $L$ extending the rank-1 valuation on $K$
+such that $L$ is a complete uniform Tate ring. Notice that $L$ is necessarily a separable extension of $K$.\\
+
+
+This is the \emph{almost purity theorem for perfectoid fields}:
+
+\begin{theorem}
+Let $K$ be a perfectoid field and denote by $K\tilt$ its tilt. Let $L$ be a finite, necessarily separable extension of $K$.
+Then $L$ is a perfectoid field, $L\tilt$ is a finite, necessarily separable extension of $K\tilt$ and the degrees are preserved.
+Tilting induces an equivalence of categories of finite \'{e}tale $K$-algebras and of finite \'{e}tale $K\tilt$-algebras. 
+This means $\pione(\spec{K})\simeq\pione(\spec{K\tilt})$.
+\end{theorem}
+\begin{proof}
+This is \cite[theorem 3.7]{Scholze12}.
+\end{proof}
+
+
+

@@ -1,0 +1,165 @@
+We are now ready to define \emph{diamonds}. We will give the most basic definition. The canonical references are \cite{Scholzeetcoh21} and \cite{SW20}.
+
+\begin{definition}
+A \emph{diamond} is a sheaf $\D$ on $\perfcsite$ which admits a  pro-\'{e}tale cover $\h{X}\to\D$ from a representable sheaf, which will be called
+\emph{presentation} of $\D$.
+Morphisms of diamonds are morphisms of sheaves.
+\end{definition}
+To every perfectoid space $X$ in $\perfc$ we can associate a diamond via the Yoneda embedding.
+Let $\D$ be a diamond with presentation $\h{X}\to\D$. It follows immediately from the definition that
+$\h{Z}\simeq\h{X}\times_{\D}\h{X}$ for some perfectoid space $Z$ in $\perfc$.
+We have morphisms $s,t\colon Z\substack{\xrightarrow{\hspace{0.25cm}}\\[-1.2em] \xrightarrow{\hspace{0.25cm}}} X$ 
+corresponding to the projections $\h{Z}\simeq\h{X}\times_{\D}\h{X}\substack{\xrightarrow{\hspace{0.25cm}}\\[-1.2em] \xrightarrow{\hspace{0.25cm}}}\h{X}$.
+The morphisms are pro-\'{e}tale, since $\h{X}\to\D$ is pro-\'{e}tale.
+In particular $\h{Z}\subset \h{X}\times\h{X}$ defines an equivalence relation on $\h{X}$, we also say that $s,t\colon Z\substack{\xrightarrow{\hspace{.25cm}}\\[-1.2em] \xrightarrow{\hspace{0.25cm}}} X$ 
+is a \emph{pro-\'{e}tale equivalence relation} on $X$. Moreover one can prove that
+the diagram 
+\[\h{X}\times_{\D}\h{X}\substack{\xrightarrow{\hspace{0.25cm}}\\[-1.2em] \xrightarrow{\hspace{0.25cm}}}\h{X}\xrightarrow{\hspace{0.25cm}}\D\]
+represents $\D$ as coequalizer in $\mathbf{Shv}(\mathrm{Perf}_{C})$. This recovers \cite[definition 11.1]{Scholzeetcoh21}, 
+see also \cite[definition 8.3.1]{SW20} and \cite{Hansen16}. Compare also with \cite[definition I.5.1]{Knutson71}.
+\\
+
+
+
+
+
+The definition of diamonds and properties of pro-\'{e}tale covers imply the following basic result:
+\begin{prop}
+Let $\F\to\G$ be a pro-\'{e}tale cover of sheaves on $\perfcsite$. Then $\F$ is a diamond if and only if $\G$ is a diamond.
+\end{prop}
+\begin{proof}
+Let $\G$ be a diamond with presentation $\h{X}\to\G$. By definition there exists a perfectoid space $Y$ and an isomorphism
+$\h{Y}\simeq\F\times_{\G}\h{X}$ with $Y\to X$ a pro-\'{e}tale cover. In particular $\h{Y}\simeq\F\times_{\G}\h{X}\to\F$
+is a pro-\'{e}tale cover by base change.
+\end{proof}
+
+Let $\underline{G}$ be a a group object in the category $\perfc$, i.e. a representable functor $\perfc^{op}\to\catname{Grp}$ to the category of groups, hence a sheaf for the pro-\'{e}tale topology.
+Consider the following definitions:
+\begin{definition}
+Let $\F$ be a sheaf on $\perfc$ with a $\underline{G}$-action.
+A pro-\'{e}tale $\underline{G}$-torsor is a morphism $\F\to\G$ of sheaves on $\perfc$ which is $\underline{G}$-equivariant for the trivial action on $\G$, i.e. we have a commutative diagram:
+
+$$\begin{CD}
+\F\times\underline{G}     @>\alpha>>  \F	\\
+@VprVV           @VVV                \\
+\F    @>>>  \G		
+\end{CD}$$\\
+where the first vertical arrow is the projection, the above arrow is the action and 
+such that there exists a pro-\'{e}tale cover $\G'\to\G$ together with a morphism $s\colon \G'\to\F$ such that the natural map
+\[\G'\times\underline{G}\to\G'\times_{\G}\F,\]
+\[(x,g)\mapsto (x, s(x)g)\]
+is an isomorphism.
+%$\F'\times_{\F}\Hh\simeq\G\times\Hh$ which is $\G$-equivariant.
+\end{definition}
+
+Let $G$ be a profinite group, let $\underline{G}$ be the corresponding group object in $\perfc$. This represents the sheaf on $\perfc$
+which sends an object $X$ in $\perfc$ to $C^{0}(\norm{X}, G)$, continuous functions from the underlying topological space $X$ to $G$.
+This is a sheaf for the $v$-topology on $\perfc$, which is another subcanonical topology on $\perfc$ and which is finer than the pro-\'{e}tale topology on $\perfc$.
+Explicitely 
+$\underline{G} = \spa{C^{0}(G, C)}{C^{0}(G, \Oo_C)}$, an affinoid perfectoid space over $C$. 
+Moreover
+$\underline{G}\to\spa{C}{\Oo_C}$ is a  pro-\'{e}tale cover since
+$\underline{G} = \varprojlim_{i\in I}\spa{C^{0}(G_i, C)}{C^{0}(G_i, \Oo_C)}$
+and $\spa{C^{0}(G_i, C)}{C^{0}(G_i, \Oo_C)}$ is a disjoint union of $G_i$ copies of $\spa{C}{\Oo_C}$, where $G=\varprojlim_{i\in I}G_i$.
+
+
+
+\begin{definition}
+Let $G$ be a group, let $\F$ be a sheaf in $\perfc$ with an action $\underline{G}\times\mathcal{F}\to\mathcal{F}$. We then write
+$\F/\underline{G}$ for the sheafification of the presheaf which sends an object $Y$ in $\perfc$ to $\mathcal{F}(Y)/\underline{G}(Y)$.
+\end{definition}
+
+
+
+\begin{prop}\label{torsorprop1}
+Let $G$ be a profinite group, let $\F'$ be a sheaf on $\perfc$.
+Let $\underline{G}\times\F'\to\F'$ be an action. 
+Set $\F = \F'/\underline{G}$ as a sheaf on $\perfc$.
+Assume that for every complete algebraically closed non-Archimedean field $C'$ over $C$ the action of $G$ on
+$\F'(\spa{C'}{\Oo_{C'}})$ is free. Then
+$\F'\to\F$ is a  pro-\'{e}tale $\underline{G}$-torsor and a pro-\'{e}tale cover.
+In particular $\F$ is a diamond if $\F'$ is representable.
+\end{prop}
+\begin{proof}
+The statement will follow as soon as we have proven that
+$\F'\to\F$ is a pro-\'{e}tale cover and that the morphism
+$\underline{G}\times\F'\to \F'\times_{\F}\F'$, $(g,x)\mapsto (gx,x)$, 
+is an isomorphism. The second claim is equivalent to the existence of a division map $\gamma\colon\F'\times_{\F}\F'\mapsto\underline{G}$ such that the following diagrams commute:
+$$\begin{tikzcd}
+\F'\times_{\F}\F' \arrow[rd, "pr_{1}"] \arrow[r, "{(\gamma, pr_{2})}"] & \underline{G}\times\F' \arrow[d, "\alpha"]\\
+				     					        & \F'
+\end{tikzcd}\hspace{1.7cm}
+\begin{tikzcd}
+\underline{G}\times\F' \arrow[rd, "pr_{1}"] \arrow[r, "{(\alpha, pr_{2})}"] & \F'\times_{\F}\F' \arrow[d, "\gamma"]\\
+				                                                                      & \underline{G}
+\end{tikzcd}$$
+
+Suppose we have a section $\h{Y}\to\F'\times_{\F}\F'$. This means we have morphisms $f_1, f_2\colon \h{Y}\to\F'$ such that there exists a pro-\'{e}tale cover $g\colon Y'\to Y$ and a morphism
+$\gamma\colon Y'\to \underline{G}$ such that for all $y\in Y'$ we have $f_2(g(y))=\gamma(y)f_1(g(y))$. We claim that the morphism $\gamma\colon Y'\to\underline{G}$ is constant. Without loss of generality we can assume that
+$Y=\spa{C'}{\Oo_{C'}}$ for a complete algebraically closed non-Archimedean field $C'$ over $C$. See \cite[lemma 5.4]{Scholzeetcoh21}. 
+We have that $f_1, f_2\in\F'(\spa{C'}{\Oo_{C'}})$ and by assumption there is a unique $\gamma\in G$ which maps one to the other. This proves existence of the morphism
+ $\gamma\colon\F'\times_{\F}\F'\mapsto\underline{G}$ and one checks that the diagrams above are indeed commutative. Hence 
+$\underline{G}\times\F'\to \F'\times_{\F}\F'$ is an isomorphism.
+
+Let us prove now the second claim, namely that $\F'\to\F$ is a pro-\'{e}tale cover. This will then prove that $\F'\to\F$ is a pro-\'{e}tale $\underline{G}$-torsor because a 
+trivialization is then given by the pro-\'{e}tale cover $\F'\to\F$ itself. 
+Let $\h{Y}\to\F$ be a morphism from a representable sheaf. We can assume that $Y$ is affinoid.
+We claim that  the fibre product
+$\F'\times_{\F}\h{Y}$ is representable in $\perfc$ and $\F'\times_{\F}\h{Y}\to \h{Y}$ is a pro-\'{e}tale cover.
+The morphism $\h{Y}\to\F$ is given by a pro-\'{e}tale cover $\h{Y'}\to\h{Y}$ together with a morphism $f\colon\h{Y'}\to\F'$.
+We have an isomorphism $\F'\times_{\F}\h{Y'}\to \underline{G}\times\h{Y'}$, where the map $\F'\times_{\F}\h{Y'}\to \underline{G}$ is the composition of
+$\F'\times_{\F}\h{Y'}\to\F'\times_{\F}\F'$ with $\gamma\colon\F'\times_{\F}\F'\mapsto\underline{G}$ and the projection $\F'\times_{\F}\h{Y'}\to\h{Y'}$.
+In particular $\F'\times_{\F}\h{Y'}$ is representable.
+
+Notice that as sheaves we have $\F' = \varprojlim_{i\in I}\F'/\underline{G_i}$, where the index goes over all open normal subgroups of $G$. Moreover we have
+$\F'\times_{\F}\h{Y} = \varprojlim_{i\in I}\F'/\underline{G_i}\times_{\F}\h{Y}$. Hence it is enough to prove that for each open normal subgroup $H\subseteq G$ we have that
+$\F'/\underline{H}\times_{\F}\h{Y}$ is representable by an affinoid and $\F'/\underline{H}\times_{\F}\h{Y}\to\h{Y}$ is finite \'{e}tale.\\
+Consider the diagram:
+$$\begin{tikzcd}
+\F'/\underline{H}\times_{\F}\h{Y'}		 \arrow[d] \arrow[r] & \h{Y'} \arrow[d]\\
+\F'/\underline{H}\times_{\F}\h{Y}		 \arrow[r]	    & \h{Y}
+\end{tikzcd}$$
+
+The top arrow is a finite \'{e}tale morphism between affinoids and the right arrow is  a pro-\'{e}tale cover by assumption. Using proposition \ref{descentprop1}, there exists
+a finite \'{e}tale morphism of affinoids $\h{Z}\to\h{Y}$ such that $\F'/\underline{H}\times_{\F}\h{Y'}\simeq \h{Z}\times_{\h{Y}}\h{Y'}$ and hence
+$\h{Z}= \F'/\underline{H}\times_{\F}\h{Y}$ since $Y'\to Y$ is a pro-\'{e}tale cover. Hence $F'\times_{\F}\h{Y}\to\h{Y}$  is a pro-\'{e}tale cover.
+\end{proof}
+
+
+\begin{theorem}\label{torsorthm1}
+Let $G$ be a profinite group. Let $\F'\to\F$ be a  pro-\'{e}tale $\underline{G}$-torsor. Then we have an equivalence of categories between the category of finite \'{e}tale $\F$-morphisms and $\underline{G}$-equivariant finite \'{e}tale $\F'$-morphisms.
+\end{theorem}
+\begin{proof}
+Let $\F''\to\F$ be a  pro-\'{e}tale cover such that  $\F'\times_{\F}\F''\simeq\underline{G}\times\F''$. Hence we can apply lemma \ref{lemma2218}.
+Let $f\colon\G'\to\F'$ be a $\underline{G}$-equivariant finite \'{e}tale morphism. 
+Let us note that 
+$\underline{G}\times\F'\simeq\F'\times_{\F}\F'$ via $(g,x)\mapsto (gx,x)$, i.e. defined for an object $Y$ in $\perfc$ and elements $g\in\underline{G}(Y)$, $x\in\F'(Y)$. See for example \cite[proposition 4.43]{Vistoli05}.
+Consider the morphism 
+$\G'\times_{\F}\F'\to\F'\times_{\F}\F'\simeq\underline{G}\times\F'\to\underline{G}$, $(y,x)\mapsto \gamma(y,x)$. 
+Then the isomorphism 
+$\G'\times_{\F}\F'\simeq\F'\times_{\F}\G'$ defined by $(y,x)\mapsto (f(y), \gamma(y,x)y)$ defines a descent datum for $f\colon\G'\to\F'$ relative to $\F'\to\F$. 
+It satisfies the cocycle condition precisely because $f\colon\G'\to\F'$ is $\underline{G}$-equivariant. Hence by descent there exists
+$\G\to\F$ finite \'{e}tale such that
+$\G'\simeq\G\times_{\F}\F'$.
+\end{proof}
+
+\clearpage
+\hfill
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

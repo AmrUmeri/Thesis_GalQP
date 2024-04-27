@@ -1,0 +1,83 @@
+\section{Adic spaces: Adic generic fibres}\label{adicgenericfibresection}
+
+We want to study \emph{punctured adic spectra} and in particular \emph{adic generic fibres} over non-Archimedean fields. Heuristically we can define punctured adic spectra as the open subsets of an adic spectrum that we get by progressively removing points of an adic spectrum of an adic ring of finite type.\\
+
+Let $K$ be a complete non-Archimedean field with non-trivial valuation, let $\Oo_K=K\upcirc$ be its valuation ring and let $\pu\in K$ be a pseudo-uniformizer. This always exists since we assume the valuation to be non-trivial. In particular the topology on $\Oo_K$ is the $\pu$-adic topology and $(\Oo_K, \Oo_K)\to(K,\Oo_K)$ is an 
+adic morphism of Huber pairs.
+Let $R$ be an $\Oo_K$-algebra which is adic of finite type. In particular we want the structure morphism $\Oo_K\to R$ to be continuous. 
+This implies that the topology on $R$ is coarser than the $\pu$-adic topology on $R$.
+Since the topology in either case is adic, we have $R=R\upcirc$ and we can form the Huber pair $(R,R)$ over $(\Oo_K,\Oo_K)$.
+We will write $R_{\pu}$ for the ring $R$ when equipped with the $\pu$-adic topology. 
+We will write $\spaa{R}$ and $\spaa{\Oo_K}$ for the corresponding adic spectra to simplify notation.\\
+
+We define the \emph{adic generic fibre} of $\spaa{R}$ to be:
+\[(\spaa{R})_{\eta}\coloneqq \spaa{R}-\{\pu=0\}.\]
+This has to be understood as the set of all continuous valuations $x\in\spaa{R}$ which satisfy $\normx{\pu}\neq0$.
+It does not depend on the choice of pseudo-uniformizer.
+
+
+%For the following proposition we do not need the assumption that $K$ or $R$ is complete.
+
+\begin{prop}\label{prop_adic_fibre}
+The adic generic fibre $(\spaa{R})_{\eta}$ can be covered by rational subsets of $\spaa{R}$. More precisely
+$(\spaa{R})_{\eta} = \bigcup\limits_{n\geq1}U(\tfrac{f_1^n,\dots,f_m^n}{\pu})$ where 
+$(f_1,\dots,f_m)\subseteq R$ is an ideal of definition for $R$.
+%is an adic space.
+\end{prop}
+\begin{proof}
+We want to cover $(\spaa{R})_{\eta}$ by rational subsets of $\spaa{R}$.
+Let $(f_1,\dots,f_m)\subseteq R$ be an ideal of definition. Notice that for each $n\geq 1$ $(f_1^n,\dots,f_m^n)\subseteq R$ is an ideal of definition as well. Consider the rational subsets $U(\tfrac{f_1^n,\dots,f_m^n}{\pu})\subseteq\spaa{R}$  for each $n\geq 1$. 
+We claim that   $(\spaa{R})_{\eta} = \bigcup\limits_{n\geq1}U(\tfrac{f_1^n,\dots,f_m^n}{\pu})$.
+Let $x\in(\spaa{R})_{\eta}$, then $\normx{\pu}\neq0$. Then $\{a\in R\:\vert\: \normx{a}<\normx{\pu}\}\subseteq R$ is an open subset by continuity of the valuation.
+Hence we can find $n\geq1$ such that $\normx{f_i^n}\leq\normx{\pu}$ for $i=1,\dots,m$. Then $x\in U(\tfrac{f_1^n,\dots,f_m^n}{\pu})$.
+\end{proof}
+
+Assume now that $R$ is $\pu$-torsion free and carries the $\pu$-adic topology for which it is complete. Then $R[\tfrac{1}{\pu}]$ is a Tate ring.
+Assume furthermore that $R$ is integrally closed in $R[\tfrac{1}{\pu}]$.
+Then $(R[\tfrac{1}{\pu}], R)$ is a Huber-Tate pair and we have:
+\[(\spaa{R})_{\eta} = \spa{R[\tfrac{1}{\pu}]}{R}.\]
+In fact $(\spaa{R})_{\eta}\subseteq\spaa{R}$ is the open subset consisting of analytic points.
+Recall that in this example $R$ is equipped with the $\pu$-adic topology.
+We have the following:
+\[\spa{R[\tfrac{1}{\pu}]}{R} = \spaa{R}\times\!\!_{\spaa{\!\Oo_K}}\spa{K}{\Oo_K}\]
+where the fibre product is taken in the opposite category of complete Huber pairs.
+Notice that $\eta=\spa{K}{\Oo_K}$ is a one-point space and can be understood as generic point of $\spaa{\Oo_K}$.\\
+
+For example consider the \emph{adic (or formal) open unit disk} over $\Oo_K$, namely $\spaa{\Oo_K[[T]]}$, where we equip $\Oo_K[[T]]$ with the $(\pu, T)$-adic topology. This is an adic space if $\Oo_K$ is noetherian.
+This can be understood as a functor which sends a complete Huber pair $(R, R\upplus)$ over $(\Oo_K, \Oo_K)$ (or an an complete adic $\Oo_K$-algebra $R$\.) to its set of topologically nilpotent elements $R\twocirc$.  In fact continuous ring morphisms $\Oo_K[[T]]\to R$ correspond bijectively to elements in $R\twocirc$.
+Proposition \ref{prop_adic_fibre} then says that:
+\[(\spaa{\Oo_K[[T]]})_{\eta} = \bigcup\limits_{n\geq1}U(\tfrac{T^n,\pu}{\pu}).\]
+From lemma \ref{lemmaforpuncturedspectra} it follows immediately that the \emph{adic generic fibre of the adic open unit disk over} $\Oo_K$ \emph{is the adic open unit disk over} $K$. This is the functor which sends  a complete Huber-Tate pair $(R, R\upplus)$ over $(K, \Oo_K)$ to its set of topologically nilpotent elements $R\twocirc$.
+We will later study the case where the adic generic fibre is a \emph{perfectoid space}.
+Notice that in general we do not know whether the adic generic fibre is an adic space. However the adic generic fibre $(\spaa{R})_{\eta}$ is an adic space if $\spaa{R}$ is an adic space by proposition \ref{prop_adic_fibre}.
+\\
+
+We want to give a short remark on the punctured adic spectra 
+\[\spaa{\Oo_K[[T]]}-\{T=0\},\:\: \spaa{\Oo_K[[T]]}-\{T\pu=0\}.\] 
+Using lemma \ref{lemmaforpuncturedspectra} we see immediately that we can interpret these as moduli functors parametrizing topologically nilpotent units of a complete Huber pair $(R, R\upplus)$ over $(\Oo_K, \Oo_K)$ or a complete Huber-Tate pair $(R, R\upplus)$ over $(K, \Oo_K)$ respectively.
+\\
+
+The next lemma will explain that it is possible to cover an open subset of a non-analytic adic spectrum by analytic spaces:
+\begin{lemma}\label{pfibrelemma2}
+Let $R$ be an $\Oo_K$-algebra which is adic of finite type, $\pu$-torsion free and integrally closed in $R[\tfrac{1}{\pu}]$. Then
+we can identify $(\spaa{R})_{\eta}$ as the open subset of the Huber-Tate pair $\spa{R_{\pu}[\tfrac{1}{\pu}]}{R_{\pu}}$ which consists of valuations that are continuous for the original topology on $R$.
+\end{lemma}
+\begin{proof}
+See proof of theorem \ref{pfibrethm}.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

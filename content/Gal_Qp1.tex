@@ -1,0 +1,301 @@
+\chapter{Punctured perfectoid open unit disk}
+Let $E$ be a finite extension of $\Qp$ and let $\pi\in\Oo_E$ be a fixed uniformizer.
+Let $C$ be a complete, non-Archimedean and algebraically closed extension of $E$. In particular $C$ is a perfectoid field.
+We introduce the \emph{perfectoid open unit disk} $\widetilde{H}_{C}^{ad}$ which will be defined as a perfectoid generic fibre over the non-Archimedean field $C$. It is an $E$-vector space object in the category $\perfc$. After removing certain points of this perfectoid space we get the \emph{punctured perfectoid open unit disk} which admits an $E^{\times}$-action and which we denote by $\widetilde{H}_{C}^{ad, *}$. The uniformizer   $\pi\in\Oo_E$ generates a free and totally discontinuous action and $\tilde{H}^{ad, *}_{C}\!/\pi^{\Z}$ exists as a perfectoid space in $\perfc$ as well. 
+The construction resembles the construction of the adic Fargues-Fontaine curve and they are related via the tilting equivalence after base changing the curve with an untilt of $\Fq((X^{\frac{1}{q^\infty}}))$. There is a diamond $Z_E$ which admits $\tilde{H}^{ad, *}_{C}\!/\pi^{\Z}$ as a presentation and whose \'{e}tale fundamental group is the \'{e}tale fundamental group of $\spec{E}$.
+ 
+
+\section{Perfectoid open unit disk: Vector space object}
+
+Let $E$ be a finite extension of $\Qp$.
+We discuss the formal open unit disk and the perfectoid open unit disk. The formal open unit disk is an $\Oo_E$-module object in the category of formal schemes over $\Oo_E$.
+We start with recalling Lubin-Tate theory. Recommended references are \cite{Lang78} and \cite{Hazewinkel78}. The original reference is \cite{LT65}.\\
+
+A (commutative) formal group law over $\Oo_E$  is a formal power series $F(X,Y)\in\Oo_E[[X,Y]]$ satisfying certain axioms.
+Let $R$ be a complete adic $O_E$-algebra. Then a formal group law $F(X,Y)\in\Oo_E[[X,Y]]$ defines an actual abelian group law on $R\twocirc$, the set of topologically nilpotent elements, via the addition:
+$a+_{F} b = F(a,b)\in R\twocirc$ for $a,b\in R\twocirc$.\\
+ 
+Every complete algebraic extension $K$ of $E$ gives rise to the abelian group $(\mathfrak{m}_K, +_{F})$, where $\mathfrak{m}_K=K\twocirc$ is the maximal ideal in its ring of integers.
+Recall that the category of affine formal schemes over $\Oo_E$ is the opposite category of the category of complete adic of finite type $\Oo_E$-algebras, see for example \cite[definition 1.1.10]{FK18}. The functor from adic complete $O_E$-algebras to abelian groups sending $R$ to $R\twocirc$,
+$H_E\colon R\mapsto R\twocirc$ gives rise to a group object in the category of formal schemes and is represented by
+$\spf{\Oo_E[[X]]}$, compare also with our discussion in section \ref{adicgenericfibresection}.
+There is an adic version, the adic space $\spaa{\Oo_E[[X]]}$. This is an adic space since $\Oo_E[[X]]$ is noetherian. See for example \cite[lemma 7.3.1.2]{BGR84}. However it is not analytic since it contains the point which vanishes on the ideal of definition.
+
+
+
+\begin{definition}
+A \emph{Frobenius power series} (or \emph{Lubin-Tate series})  associated to a fixed uniformizer $\pi\in\Oo_E$ is a formal power series $f(X)\in\Oo_E[[X]]$
+with the following properties:
+\begin{enumerate}
+\item $f(X)-\pi X \in X^2\Oo_E[[X]]$,
+\item $f(X)-X^q \in \pi\Oo_E[[X]]$.
+\end{enumerate}
+\end{definition}
+
+For example we can take $\phi(X)=X^q + \pi X$.
+This is the \emph{special Frobenius power} series associated to the uniformizer $\pi\in\Oo_E$.
+
+\begin{prop}
+For every Frobenius power series $f(X)\in\Oo_E[[X]]$ there is a unique formal group law $F_f(X,Y)\in\Oo_E[[X,Y]]$ over $\Oo_E$ such that $f(F_f(X,Y))=F_f(f(X),f(Y))$.
+\end{prop}
+\begin{proof}
+This is \cite[theorem 8.1.1]{Lang78}.
+\end{proof}
+
+
+Let $\phi(X)=X^q + \pi X$. Then $F_\phi(X,Y)\in\Oo_E[[X,Y]]$ is called the \emph{special Lubin-Tate formal group law} associated to $\pi\in\Oo_E$.\\
+
+Let $a\in\Oo_E$, let  $f(X)\in\Oo_E[[X]]$ be a Frobenius power series associated to the uniformizer $\pi\in\Oo_E$.
+From Lubin-Tate theory we know that there exists a unique power series $[a]_f\in\Oo_E[[X]]$ such that $[a]_f(X)-aX\in  X^2\Oo_E[[X]]$ and $f\circ[a]_f(X) = [a]_f\circ f(X)$.
+In particular $[\pi]_f=f$ and for any complete adic $O_E$-algebra $R$ the group $R\twocirc$ becomes an $\Oo_E$-module by setting:
+$ar = [a]_f(r)\in R\twocirc$ for $r\in R\twocirc$. See for example \cite[section 32.1.3]{Hazewinkel78}.
+Moreover the $\Oo_E$-module structure does not depend on the choice of Frobenius polynomial associated with $\pi\in\Oo_E$.
+Hence we assume $f(X)=X^q + \pi X\in\Oo_E[[X]]$ and we set $[a]\coloneqq [a]_f$ for $a\in\Oo_E$. In particular 
+$[\pi](r)=r^q + \pi r$ for $r\in R\twocirc$.
+Hence the functor $H_E\colon R\mapsto R\twocirc$ is an $\Oo_E$-module object in the category of formal schemes.
+Every $a\in\Oo_E$ defines a natural transformation $[a]\colon H_E\to H_E$, the corresponding morphism on the corepresenting object is then given by $\Oo_E[[X]]\to\Oo_E[[X]]$, $X\mapsto[a](X)$. This follows from the Yoneda lemma.
+In particular $[\pi](X)=X^q + \pi X$.\\
+
+Let $\bar{E}$ be an algebraic closure of $E$ with the unique valuation extending the valuation on $E$. For $\pi^n\in\Oo_E$, $n\geq1$, we set:
+$H_E[\pi^n] = \{a\in\bar{E}\twocirc\mid [\pi^n](a)=0\}.$
+This is an $\Oo_E/\pi^n\Oo_E$-module. We then define:
+$E_n\coloneqq E(H_E[\pi^n])$ for $n\geq1$ the field generated over $E$ by these elements. This gives a tower of finite Galois extensions $E\subseteq E_1\subseteq\dots\subseteq\cup_{n\geq1}E_n\subseteq\bar{E}$.
+We set $E_{\infty}\coloneqq\cup_{n\geq1}E_n$ and denote by $\hat{E}_{\infty}$ its completion.
+The extensions only depend on the uniformizer $\pi\in\Oo_E$ and not on the choice of Frobenius power series.
+Using terminology in \cite{Berkovich93} we have that $E_{\infty}$ is a \emph{quasi-complete field} since it is an algebraic extension of a complete field and hence valuations on $E_{\infty}$ extend uniquely to valuations on algebraic extensions.
+Finite \'{e}tale $E_{\infty}$-algebras are then canonically equivalent to finite \'{e}tale $\hat{E}_{\infty}$-algebras via the base-change $A\to A\tens_{E_{\infty}}\hat{E}_{\infty}$.
+This is proven in  \cite[proposition 2.4.1]{Berkovich93}.\\
+
+We now fix a sequence of compatible elements 
+$z_n\in H_E[\pi^n]\backslash H_E[\pi^{n-1}]$ for $n\geq1$ such that $[\pi]z_{n+1}=z_n$ and $\Oo_{E_n}=\Oo_E[z_n]$.
+%We then have $E_n=E[z_n]$ and $\Oo_{E_n}=\Oo_E[z_n]$.\\
+By counting cardinalities one proves that the homomorphisms of $\Oo_E$-modules
+\begin{gather*}
+\Oo_E/\pi^n\Oo_E\to H_E[\pi^n],\\
+a+\pi^n\Oo_E\mapsto [a](z_n)
+\end{gather*}
+are isomorphisms, hence $H_E[\pi^n]$ is a free of rank one $\Oo_E/\pi^n\Oo_E$-module for $n\geq1$.
+This map then defines an isomorphism of groups $\chi_{E,n}\colon\Gal(E_n/E)\xrightarrow{\sim}(\Oo_E/\pi^n\Oo_E)^{\times}$ for $n\geq1$.
+For any $\sigma\in\Gal(E_n/E)$ there is a unique $\chi_{E,n}(\sigma)\in(\Oo_E/\pi^n\Oo_E)^{\times}$ with $\sigma(z) = [\chi_{E,n}(\sigma)](z)$ for $z\in H_E[\pi^n]$.
+See for example \cite[chapter 32.1]{Hazewinkel78} for the proof of the above statements.\\
+
+The isomorphisms $\chi_{E,n}$, $n\geq1$, fit into the commutative diagram:
+
+$$\begin{CD}
+	\Gal(E_{n+1}/E)     @>\sim>\chi_{E,n+1}>  (\Oo_E/\pi^{n+1}\Oo_E)^{\times}\\
+	@V\text{restriction}VV        @V\text{projection}VV\\
+	\Gal(E_n/E)     @>\sim>\chi_{E,n}>  (\Oo_E/\pi^n\Oo_E)^{\times}.
+\end{CD}$$
+
+
+By passing to projective limits we obtain an isomorphism of groups: 
+\[\chi_{E}\colon\Gal(E_{\infty}/E)\xrightarrow{\sim}\Oo_E^{\times}.\]
+
+The next goal is to prove that $\hat{E}_{\infty}$ is a perfectoid field and to determine its tilt.
+
+\begin{prop}\label{ehatprop}
+$\hat{E}_{\infty}$ is a perfectoid field. 
+There is an isomorphism of $\Fq$-algebras $\Oo_{\hat{E}_{\infty}\tilt}\simeq\Fq[[X^{\frac{1}{q^\infty}}]]$ which is $\pi^{\Z}$-equivariant for a certain action of the group $\pi^{\Z}$.
+\end{prop}
+\begin{proof}
+Let us prove that $\hat{E}_{\infty}$ is a perfectoid field. It is enough to prove that the value group $\norm{E^\times_{\infty}}$ is not discrete and that the $q$-th power Frobenius map
+$\Oo_{E_{\infty}}/\pi\Oo_{E_{\infty}}\to\Oo_{E_{\infty}}/\pi\Oo_{E_{\infty}}$ is surjective.
+To prove the first claim notice that $\norm{\pi}<1$. From Lubin-Tate theory we know that $z_n\in\Oo_{E_n}$ is a prime element and that $E_n$ is a totally ramified extension of degree $(q-1)q^{n-1}$ of $E$.
+Hence $\norm{z_n}^{(q-1)q^{n-1}}=\norm{\pi}$ and $\norm{E^\times_{\infty}}\subseteq\R_{>0}$ is dense.
+To prove the second claim, consider again as before a sequence of compatible elements
+$z_n\in H_E[\pi^n]\backslash H_E[\pi^{n-1}]$ for $n\geq1$. I.e. we require that $[\pi]z_{n+1}=z_n$. 
+Recall that $\Oo_{E_\infty}$ is then generated by $(z_n)_{n\geq 1}$ as an $\Oo_E$-algebra, hence the cosets generate $\Oo_{E_\infty}/\pi\Oo_{E_\infty}$ as an $\Fq$-algebra.
+In particular, letting $f(X)=\pi X + X^q\in\Oo_E[[X]]$ be the special Frobenius polynomial, we have $z^q_{n+1}-z_n\in\pi\Oo_{E_\infty}$.
+This proves the second claim.
+Let us determine the tilt $\Oo_{\hat{E}_{\infty}\tilt}$ of $\Oo_{\hat{E}_{\infty}}$.
+Consider the surjective homomorphism of  $\Fq$-algebras:
+\begin{gather*}
+\Fq[[X^{\frac{1}{q^\infty}}]]\to \Oo_{\hat{E}_{\infty}\tilt} =  \varprojlim_{\overline{z}\mapsto \overline{z^q}}\Oo_{E_\infty}/\pi\Oo_{E_\infty},\\
+X^{\frac{1}{q^n}}\mapsto (\overline{z_{k+n}})_{k\geq 1}.
+\end{gather*}
+
+This homomorphism is injective since $\norm{z_n}>\norm{\pi}$ for some $n\geq1$.
+Hence we have:
+$$\Fq((X^{\frac{1}{q^\infty}})) = \hat{E}_{\infty}\tilt.$$
+Let us describe the actions. %$E^\times$-actions.
+%$\Oo_E^\times$ acts via the action on $\Fq[[X^{\frac{1}{q^\infty}}]]$ coming from Lubin-Tate theory and 
+$\pi\in\Oo_E$ acts via the $q$-th power Frobenius on $\Fq[[X^{\frac{1}{q^\infty}}]]$ and on $\Oo_{\hat{E}_{\infty}\tilt}$. 
+%The action on $\Oo_{\hat{E}_{\infty}\tilt}$ is described the following way: $\Oo_E^\times$ acts as $\Gal(E_{\infty}/E)$ and  $\pi\in\Oo_E$ acts via the $q$-th power Frobenius.
+The isomorphism $\Fq[[X^{\frac{1}{q^\infty}}]]\xrightarrow{\sim}\Oo_{\hat{E}_{\infty}\tilt}$ is clearly equivariant.% for the $\pi^\Z$-action.% It is also equivariant for the $\Oo_E^\times$-action, since the actions are described via formal power series.
+\end{proof}
+
+
+Recall the functor $H_E$ from adic complete $\Oo_E$-algebras to $\Oo_E$-modules, where the $\Oo_E$-module structure comes from the Lubin-Tate formal $\Oo_E$-module
+associated to the uniformizer $\pi\in\Oo_E$. 
+The functor is representable by the affine formal scheme $\spf{\Oo_E[[X]]}$, an $\Oo_E$-module object in the category of formal schemes or a \emph{formal $\Oo_E$-module object}.\\
+
+We define the \emph{universal cover}:
+
+\[\tilde{H}_E= \varprojlim_{[\pi]}H_E.\]
+
+Hence a complete adic $\Oo_E$-algebra $R$ is sent to the $E$-vector space $$\varprojlim_{r\mapsto[\pi]r}R\twocirc.$$
+%This is the \emph{perfectoid open unit disk} over the base space $E$. 
+Via base change to a complete algebraicailly closed extension $C$ of $E$, we define also the functor $\tilde{H}_{C}$.
+This sends complete adic $\Oo_C$-algebras to $E$-vector spaces.\\
+
+ The functor described above is not yet the candidate to be the perfectoid version of the formal open unit disk, instead we will define it as adic generic fibre over the non-Archimedean field $C$ and we will show that it is in fact a perfectoid space. Taking the adic generic fibre will ensure that it is indeed an element in $\perfc$. Consider first the following proposition: 
+
+
+\begin{prop}\label{vobjprop}
+$\tilde{H}_E$ is an $E$-vector space object in the category of affine formal schemes over $\Oo_E$.
+It is represented by $\spf{\Oo_E[[X^{\frac{1}{q^\infty}}]]}$. The uniformizer $\pi\in\Oo_E$ acts continuously (ignoring the algebraic structure) on the corepresenting object $\Oo_E[[X^{\frac{1}{q^\infty}}]]$ via the $q$-th power Forbenius 
+$X^{\frac{1}{q^{n+1}}}\mapsto X^{\frac{1}{q^n}}$, leaving elements of $\Oo_E$ fixed.
+\end{prop}
+\begin{proof}
+$\spf{\Oo_E[[X^{\frac{1}{q^\infty}}]]}$ represents the functor which sends a complete adic of finite type $\Oo_E$-algebra $R$ to $\varprojlim_{x\mapsto x^q}R\twocirc$.
+We have using arguments as in lemma \ref{keylemma} and that $R$ is also complete for the $\pi$-adic topology
+%\begin{align*}
+%\varprojlim_{x\mapsto x^q}R\twocirc &= \varprojlim_{x\mapsto x^q}R\twocirc/\pi R\twocirc\\
+%						&= \varprojlim_{[\pi]}R\twocirc/\pi R\twocirc \\
+%						&= \varprojlim_{[\pi]}R\twocirc.
+%\end{align*}
+$$\varprojlim_{x\mapsto x^q}R\twocirc = \varprojlim_{x\mapsto x^q}R\twocirc/\pi R\twocirc = \varprojlim_{[\pi]}R\twocirc/\pi R\twocirc = \varprojlim_{[\pi]}R\twocirc.$$
+The last claim is proven using the dual version of the Yoneda lemma. See also  \cite[section II.2.1]{FS2021} for similar statements. The action does not preserve the usual addition rule on the corepresenting object since the morphisms go in the opposite direction.
+\end{proof}
+
+Let us set $\tilde{H}_{C}$ as the following adic spectrum:
+$$\tilde{H}_{C} = \spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}.$$
+This is not a perfectoid space since it containts non-analytic points.
+We write  $\tilde{H}^{ad}_{C}$ for the adic generic fibre of $\tilde{H}_{C}$, namely  
+$$(\spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]})_{\eta} = \spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}-\{\pu_C=0\}.$$
+We will give a proof that $\tilde{H}^{ad}_{C}$ is a perfectoid space and determine its tilt in the next section.
+This will imply that $\tilde{H}^{ad}_{C}$ is an $E$-vector space object in the category $\perfc$. This is the \emph{perfectoid open unit disk} over $C$. By inverting the pseudo-uniformizer $\pu_C\in\Oo_C$ we in fact have a morphism  $\tilde{H}^{ad}_{C}\to\spa{C}{\Oo_C}$. A perfectoid pair $(A, A\upplus)$ over $(C, \Oo_C)$ is then sent to the $E$-vector space ${A\tilt}\twocirc$, the set of \emph{topologically nilpotent elements of its tilt}.
+
+\begin{definition}
+The \emph{perfectoid open unit disk} over $C$ is defined as the following adic generic fibre:
+$$\tilde{H}^{ad}_{C} = (\spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]})_{\eta},$$
+where $\Oo_C[[X^{\frac{1}{q^\infty}}]]$ is completed for the $(\pu_C, X)$-adic topology.
+\end{definition}
+
+
+\section{Perfectoid open unit disk: Perfectoid generic fibre}
+We want to prove that the perfectoid open unit disk $\tilde{H}^{ad}_{C}$ is a perfectoid space and determine its tilt.
+
+\begin{prop}\label{punitdiskfibre}
+Set $R=\Oo_C[[X^{\frac{1}{q^\infty}}]]$. This is a complete adic of finite type $\Oo_C$-algebra.
+Then we have $R\tilt = \Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]] =  \Oo_{C\tilt}\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$ and
+%\begin{enumerate}
+%\item $R$ is $\pu_C$-torsion free.
+%\item $R$ is integrally closed in $R[\tfrac{1}{\pu}]$
+%\item The Frobenius map $\varphi\colon R/\pu_C \to R/\pu_C$, $\ovl{r}\mapsto \ovl{r}^q$, is surjective.
+%\item $\pu R\subseteq R$ is closed.
+%\end{enumerate}
+$\tilde{H}^{ad}_{C}$ is a perfectoid space over $C$ with tilt $\tilde{H}^{ad, \flat}_{C} = \spaa{R\tilt}-\{\pu_{C\tilt}=0\}$, a perfectoid space over $C\tilt$.
+\end{prop}
+\begin{proof}
+Set $R=\Oo_C[[X^{\frac{1}{q^\infty}}]]$, let $R_{\pu_C}$ be the ring when equipped with the $\pu_C$-adic topology.
+From lemma \ref{pfibrelemma2} we know that 
+\[\spaa{R}-\{\pu_C=0\} = \tilde{H}^{ad}_{C}\subseteq\spa{R_{\pu_C}[\tfrac{1}{\pu_C}]}{R_{\pu_C}}\]
+is an open subset and can be covered by rational subsets. Hence it is enough to prove that 
+$\spa{R_{\pu_C}[\tfrac{1}{\pu_C}]}{R_{\pu_C}}$
+is a perfectoid space. However we have
+\[\spa{R_{\pu_C}[\tfrac{1}{\pu_C}]}{R_{\pu_C}} = \spa{C[[X^{\frac{1}{q^\infty}}]]}{\Oo_C[[X^{\frac{1}{q^\infty}}]]}\]
+where $\Oo_C[[X^{\frac{1}{q^\infty}}]]$ is now equipped with the $\pu_C$-adic topology. This is a perfectoid space and tilts to
+$\spa{C\tilt[[X^{\frac{1}{q^\infty}}]]}{\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]}$.
+Hence $\spaa{R}-\{\pu_C=0\}$ is a perfectoid space. Similarly $\spaa{R\tilt}-\{\pu_{C\tilt}=0\} = \spaa{\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]}-\{\pu_{C\tilt}=0\}$ is a perfectoid space.
+To prove that $\spaa{R\tilt}-\{\pu_{C\tilt}=0\}$ is the tilt of $\spaa{R}-\{\pu_C=0\}$ as objects over $(C, \Oo_C)$ or $(C\tilt, \Oo_{C\tilt})$ respectively, it is enough to study their functor of points on affinoid perfectoid spaces. Both send a perfectoid pair $(A,A\upplus)$ over $(C, \Oo_C)$ or the tilted pair $(A\tilt, A\tilt\upplus)$ over $(C\tilt, \Oo_{C\tilt})$ to the set of topologically nilpotent elements of $A\tilt$. Hence the functors are identified, which proves the claim.
+
+\end{proof}
+
+The tilt of $\tilde{H}^{ad}_{C}$ is a perfectoid space over $\Oo_{C\tilt}$ and over $\Oo_{\hat{E}_{\infty}\tilt}$.
+Notice that $\Oo_{C\tilt}\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$ has Frobenii action on $\Oo_{C\tilt}$ and on $\Fq[[X^{\frac{1}{q^\infty}}]]$. Their composition is the absolute Frobenius action on $\tilde{H}^{ad, \flat}_{C}$ which is the identity on the underlying topological space and an automorphism since it is a perfectoid space in characteristic $p$.
+%Define $K_n$, $n\geq1$, to be the kernel of multiplication with $\pu_C\in\Oo_C$,\\
+%$R/(\pu_C^n, X^n)\to R/(\pu_C^n, X^n)$.\\
+%We then have a commutative diagram of abelian groups:\\
+%\scaleto{%
+%$$\begin{CD}
+%0     @>>>  K_{n+1}	@>>>  R/(\pu_C^{n+1}, X^{n+1}) 	@>\cdot\pu_C>>  R/(\pu_C^{n+1}, X^{n+1})	@>pr>>  R/(\pu_C, X^{n+1}) 	@>>>  0\\
+%@VVV        @VVV 	               @VprVV           @VVV          @VVV          @VVV\\
+%0     @>>>  K_n		@>>>  R/(\pu_C^n, X^n) 		@>\cdot\pu_C>> R/(\pu_C^n, X^n) 		@>pr>> R/(\pu_C, X^{n}) 	@>>>  0
+%\end{CD}$$
+%}{54pt}\\
+
+%Notice that $R/(\pu_C, X^{n})$ is the cokernel of multiplication with $\pu_C\in\Oo_C$,
+%$R/(\pu_C^n, X^n)\to R/(\pu_C^n, X^n)$.\\ In particular the sequences are exact.
+%There are obvious short exact sequences for each $n\geq1$  associated to the above diagram. In fact the above diagram is equivalent to
+%the following diagram of short exact sequences of abelian groups:\\
+
+
+%\scaleto{%
+%$$\begin{CD}
+%0     @>>>  K_{n+1}	@>>>  R/(\pu_C^{n+1}, X^{n+1}) 	@>\cdot\pu_C>>  \pu_CR/(\pu_C^{n+1}, X^{n+1})	@>>>    0\\
+%@VVV        @VVV 	               @VprVV           @VVV          @VVV          \\
+%0     @>>>  K_n		@>>>  R/(\pu_C^n, X^n) 		@>\cdot\pu_C>> \pu_C R/(\pu_C^n, X^n) 		@>>>   0
+%\end{CD}$$
+%}{54pt}\\
+
+
+%We claim that the maps $K_{n+1}\to K_n$ for $n\geq1$ coming from the projection $ R/(\pu_C^{n+1}, X^{n+1})\to R/(\pu_C^n, X^n)$ are zero-maps.\\
+
+%Taking projective limits (and using the Mittag-Leffler condition) we get a short exact sequence:\\
+
+%\scaleto{%
+%$$\begin{CD}
+%0    @>>>  \varprojlim_{n\geq1}R/(\pu_C^n, X^n) 		@>\cdot\pu_C>> \varprojlim_{n\geq1} \pu_C R/(\pu_C^n, X^n) 		@>>>   0
+%\end{CD}$$
+%}{18pt}\\
+
+%I.e. the following short exact sequence:\\
+%
+%\scaleto{%
+%$$\begin{CD}
+%0    @>>>  R 		@>\cdot\pu_C>>  \pu_C R 		@>>>   0
+%\end{CD}$$
+%}{18pt}\\
+
+%In particular $R=\varprojlim_{n\geq1}R/(\pu_C^n, X^n)$ is $\pu_C$-torsion free. 
+%Moreover we have:\\
+%$R/\pu_CR=\varprojlim_{n\geq1}R/(\pu_C, X^{n}) = \Oo_C/\pu_C[[X^{\frac{1}{q^\infty}}]] = \Oo_{C}/\pu_C\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$.\\
+%$\Oo_{C}/\pu_C\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$ is the $(X)$-adic completion of $\Oo_{C}/\pu_C\tens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$.\\
+%$R\tilt = \varprojlim_{(\cdot)^q}R/\pu_CR = \Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]$.\\
+%The homomorphism $\Oo_{C\tilt}\tens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]=(\varprojlim_{(\cdot)^q}\Oo_C/\pu_C\Oo_C)\tens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]\to\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]$ extends to an isomorphism
+%$R\tilt = \Oo_{C\tilt}\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]]$. This is complete for the $(\pu_{C\tilt}, X)$-adic topology.
+%This proves that  $\tilde{H}^{ad}_{C}$ is a perfectoid space using \ref{pfibrethm}.\\
+
+%To determine the tilt of $\tilde{H}^{ad}_{C} = \spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}-\{\pu_C=0\}$ we apply theorem \ref{pfibrethm}.
+%The tilt is given by $\tilde{H}^{ad, \flat}_{C} = \spaa(\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]])-\{\pu_{C\tilt}=0\}$.
+%This proves the last claim.
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

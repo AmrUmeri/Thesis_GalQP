@@ -1,0 +1,176 @@
+\section{Perfectoid spaces}
+We introduce \emph{perfectoid spaces} which are analytic adic spaces that locally are adic spectra of perfectoid Huber-Tate pairs and extend the tilting equivalence via gluing. Tilting a perfectoid space gives a perfectoid space of characteristic $p$. We also introduce the \emph{almost purity theorem}. This relates the \'etale site of a perfectoid space to the \'etale site of its tilt, which are in fact equivalent. We will also give a short exposition on \emph{almost mathematics}.
+
+\subsection{Perfectoid spaces: Definition and properties}
+Let $(A,A\upplus)$ be a perfectoid pair. The adic spectrum will be denoted by $\spa{A}{A\upplus}$. The following theorem indicates that perfectoid pairs behave better than Huber-Tate pairs.
+The structure presheaf $\mathcal{O}_{\spa{A}{A\upplus}}$ of $\spa{A}{A\upplus}$ is always a sheaf:
+
+\begin{theorem}
+Let $(A,A\upplus)$ be a perfectoid pair. Set $X=\spa{A}{A\upplus}$.
+For every rational
+$U\subseteq X$ the Huber-Tate pair $(\mathcal{O}_{X}(U),\mathcal{O}\upplus\!\!\!\!_X(U))$ is perfectoid.
+In particular the structure presheaf $\mathcal{O}_{\spa{A}{A\upplus}}$ is a sheaf, i.e. $(A,A\upplus)$ is sheafy.
+\end{theorem}
+\begin{proof}
+This is a technical result. Let $X=\spa{A}{A\upplus}$.
+First one proves that for each rational subset $U\subseteq X$, the Huber pair $(\mathcal{O}_{X}(U),\mathcal{O}\upplus\!\!\!\!_X(U))$ is perfectoid and in particular uniform, i.e. $(A,A\upplus)$ is \emph{stably uniform}. This is proven in \cite{Scholze12}.
+We then use the fact that \emph{stably uniform Huber-Tate pairs are sheafy}. This is proven in \cite[theorem IV.1.1.5]{Morel19}.
+\end{proof}
+
+Consider the following definition:
+\begin{definition}\label{definitionperfectoidspaces}
+A \emph{perfectoid space} $X$ is an adic space that admits an open cover of $\spa{A}{A\upplus}$ for perfectoid pairs 
+$(A,A\upplus)$.
+$X$ is called \emph{affinoid perfectoid space} if $X=\spa{A}{A\upplus}$ for a perfectoid pair $(A,A\upplus)$.
+Morphisms of perfectoid spaces are morphisms of adic spaces.
+\end{definition}
+
+Let $X$ be a perfectoid space. We will denote by $\mathrm{Perf}_{X}$ the category of perfectoid spaces over $X$.
+Products exist in $\mathrm{Perf}_{X}$. Consider the following proposition:
+
+\begin{prop}
+Let $Y\to X$, $Z\to X$ be morphisms of perfectoid spaces. Then the fibre product $Y\times\!_{X}Z$
+exists in the category of perfectoid spaces.
+\end{prop}
+\begin{proof}
+See \cite[proposition 6.18]{Scholze12}.
+\end{proof}
+
+
+\subsection{Perfectoid spaces: Tilting equivalence}
+Let $(A,A\upplus)$ be a perfectoid pair and denote by $(A\tilt,A\tilt\upplus)$ its tilt.
+Put $X=\spa{A}{A\upplus}$, $X\tilt=\spa{A\tilt}{A\tilt\upplus}$.
+Recall that the sharp-map $A\tilt\to A$, $a\mapsto a\shrp$, is continuous.
+Define the tilting map:
+\[\flat\colon X\to X\tilt,\]
+\[x=\normx{\cdot}\mapsto x\tilt=\normxtilt{\cdot},\]
+by setting $\normxtilt{a}\coloneqq\normx{a\shrp}$ for $a\in A\tilt$, i.e. a continuous valuation in $X$ is sent to a continuous valuation in $X\tilt$.
+
+\begin{lemma}
+Let $X$ be an affinoid perfectoid space and denote by $X\tilt$ its tilt.
+The tilting map $\flat\colon X\to X\tilt$ is well-defined.
+\end{lemma}
+\begin{proof}
+Let $x\in X$ correspond to the continuous valuation $\normx{\cdot}\colon A\to\Gamma\cup\{0\}$ which satisfies
+ $\normx{A\upplus}\leq1$.
+We have to prove that $x\tilt\in X\tilt$, i.e. it is a continuous valuation
+$\normxtilt{\cdot}\colon A\tilt\to\Gamma\cup\{0\}$ with $\normxtilt{A\tilt\upplus}\leq1$.
+Since the map $A\tilt\to A$ is continuous and multiplicative the only non-trivial axiom to prove is the strong triangle inequality.
+Let $a,b\in A\tilt$. Then by definition of addition on $A\tilt$ we have
+\begin{equation*}
+\begin{split}
+\normxtilt{a+b} = \normx{(a+b)\shrp} &= \lim_{n\to\infty}\normx{(a^{\frac{1}{p^n}})\shrp + (b^{\frac{1}{p^n}})\shrp}^{p^n} \\
+                                                        &\leq  \lim_{n\to\infty}\max\{\normx{(a^{\frac{1}{p^n}})\shrp}^{p^n}, \normx{(b^{\frac{1}{p^n}})\shrp}^{p^n}\}\\
+									 &= \max\{\normx{a\shrp}, \normx{b\shrp}\}\\
+									&= \max\{\normxtilt{a}, \normxtilt{b}\}.
+\end{split}
+\end{equation*}
+The fact that $\normxtilt{a}\leq1$ for $a\in A\tilt\upplus$ follows from proposition \ref{inttiltprop}.
+We show now continuity of the valuation. 
+This is immediate since the sharp-map $A\tilt\to A$, $a\mapsto a\shrp$, is continuous.
+\end{proof}
+
+
+\begin{prop}
+Let $X$ be an affinoid perfectoid space and denote by $X\tilt$ its tilt.
+The tilting map $\flat\colon X\to X\tilt$ is a homeomorphism.
+Rational subsets $U\subseteq X$ correspond to rational subsets $U\tilt\subseteq X\tilt$ under the homeomorphism. For rational $U\subseteq X$
+the perfectoid pair
+$(\mathcal{O}_{X\tilt}(U\tilt),\mathcal{O}\upplus\!\!\!\!_{X\tilt}(U\tilt))$ is the tilt of 
+$(\mathcal{O}_{X}(U),\mathcal{O}\upplus\!\!\!\!_X(U))$.
+\end{prop}
+\begin{proof}
+This is \cite[theorem 6.3]{Scholze12}.
+\end{proof}
+
+
+We want to make sense of the \emph{tilt} of a perfectoid space. Let $X$ be a perfectoid space, which is not necessarily affinoid.
+A perfectoid space $X\tilt$ of characteristic $p$  is called the tilt of $X$ if there is a natural bijection
+\[\Hom(\spa{A\tilt}{A\tilt\upplus},X\tilt)=\Hom(\spa{A}{A\upplus},X)\]
+for all perfectoid pairs $(A,A\upplus)$ with tilt $(A\tilt,A\tilt\upplus)$.
+In particular the tilt $X\tilt$ is unique up to unique isomorphism if it exists. The next proposition shows that the tilt always exists, i.e. tilting glues.
+
+\begin{prop}
+Let $X$ be a perfectoid space. Then the tilt $X\tilt$ exists and for every affinoid perfectoid subspace $U\subseteq X$
+the perfectoid pair
+$(\mathcal{O}_{X\tilt}(U\tilt),\mathcal{O}\upplus\!\!\!\!_{X\tilt}(U\tilt))$ is the tilt of 
+$(\mathcal{O}_{X}(U),\mathcal{O}\upplus\!\!\!\!_X(U))$,
+where we write $U\tilt\subseteq X\tilt$ for the corresponding rational subset.
+Moreover tilting $X\mapsto X\tilt$ induces an equivalence of categories:
+\[\mathrm{Perf}_{X}\cong\mathrm{Perf}_{X\tilt}.\]
+\end{prop}
+\begin{proof}
+This is a gluing argument, i.e. we tilt an open cover of $X$ by affinoid perfectoid subspaces. The tilts then glue to a locally and topologically ringed space which by construction admits an open cover of affinoid perfectoid subspaces of characteristic $p$, i.e. $X\tilt$ is a perfectoid space of characteristic $p$. The construction then does not depend on the choice of open covers and the definition of a tilt is then easily verified, since everything is a sheaf and by applying the tilting equivalence for perfectoid pairs, i.e. theorem \ref{tiltequivthm1} and corollary \ref{cor1}.
+\end{proof}
+
+
+\begin{cor}
+Let $X$ be a perfectoid space. Then $X$ is affinoid perfectoid if and only if $X\tilt$ is affinoid perfectoid.
+\end{cor}
+\begin{proof}
+This is immediate.
+\end{proof}
+
+
+Recall that \'etale morphisms in algebraic geometry generalize the idea of local isomorphisms in topology. In fact local isomorphisms of a topological space $X$ correspond to sheaves on $X$.
+Noticing that open subsets of $X$ give rise to sheaves on $X$ as well, the idea is then to allow not only open subsets of $X$ as covering, but also local isomorphisms. These then describe the \emph{\'etale topology} on $X$. 
+Sheaves on $X$ for the usual topology and for the \'etale topology are then identified, since sheaves can be described locally. Recall also that in smooth topology we can define local isomorphisms purely in algebraic terms.
+In algebraic geometry, the \'etale topology is distinct from the Zariski topology in the sense that not every Zariski sheaf is an \'etale sheaf.
+For the definition of the \'etale topology in algebraic geometry, we refer to \cite{Tamme94}. \\
+
+
+
+We want to discuss now the  \'etale site of a perfectoid space and the \emph{almost purity theorem}. \\
+%Recall that a morphism of rings $A\to B$ is called \'etale if it is flat and unramified.?????
+%The morphism called finite \'etale if it is additionaly finitely presented.????
+%We will also say that $B$ is a finite \'etale $A$-algebra.
+%In particular finite  \'etale morphisms of fields are ??? finite separable extensions.
+
+Let $(A, A\upplus)\to(B, B\upplus)$ be a morphism of Huber-Tate pairs.
+The morphism is called \emph{finite \'etale} if $B$ is a finite \'etale $A$-algebra
+and $B\upplus$ is the integral closure of $A\upplus$ in $B$. 
+If $(A, A\upplus)$ is a Huber-Tate pair and $B$ is a finite \'etale $A$-algebra, we let $B\upplus$ be the integral closure of 
+$A\upplus$ in $B$. There is then a canonical way to topologize $B$ such that $(B, B\upplus)$ is a  Huber-Tate pair and $(A,A\upplus)\to(B,B\upplus)$ is a finite \'etale morphism of Huber-Tate pairs. 
+We use a surjection $A^n\to B$ for some $n\geq1$ and declare the image of $A\lowcirc\!\!\!^n$ in $B$ to be a ring of definition of $B$ where $A\lowcirc\subseteq A$ is a ring of definition of $A$.
+ If $A$ has a noetherian ring of definition, then $B$ has a noetherian ring of definition. This is also called the \emph{canonical topology} on $B$.\\
+
+
+A morphism of analytic adic spaces $f\colon Y\to X$ is called \emph{finite \'etale} if there is a cover of $X$ by open affinoid subspaces
+$U\subseteq X$ such that $f^{-1}(U)=V\subseteq Y$ is affinoid and the associated morphism of Huber-Tate pairs
+$(\Oo_X(U), \Oo\upplus\!\!\!\!_X(U))\to(\Oo_Y(V), \Oo\upplus\!\!\!\!_Y(V))$ is finite \'etale. 
+In the above example $\spa{B}{B\upplus}\to\spa{A}{A\upplus}$ is a finite \'etale morphism of adic spaces if for example $A$ has a noetherian ring of definition.\\
+
+
+
+A morphism of adic spaces $f\colon Y\to X$ is called \emph{\'etale} if for every $y\in Y$ there exists open subsets $V\subseteq Y$ with $y\in V$ 
+and $U\subseteq X$ with $f(V)\subseteq U$ and a commutative diagram:
+
+\[
+\begin{tikzcd}
+V \arrow[rd, swap,  "\restr{f}{V}"] \arrow[r,"j", hook] & W \arrow[d, "p"] \\
+& U
+\end{tikzcd}
+\]
+where $j$ is an open embedding and $p$ is finite \'etale.\\
+
+
+For an analytic adic space $X$ we let $X_{\acute{e}t}$ be the category with \'{e}tale morphisms of adic spaces $Y\to X$  as objects and with covers given by 
+jointly surjective families of morphisms of adic spaces $\{Y_i\to Y\}_{i\in I}$, which are \'etale over $X$. This is a site if $X$ is a perfectoid space and will be called the small \'etale site of $X$.
+
+
+
+\begin{theorem}\label{almostpuritythm}
+Let $X$ be a perfectoid space. Then we have the following:
+\begin{enumerate}
+\item $X_{\acute{e}t}$ is a site.
+\item If $Y\to X$ is  an \emph{\'etale} morphism of adic spaces, then $Y$ is perfectoid.
+\item Tilting induces an equivalence of categories:
+\[X_{\acute{e}t}\cong X\tilt_{\acute{e}t}.\]
+This is in fact an equivalence of sites.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+This is \cite[theorem 7.9]{Scholze12}.
+\end{proof}
+
+

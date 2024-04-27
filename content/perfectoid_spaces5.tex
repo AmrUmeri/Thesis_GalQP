@@ -1,0 +1,161 @@
+\subsection{Perfectoid spaces: Perfectoid generic fibres}
+
+We want to give explicit constructions of perfectoid spaces, which are not necessarily affinoid. We discuss under which assumptions the adic generic fibre is a perfectoid space and we then call it \emph{perfectoid generic fibre}. This is a continuation of section \ref{adicgenericfibresection}.\\
+
+Let $K$ be a perfectoid field, $\pu\in K\upcirc$ a pseudo-uniformizer admitting $p$-power roots $\pu^{\slfrac{1}{p^n}}\in K\upcirc$ for $n\geq1$ and $p\in\pu K\upcirc$. Let $R$ be a $K\upcirc$-algebra which is adic of finite type and complete. In particular we want the structure morphism $K\upcirc\to R$ to be continuous.
+The topology on $R$ is coarser than the $\pu$-adic topology on $R$.
+Recall that in section \ref{adicgenericfibresection} we defined the \emph{adic generic fibre} 
+\[(\spaa{R})_{\eta} \coloneqq \spaa{R}-\{\pu=0\}.\] It is not necessarily an adic space. We want to study now the case where the adic generic fibre is actually a perfectoid space and we will call these \emph{perfectoid generic fibres}. 
+We will then study the \emph{tilt} of a perfectoid generic fibre.
+We define the following ring:
+\[R\tilt\coloneqq \varprojlim_{r\mapsto r^p}R\]
+% = \varprojlim_{\ovl{r}\mapsto\ovl{r}^p}R/\pu R.\]
+and call $R\tilt$ the \emph{tilt} of $R$ even if $R$ is not a perfectoid ring. It gets a ring structure via lemma \ref{keylemma}. %The isomorphism of monoids in lemma \ref{keylemma} is true even if $R$ is not $\pu$-adically complete but just complete for any other coarser topology. 
+In fact $R$ is also complete for the $\pu$-adic topology. This is true since the $\pu$-adic topology is of finite type.
+We put the projective limit topology on $R\tilt$.
+
+
+\begin{lemma}
+Let $R$ be a $K\upcirc$-algebra which is adic of finite type.
+Assume  furthermore that the Frobenius map 
+\[\varphi\colon R/\pu \to R/\pu,\:\:\:\ovl{r}\mapsto \ovl{r}^p,\]
+is surjective.
+%\begin{enumerate}
+%\item $R$ is $\pu$-torsion free.
+%\item  $R$ is integrally closed in $R[\tfrac{1}{\pu}]$
+%\item The Frobenius map $\varphi\colon R/\pu \to R/\pu$, $\ovl{r}\mapsto \ovl{r}^p$, is surjective.
+%\item $\pu R\subseteq R$ is closed.
+%\end{enumerate}
+Then $R\tilt$ is a $K\tilt\upcirc$-algebra which is adic of finite type. % and complete.
+%Moreover the Frobenius map 
+%\[\varphi\colon R\tilt/\pu\tilt \to R\tilt/\pu\tilt,\:\:\:\ovl{r}\mapsto \ovl{r}^p,\] 
+%is surjective.
+%\begin{enumerate}
+%\item $R\tilt$ is $\pu\tilt$-torsion free.
+%\item $R\tilt$ is integrally closed in $R\tilt[\tfrac{1}{\pu\tilt}]$.
+%\item The Frobenius map $\varphi\colon R\tilt/\pu\tilt \to R\tilt/\pu\tilt$, $\ovl{r}\mapsto \ovl{r}^p$, is surjective.
+%\item $\pu\tilt R\tilt\subseteq R\tilt$ is closed.
+%\end{enumerate}
+Furthermore if $(g_1,\dots,g_m)\subseteq R\tilt$ is an ideal of definition, then the elements coming from the canonical map $R\tilt\to R$, $g\mapsto g_0 = g\shrp$ generate an ideal of definition 
+$(g_1\shrp,\dots,g_m\shrp,\pu)\subseteq R$.
+\end{lemma}
+\begin{proof}
+Let $(f_1,\dots,f_m)\subseteq R$ be an ideal of definition. We can clearly assume that $\pu\in(f_1,\dots,f_m)$, i.e. replace 
+$(f_1,\dots,f_m)\subseteq R$ with $(f_1,\dots,f_m, \pu)\subseteq R$. These generate the same topologies on $R$ since
+$\pu^n\subseteq(f_1,\dots,f_m)$ for some $n\geq0$.
+Using the assumption we can find elements $g_1\shrp,\dots,g_m\shrp\in R$ which admit $p$-power lifts to elements 
+$g_1,\dots,g_m\in R\tilt$ and such that $f_i-g_i\shrp\in R\pu$ for $i=1,\dots,m$. Hence we can replace 
+$(f_1,\dots,f_m)\subseteq R$ with $(g_1\shrp,\dots,g_m\shrp)\subseteq R$ since these generate the same topologies on $R$. It follows easily that $(g_1,\dots,g_m)\subseteq R\tilt$ generates the projective limit topology. This uses that
+$p\in\pu R$ and that the open ideal $(f_1,\dots,f_m)\subseteq R$ is closed.
+\end{proof}
+
+In particular, the lemma tells us that we can form the Huber pair $(R\tilt,R\tilt)$ over $(K\tilt\upcirc,K\tilt\upcirc)$ and we can make sense of the
+adic generic fibre of $\spaa{R\tilt}$, which we will denote by:
+\[(\spaa{R\tilt})_{\eta}\coloneqq \spaa{R\tilt}-\{\pu\tilt=0\}.\]
+
+We want to prove now that under certain conditions the adic generic fibre is a perfectoid space and we will call these \emph{perfectoid generic fibre}. 
+It will turn out that the tilt of $(\spaa{R})_{\eta}$ is given by $(\spaa{R\tilt})_{\eta}$.
+This is again a perfectoid space.
+
+
+\begin{theorem}\label{pfibrethm}
+Let $R$ be a $K\upcirc$-algebra which is adic of finite type and complete.
+Assume  furthermore the following:
+\begin{enumerate}
+\item $R$ is $\pu$-torsion free.
+\item The Frobenius map $\varphi\colon R/\pu \to R/\pu$, $\ovl{r}\mapsto \ovl{r}^p$, is surjective.
+\item $R$ is integrally closed in $R[\tfrac{1}{\pu}]$.
+%\item $\pu R\subseteq R$ is closed.
+\end{enumerate}
+Then $(\spaa{R})_{\eta}$ is a perfectoid space over $\spa{K}{K\upcirc}$ with tilt given by $(\spaa{R\tilt})_{\eta}$, which is a perfectoid space over $\spa{K\tilt}{K\tilt\upcirc}$.
+\end{theorem}
+\begin{proof}
+%To simplify the proof we assume that $R$ is integrally closed in $R[\tfrac{1}{\pu}]$. (It seems to be true that this assumpton can be easily dropped, i.e. we replace $R$ with its integral closure in $R[\tfrac{1}{\pu}]$. The associated adic spectra, see below, are then identified).
+Denote by $R_{\pu}$ the ring $R$ equipped with the $\pu$-adic topology, for which it is complete as well by a previous remark.
+%(If $R_{\pu}$ is not complete for the $\pu$-adic topology, then we just complete it which does not change the associated adic spectra).
+Then $R_{\pu}[\tfrac{1}{\pu}]$ is a complete Tate ring with pseudo-uniformizer $\pu\in R_{\pu}[\tfrac{1}{\pu}]$.
+Furthermore one proves that $R_{\pu}[\tfrac{1}{\pu}]$ is uniform. (This is always true in characteristic $p>0$, i.e. complete perfect Tate rings of characteristic $p>0$ are uniform, see lemma \ref{perfringplemma}. Using tilting equivalence for perfectoid rings one easily deduces the general case). 
+%Using the assumption we can also use the fact that Tate rings which contain a ring of definition which is integrally closed are uniform).
+Hence $R_{\pu}[\tfrac{1}{\pu}]$ is a perfectoid ring, in fact a perfectoid $K$-algebra.
+Since $R$ is integrally closed in $R[\tfrac{1}{\pu}]$ we can form the perfectoid affinoid space:
+\[X = \spa{R_{\pu}[\tfrac{1}{\pu}]}{R_{\pu}}.\]
+
+Let $X_0\subseteq X$ be the subset consisting of valuations $x\in X$ which are continuous for the original topology on $R$.
+We claim that $X_0\subseteq X$ is open and hence a perfectoid space since it will be covered by rational subsets of $X$.
+Let $(f_1,\dots,f_m)\subseteq R$ be an ideal of definition for the original topology on $R$. Notice that $(f_1,\dots,f_m)\subseteq R$ generates an open ideal for the $\pu$-adic topology on $R$.
+Then we have the following:
+\[X_0 =  \bigcup\limits_{n\geq1}U(\tfrac{f_1^n,\dots,f_m^n}{\pu}),\]
+for rational subsets $U(\tfrac{f_1^n,\dots,f_m^n}{\pu})\subseteq X$ for each $n\geq 1$.
+Indeed let $x\in X_0$, then $\{a\in R\:\vert\: \normx{a}<\normx{\pu}\}\subseteq R$ is an open subset for the original topology on $R$ by continuity of the valuation.
+Hence we can find $n\geq1$ such that $\normx{f_i^n}\leq\normx{\pu}$ for $i=1,\dots,m$. 
+Then $x\in U(\tfrac{f_1^n,\dots,f_m^n}{\pu})\subseteq X$, where we consider it as a rational subset of $X$. 
+Assume now $x\in U(\tfrac{f_1^n,\dots,f_m^n}{\pu})$ for some $n\geq 1$. 
+Then one verifies that $x\in X_0$, i.e. it is continuous for the original topology.
+For this let $\gamma>0$, then  $\{a\in R\:\vert\: \normx{a}<\gamma\}\subseteq R$ is an open subset in the $\pu$-adic topology, hence 
+contains $\pu^kR$ for some $k\geq1$. Hence it contains $(f_1^{nk},\dots,f_m^{nk})$, hence it is an open subset in the original topology. For this write $\{a\in R\:\vert\: \normx{a}<\gamma\}\subseteq R$ as union of translates of
+$(f_1^{nk},\dots,f_m^{nk})$.
+This proves $x\in X_0$.
+We proved that $X_0\subseteq X$ is an open subset and can be covered by rational subsets, hence $X_0$ is a perfectoid space.
+We claim that as adic spaces, we have:
+\[(\spaa{R})_{\eta}\cong X_0,\:\: x\mapsto x.\]
+
+This map is bijective: Any $x\in\spaa{R}$ with $\normx{\pu}\neq0$ defines a continuous valuation on $R_{\pu}[\tfrac{1}{\pu}]$ and it lies in $X_0$. Moreover every $x\in X_0$ defines a continuous valuation on $R$ by restriction. This map is a homeomorphism: We have seen before that:
+\[X_0 =  \bigcup\limits_{n\geq1}U(\tfrac{f_1^n,\dots,f_m^n}{\pu}).\]
+Similary one proves, see proposition \ref{prop_adic_fibre}, that we have:
+\[(\spaa{R})_{\eta} =  \bigcup\limits_{n\geq1}U(\tfrac{f_1^n,\dots,f_m^n}{\pu}),\]
+where we consider $U(\tfrac{f_1^n,\dots,f_m^n}{\pu})\subseteq \spaa{R}$  for $n\geq1$ in the latter case.
+These rational subsets are identified under the map described above, $(\spaa{R})_{\eta}\to X_0, x\mapsto x.$
+
+This proves the claim. Using analogous ideas, one proves that  the rational subsets 
+$U(\tfrac{f_1,\dots,f_m}{\pu})\subseteq X_0$  form a basis for the topology on $X_0$, when $(f_1,\dots,f_m)\subseteq R$ runs through tuples of generators for the ideal of definiton of the original topology.
+This map is an isomorphism of adic spaces: It is enough if we can identify the sections of the structure sheaves on a basis for the topologies.
+Let $U\coloneqq U(\tfrac{f_1,\dots,f_m}{\pu})\subseteq X_0$. Then
+\[\Gamma(U,X_0) = R\langle \tfrac{f_1,\dots,f_m}{\pu}\rangle.\]
+Let $U\coloneqq U(\tfrac{f_1,\dots,f_m}{\pu})\subseteq (\spaa{R})_{\eta}$. Then
+\[\Gamma(U, (\spaa{R})_{\eta}) = R\langle \tfrac{f_1,\dots,f_m}{\pu}\rangle.\]
+
+This proves that  $(\spaa{R})_{\eta}$ is a perfectoid space.
+We want to study now its tilt.
+First of all recall that we defined the perfectoid affinoid space $X=\spa{R_{\pu}[\tfrac{1}{\pu}]}{ R_{\pu}}.$
+We can describe the tilt of $X$, it is given by:
+\[X\tilt = \spa{R\tilt_{\pu\tilt}[\tfrac{1}{\pu\tilt}]} {R\tilt_{\pu\tilt}}.\]
+$R\tilt_{\pu\tilt}$ denotes the ring $R\tilt$ with the $\pu\tilt$-adic topology.
+As previously, let $X\tilt_0\subseteq X\tilt$ be the subset consisting of valuations $x\tilt\in X\tilt$ which are continuous for the original topology on $R\tilt$.
+Repeating the previous arguments proves that
+\[(\spaa{R\tilt})_{\eta}\cong X\tilt_0\]
+as adic spaces.
+We prove now that the tilt of $X_0$ is given by $X\tilt_0$.
+This will prove that the tilt of $(\spaa{R})_{\eta}$ is $(\spaa{R\tilt})_{\eta}$.
+It is enough to prove that under the homeomorphism $\norm{X}\to\norm{X\tilt}$, $x\mapsto x\tilt$,
+the open subset $X_0\subseteq X$ is mapped onto $X\tilt_0\subseteq X\tilt$.
+Let $(f_1,\dots, f_m)\subseteq R\tilt$ be an ideal of definition.
+Then  $(f\shrp_1,\dots, f\shrp_m)\subseteq R$ is an ideal of definition.
+Moreover we have for $x\in X$, $\normxtilt{f_i} = \normx{f\shrp_i}$ for $i=1,\dots, m$.
+Hence for $\gamma>0$, the subset $\{a\in R\:\vert\: \normx{a}<\gamma\}\subseteq R$ is open 
+if and only if
+$\{a\in R\tilt\:\vert\:\normxtilt{a}<\gamma\}\subseteq R\tilt$ is open.
+In fact $\normxtilt{f_1^n},\dots, \normxtilt{f_m^n}\leq\normxtilt{\pu\tilt}$ for some $n\geq1$ if and only if
+$\normx{f^{n\#}_1},\dots, \norm{f^{n\#}_m}\leq\normx{\pu}$ for some $n\geq1$.
+This proves that $x\in X_0$ if and only if $x\tilt\in X\tilt_0$. This finishes the proof.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

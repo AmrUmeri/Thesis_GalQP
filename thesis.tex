@@ -1,0 +1,83 @@
+\documentclass[12pt]{mathesisclass}
+\setlength\parindent{0pt}
+
+
+\include{packages/mypackages}
+\include{macros/mymacros}
+
+
+\title{The absolute Galois group of $\Qp$ as\\[1ex]    
+        \'{e}tale fundamental group of a \\[1ex]    
+	diamond}   
+
+
+\author{Amr Umeri}             
+
+
+\degree{MSc Mathematics ETHZ}     
+\degreedate{2021}        
+
+
+\begin{document}
+
+%this baselineskip gives sufficient line spacing
+\baselineskip=18pt plus1pt
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+
+\maketitle                 				
+\newpage\null\thispagestyle{empty}\newpage
+\include{content/more/acknowledgements}       
+\newpage\null\thispagestyle{empty}\newpage 
+%\include{content/more/dedication}        
+%\newpage\null\thispagestyle{empty}\newpage
+
+\include{content/more/abstract}    
+\newpage\null\thispagestyle{empty}\newpage
+\begin{romanpages}      						
+\tableofcontents
+\newpage\null\thispagestyle{empty}\newpage
+\end{romanpages}     
+    
+
+
+\input{content/adic_spaces1}
+\input{content/adic_spaces2}
+\input{content/adic_spaces3}
+\input{content/adic_spaces4}
+\input{content/adic_spaces5}
+\input{content/perfectoid_spaces1}
+\input{content/perfectoid_spaces2}
+\input{content/perfectoid_spaces3}
+\input{content/perfectoid_spaces4}	
+\input{content/almost_math}
+\input{content/perfectoid_spaces5}
+\input{content/perfectoid_spaces6}
+\input{content/perfectoid_spaces7}
+\input{content/fargues_fontaine1}
+\input{content/fargues_fontaine2}
+\input{content/Gal_Qp1}
+\input{content/Gal_Qp2}
+\input{content/Gal_Qp3}
+
+
+
+\appendix
+%\setcounter{secnumdepth}{-1}
+
+
+\cleardoublepage
+\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\bibname}{References}
+\nocite{*}
+\bibliography{content/more/references} 
+\bibliographystyle{plain} 
+%\clearpage
+%\hfill
+%\clearpage
+%ss\includepdf{content/More/declaration_of_originality.pdf}
+\end{document}

@@ -1,0 +1,155 @@
+\chapter{Adic Fargues-Fontaine curve}
+
+In this chapter we will study the \emph{adic Fargues-Fontaine curve}.
+Let $E$ be a finite extension of $\Qp$ with uniformizer $\pi\in\Oo_E$ and residue field $\Fq$ of characteristic $p$.
+Let $F$ be an algebraically closed perfectoid field which extends $\Fq$.
+We will start by constructing  the adic space $\Y_{F,E}$. 
+The adic Fargues-Fontaine curve will then be the quotient by a free and totally discontinuous action induced by Frobenius.
+It follows that the adic Fargues-Fontaine curve is an adic space as well. We will denote it by $\X_{F,E}$. The curve has to be understood as geometrization of $\spec{E}$ (which only consists of a single point) and has analogous properties. There is also a schematic version of the Fargues-Fontaine curve.
+References are \cite{FS2021}, \cite{FF11} and \cite{SW20}.
+
+\section{Adic Fargues-Fontaine curve: Construction}
+As before we let $E$ be a finite extension of $\Qp$ with uniformizer $\pi\in\Oo_E$ and residue field $\Fq$ of characteristic $p$.
+We let $F$ be an algebraically closed perfectoid field which extends $\Fq$, for example we can let $F$ be the completion of an algebraic closure of a non-Archimedean extension of $\Fq$.
+Moreover we let $\pu_F\in F$ be a pseudo-uniformizer admitting $p$-power roots $\pu_F^{\slfrac{1}{p^n}}\in \Oo_F$ for $n\geq1$.
+For $\tau\in{\Z[\tfrac{1}{p}]_{\geq0}}$ we will consider compatible elements $\pu_F^\tau\in \Oo_F$.\\
+
+Notice that the Frobenius map
+\[\varphi\colon \Oo_F\to \Oo_F,\]
+\[a\mapsto a^q,\]
+is an automorphism since $F$ is perfect.\\
+
+Let $W(\Oo_F)$ denote the ring of Witt vectors of $\Oo_F$.
+Define the ring of ramified Witt vectors of $\Oo_F$ over $\Oo_E$ by:
+\[W_{\Oo_E}(\Oo_F) = W(\Oo_F)\otimes_{W(\Fq)}\Oo_{E}.\]
+
+Elements $a\in W_{\Oo_E}(\Oo_F)$ are series of the form $a=\sum_{n\geq0}[a_n]\pi^n$ defined by the Teichmüller lift with $a_n\in\Oo_F$ for $n\geq 0$ uniquely determined. In fact $W_{\Oo_E}(\Oo_F)$ is the unique $\pi$-adically complete, $\pi$-torsion free
+$\Oo_E$-algebra such that $W_{\Oo_E}(\Oo_F)/\pi W_{\Oo_E}(\Oo_F) = \Oo_F$. For example $E=W_{\Oo_E}(\Fq)[\tfrac{1}{\pi}].$ It is easy to see that the Witt functor gives a correspondence between finite extensions of $\Fq$ and finite unramified extensions of $E$.\\
+
+We have a Frobenius automorphism induced by functiorality:
+\[\varphi\colon  W_{\Oo_E}(\Oo_F)\to  W_{\Oo_E}(\Oo_F) ,\]
+\[\sum_{n\geq0}[a_n]\pi^n\mapsto \sum_{n\geq0}[a_n^q]\pi^n.\]
+Reducing modulo $(\pi)$ we recover the previous Frobenius automorphism.\\
+
+
+We equip $W_{\Oo_E}(\Oo_F)$ with the $(\pi,[\pu_F])$-adic topology, this is also called the \emph{weak topology}. 
+The ring is also denoted by $A_{inf}$ in the literature. One can prove that $W_{\Oo_E}(\Oo_F)$ is complete for the
+weak topology, see \cite[corollaire 1.4.15]{FF11}.
+Notice that $(W_{\Oo_E}(\Oo_F), W_{\Oo_E}(\Oo_F))$ is a Huber pair.
+Notice also that $\pi, [\pu_F^\tau]\in W_{\Oo_E}(\Oo_F)$ for $\tau\in{\Z[\tfrac{1}{p}]_{\geq0}}$ are topologically nilpotent and generate the weak topology.
+It is not known whether $(W_{\Oo_E}(\Oo_F), W_{\Oo_E}(\Oo_F))$ is a sheafy Huber pair. We denote its adic spectrum by $\spaa{W_{\Oo_E}(\Oo_F)}$.\\
+%This is true since the topologically nilpotent elements in $W_{\Oo_E}(\Oo_F)$ form a radical ideal.\\
+
+We want to study certain rational subsets of $\spaa{W_{\Oo_E}(\Oo_F)}$.
+Let $x\in\spaa{W_{\Oo_E}(\Oo_F)}$ which satisfies $\normx{\pi}\neq0$ and $\normx{[\pu_F]}\neq0$. These correspond to analytic points.
+Then we can find  $\tau_{1}, \tau_{2}\in{\Z[\tfrac{1}{p}]_{\geq0}}$ such that
+$\normx{[\pu_F^{\tau_2}]}\leq\normx{\pi}\leq\normx{[\pu_F^{\tau_1}]}$ by continuity of the valuation.
+This proves:
+\[x\in U(\tfrac{\pi, [\pu_F^{\tau_1}]}{[\pu_F^{\tau_1}]})\cap U(\tfrac{\pi, [\pu_F^{\tau_2}]}{\pi})\subseteq \spaa{W_{\Oo_E}(\Oo_F)}-\{\pi[\pu_F]=0\}.\]
+
+For $\tau_1\leq\tau_2$ let $(B_{[\tau_1,\tau_2]}, B\upplus_{[\tau_1,\tau_2]})$ be the Huber-Tate pair defined by the rational subset described above.
+We can describe them explicitely using propositions \ref{localizationprop1}, \ref{localizationprop2}. 
+We set $\Y_{F,E}^{[\tau_1,\tau_2]} = \spa{B_{[\tau_1,\tau_2]}}{B\upplus_{[\tau_1,\tau_2]}}$.
+We have thus proven the following:
+\[\spaa{W_{\Oo_E}(\Oo_F)}-\{\pi[\pu_F]=0\} \:\:\:= \bigcup\limits_{\tau_{1}, \tau_{2}\in{\Z[\tfrac{1}{p}]_{\geq0}}}\Y_{F,E}^{[\tau_1,\tau_2]}.\]
+% = \varinjlim_{\tau_{1}, \tau_{2}\in{\Z[\tfrac{1}{p}]_{\geq0}}} \Y_{F,E}^{[\tau_1,\tau_2]} .\]
+
+
+We set:
+\[\Y_{F,E} = \spaa{W_{\Oo_E}(\Oo_F)}-\{\pi[\pu_F]=0\}.\]
+
+Hence we can think of $\Y_{F,E}$ as union of anuli.
+It is possible to prove that $\Y_{F,E}$ is an adic space, this follows from the fact that $\spa{B_{[\tau_1,\tau_2]}}{B\upplus_{[\tau_1,\tau_2]}}$ are adic spaces for 
+$\tau_{1}, \tau_{2}\in{\Z[\tfrac{1}{p}]_{\geq0}}$, i.e. the structure presheaves are indeed sheaves.
+\begin{prop}
+$\Y_{F,E}$ is an analytic adic space over $\spa{E}{\Oo_E}$.
+\end{prop}
+\begin{proof}
+See \cite[proposition 13.1.1]{SW20}.
+\end{proof}
+
+Notice that we have an induced Frobenius map:
+\[\varphi\coloneqq\spaa{\!(\varphi)}\colon\:\Y_{F,E}\to\Y_{F,E}.\]
+This is an automorphism of $\Y_{F,E}$ as adic space and it maps the anulus $\Y_{F,E}^{[\tau_1,\tau_2]}$ isomorphically to $\Y_{F,E}^{[q\tau_1,q\tau_2]}$. This follows because the action is invariant on the uniformizer $\pi\in\Oo_E$.
+In particular it generates a free and totally discontinuous action $\varphi^\Z$ on $\Y_{F,E}$. The action is totally discontinuous which means that for every $x\in\Y_{F,E}$ we can find a rational subset
+$\Y_{F,E}^{[\tau_1,\tau_2]}\subseteq\Y_{F,E}$ such that $x\in\Y_{F,E}^{[\tau_1,\tau_2]}$ and all translates 
+$\Y_{F,E}^{[q^n\tau_1,q^n\tau_2]}$ via the Frobenius automorphism are disjoint for $n\in\Z$.
+This implies that we can find an open cover of $\Y_{F,E}$ which maps homeomorphically under the canonical projection
+$\Y_{F,E}\to\Y_{F,E}/\varphi^{\Z}$ to an open cover of the quotient space $\Y_{F,E}/\varphi^{\Z}$, i.e. the spaces are locally homeomorphic. This provides the quotient $\Y_{F,E}/\varphi^{\Z}$ with a structure sheaf and hence is an adic space as well. The quotient has to be understood as a geometric quotient taken in the category of locally ringed spaces.
+As a consequence we give the following definition.
+\begin{definition}
+The \emph{adic Fargues-Fontaine curve} is given by:
+\[\X_{F,E} \coloneqq \Y_{F,E}/\varphi^{\Z}.\]
+It is an adic space over $\spa{E}{\Oo_E}$.
+\end{definition}
+
+
+
+\section{Adic Fargues-Fontaine curve: Tilting the curve}
+Let $K$ be a perfectoid field containing $E$,  see proposition \ref{ehatprop} for an explicit example.
+The adic space $\Y_{F,E}$ becomes a perfectoid space after base change with $K$.
+This means we can make sense of the fibre product
+\[\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}\]
+as a perfectoid space over $K$ and we can determine its tilt. This is the content of the next proposition. 
+See also \cite[th\'eor\`eme 2.7]{Fargues15} and \cite[proposition II.1.1]{FS2021}.
+
+\begin{prop}\label{tiltcurveprop}
+The adic space $\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}$ is perfectoid and the tilt is given by:
+\[(\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K})\tilt\simeq \spa{F}{\Oo_F}\times\!\!_{\spa{\!\Fq}{\Fq}}\spa{K\tilt}{\Oo_{K\tilt}}.\]
+The Frobenius automorphism on $\Y_{F,E}$ corresponds to the Frobenius automorphism on $\spa{F}{\Oo_F}$.
+\end{prop}
+\begin{proof}
+Let $\pu_K\in K$ be a pseudo-uniformizer with $\norm{\pu_K}=\norm{\pi}$ such that $\pu_K=\pu_{K\tilt}\shrp$ for some $\pu_{K\tilt}\in K\tilt$.
+In particular $\pu_K=\pi u$ for some $u\in\Oo_{K}^{\times}$.
+We can consider 
+\[\Y_{F,E} \subseteq \spaa{W_{\Oo_E}(\Oo_F)}-\{\pi=0\}\]
+as an open subset.
+Notice that 
+\[\spaa{W_{\Oo_E}(\Oo_F)}-\{\pi=0\} \subseteq \spa{W_{\Oo_E}(\Oo_F)[\tfrac{1}{\pi}]}{W_{\Oo_E}(\Oo_F)},\] 
+as open subset where on the right hand side $W_{\Oo_E}(\Oo_F)$ is equipped with the $\pi$-adic topology. See proof of theorem \ref{pfibrethm}.
+Hence we can consider 
+\[\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}\subseteq \spa{W_{\Oo_E}(\Oo_F)[\tfrac{1}{\pi}]}{W_{\Oo_E}(\Oo_F)}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}\]
+%\spaa{W_{\Oo_E}(\Oo_F)}\times\!\!_{\spa{\Oo_E}{\Oo_E}}\spa{\Oo_K}{\Oo_K}\]
+as an open subset by construction of the fibre product. The right hand side corresponds to 
+\[\spaa{(W_{\Oo_E}(\Oo_F)\ctens_{\Oo_E}\Oo_K)}-\{\pi=0\} = \spaa{(W_{\Oo_E}(\Oo_F)\ctens_{\Oo_E}\Oo_K)}-\{\pu_K=0\}.\]
+%The fibre product on the right hand side is taken in the category of formal schemes, i.e. the (completed) tensor product is taken in the category of complete adic rings. In particular we do not need it to be an adic space.
+Set $R=W_{\Oo_E}(\Oo_F)\ctens_{\Oo_E}\Oo_K$ completed for the $\pi$-adic topology and seen as $\Oo_K$ algebra. Hence it is enough to study the adic generic fibre 
+\((\spaa{R})_{\eta} = \spaa{R}-\{\pu_K=0\}\)
+and prove that it is a perectoid space.
+This follows from theorem \ref{pfibrethm}.
+We have $R/\pu_K = \Oo_F\ctens_{\Fq}\Oo_K/\pu_K$ and
+$R\tilt =  \Oo_F\ctens_{\Fq}\Oo_{K\tilt}$.
+Hence \(X=(\spaa{R})_{\eta}\) is a perfectoid space with tilt \(X\tilt=\spaa{\Oo_F\ctens_{\Fq}\Oo_{K\tilt}}-\{\pu_{K\tilt}=0\}.\)
+Hence covering $\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}$ by rational subsets of $X$ we see that it is a perfectoid space as well.\\ 
+
+To compute its tilt we use tilting equivalence for perfectoid pairs and lemma \ref{lemmaforpuncturedspectra}. In fact let $\spa{A}{A\upplus}$ be a perfectoid pair over $\spa{K}{\Oo_K}$ which tilts to a perfectoid pair $\spa{A\tilt}{A\tilt\upplus}$ in characteristic $p$ over $\spa{K\tilt}{\Oo_{K\tilt}}$. Then it remains to prove that morphisms 
+\[\spa{A}{A\upplus}\to\Y_{F,E}\]
+are in bijection with morphisms
+\[\spa{A\tilt}{A\tilt\upplus}\to \spa{F}{\Oo_F}.\]
+To prove this use Witt vector functioriality, apply lemma \ref{lemmaforpuncturedspectra} repeatedly and notice that 
+$\pu_K\in A^{\times}$ and
+\[\spa{F}{\Oo_F} = \spaa{\Oo_F}-\{\pu_F=0\}.\] 
+This proves the claim.
+
+
+%We have
+%\[\Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K} = \spaa{R}-\{\pu_K[\pu_F]=0\}.\]
+%Under the tilting map, the open subset $\{[\pu_F]\neq0\}\subseteq X$ is send to $\{\pu_F\neq0\}\subseteq X\tilt$.
+%We have $\{[\pu_F]\neq0\} = \Y_{F,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{K}{\Oo_K}$ and
+%$\{\pu_F\neq0\} = \spaa{\Oo_F\ctens_{\Fq}\Oo_{K\tilt}}-\{\pu_{K\tilt}\pu_F=0\} = \spa{F}{\Oo_F}\times\!\!_{\spa{\!\Fq}{\Fq}}\spa{K\tilt}{\Oo_{K\tilt}}$.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

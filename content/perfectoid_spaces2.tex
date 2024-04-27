@@ -1,0 +1,274 @@
+\subsection{Perfectoid rings: Tilting equivalence}
+
+Let $A$ be a perfectoid ring. We will introduce a functor from perfectoid rings to perfectoid rings of characteristic $p$,
+\[A\mapsto A\tilt,\]
+and we will call $A\tilt$ the \textit{tilt} of $A$. 
+First recall that the topology on $A\upcirc$ is the $\pu$-adic topology for any choice of pseudo-uniformizer $\pu\in A\upcirc$. In particular 
+there is a pseudo-uniformizer which satisfies $p\in\pu^pA\upcirc$. Hence we can apply the key lemma \ref{keylemma} which will give us a ring structure on
+\[A\tilt\upcirc\coloneqq \varprojlim_{a\mapsto a^p}A\upcirc \simeq \varprojlim_{\ovl{a}\mapsto\ovl{a}^p}A\upcirc/\pu A\upcirc.\]
+It is a perfect ring of characteristic $p$ and we have the \emph{sharp}-map:
+\[A\tilt\upcirc\to A\upcirc,\:\:a=(a_n)_{n\geq0}\mapsto a_0=a\shrp.\]
+
+
+We put on $A\tilt\upcirc$ the projective limit topology. This is the final topology making all canonical projection maps
+$A\tilt\upcirc\to A\upcirc/\pu A\upcirc$, $(a_n)_{n\geq0}\mapsto \ovl{a_k}$, continuous for $k\geq0$ with the discrete topology. Equivalently it is the final topology making all canonical projection maps
+$A\tilt\upcirc\to A\upcirc$, $(a_n)_{n\geq0}\mapsto a_k$, continuous for $k\geq0$. The topologies are equivalent since the reduction map
+$A\upcirc\to A\upcirc/\pu A\upcirc$ is open and continuous.\\
+
+A key step for the construction of the tilt $A\tilt$ is the following proposition:
+
+\begin{prop}
+Let $A$ be a perfectoid ring. There exists $\pu\tilt\in A\tilt\upcirc$ such that $\pu\coloneqq(\pu\tilt)\shrp\in A\upcirc$ is a pseudo-uniformizer
+with $p\in\pu^pA\upcirc$.
+\end{prop}
+\begin{proof}
+If $A$ is of characteristic $p$, there is nothing to prove.
+Let $\pu\in A$ be any pseudo-uniformizer with $p\in\pu^p A\upcirc$. Necessarily $\pu\in A\upcirc$.
+Using arguments similar to key lemma \ref{keylemma}, we get an isomorphism of monoids:
+\[A\tilt\upcirc = \varprojlim_{a\mapsto a^p}A\upcirc \xrightarrow{\sim} \varprojlim_{\ovl{a}\mapsto \ovl{a}^p}A\upcirc/\pu pA\upcirc.\]
+Similary as in lemma \ref{perfringequivdeflemma}, one shows that the Frobenius, $A\upcirc/\pu pA\upcirc\to A\upcirc/\pu pA\upcirc$, is surjective.
+Hence we can find a lift $\pu\tilt\coloneqq(\pu_n)_{n\geq0}\in A\tilt\upcirc$ such that $\pu_0-\pu\in\pu pA\upcirc$.
+Hence $\pu_0 = \pu(1+pa)$ for some $a\in A\upcirc$. Notice that $pa\in\pu^pA\upcirc$, hence is topologically nilpotent. 
+Hence $1+pa\in A\upcirc$ is a unit. 
+This proves that $\pu_0\in A$ is a pseudo-uniformizer, $p\in\pu_0^pA\upcirc$ and $(\pu\tilt)\shrp=\pu_0$.
+\end{proof}
+
+Let $A$ be a perfectoid ring. 
+Recall that the topology on $A\upcirc$ is the $\pu$-adic topology for any choice of pseudo-uniformizer, necessarily in $A\upcirc$.
+Moreover $A=A\upcirc[\tfrac{1}{\pu}]$ and $\{\pu^nA\upcirc\mid n\geq 1\}$ is a fundamental system of neighborhoods around $0$.
+The previous lemma shows that there exists a pseudo-uniformizer $\pu\in A\upcirc$ which admits $p$-power roots, i.e. there is an element
+$\pu\tilt\in A\tilt\upcirc$ with $(\pu\tilt)\shrp=\pu$.
+In fact we have that the topology on $A\tilt\upcirc$ is the $\pu\tilt$-adic topology and it is complete.
+Notice also that $\pu\tilt\in A\tilt\upcirc$ is not a zero-divisor, since $\pu\in A\upcirc$ is not.
+We will define $A\tilt$ in the following way.
+We put:
+\[A\tilt\coloneqq A\tilt\upcirc[\tfrac{1}{\pu\tilt}].\]
+We call $A\tilt$ the \textit{tilt} of $A$.
+We equip $A\tilt$ with the topology making $\{(\pu\tilt)^nA\tilt\upcirc\mid n\geq 1\}$ a fundamental system of neighborhoods around $0$.
+Hence $A\tilt$ is a complete perfect Tate ring of characteristic $p$ with pseudo-uniformizer $\pu\tilt\in A\tilt$.
+Applying lemma \ref{perfringplemma} we see that $A\tilt$ is a perfectoid ring of characteristic $p$. This is the main proposition of this section:
+
+\begin{prop}
+Let $A$ be a perfectoid ring, let $\pu\tilt\in A\tilt\upcirc$ such that $\pu\coloneqq(\pu\tilt)\shrp\in A\upcirc$ is a pseudo-uniformizer with $p\in\pu^pA\upcirc$.
+Put $A\tilt= A\tilt\upcirc[\tfrac{1}{\pu\tilt}]$ with the topology described before.
+Then $A\tilt$ is a perfectoid ring of characteristic $p$. Moreover we have the following results:
+\begin{enumerate}
+\item The construction of $A\tilt$ does not depend on the choice of $\pu\tilt\in A\tilt\upcirc$.
+\item The topology on $A\tilt\upcirc$ is the $\pu\tilt$-adic topology and it is  complete.
+\item The ring of power-bounded elements of $A\tilt$ is given by $A\tilt\upcirc$.
+\item We have a ring  isomorphism
+	$A\tilt\upcirc/\pu\tilt A\tilt\upcirc\simeq A\upcirc/\pu A\upcirc$, 
+	%$A\tilt\upcirc/ A^{\flat\circ\circ}\simeq A\upcirc/A\twocirc$, 
+	induced by $A\tilt\upcirc\to A\upcirc$, $a\mapsto a\shrp$.
+\item If $A$ is of characteristic $p$, then $A\simeq A\tilt$ via $A\tilt\upcirc\to A\upcirc$, $a\mapsto a\shrp$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+The ring structure on $A\tilt$ comes from the key lemma \ref{keylemma}.
+To prove that the construction of $A\tilt$ does not depend on the choice of $\pu\tilt\in A\tilt\upcirc$, we prove the following isomorphism of topological monoids:
+$A\tilt\xrightarrow{\sim}\varprojlim_{a\mapsto a^p}A,$ 
+where we give $\varprojlim_{a\mapsto a^p}A$ the projective limit topology.
+ For the proof of the remaining assertions see for example \cite[proposition V.1.2.1]{Morel19}.
+\end{proof}
+
+
+
+We now want to extend the tilting functor to Huber-Tate pairs $(A,A\upplus)$ for which $A$ is a perfectoid ring.
+First we give the following definition:
+
+\begin{definition}
+Let $(A,A\upplus)$ be a Huber-Tate pair with $A$  perfectoid. Then we say that $(A,A\upplus)$ is a \emph{perfectoid Huber-Tate pair} or just \emph{perfectoid pair}.
+\end{definition}
+
+Recall that a ring of integral elements $A\upplus\subseteq A$ is an open and integrally closed subring $A\upplus$ of $A$ and $A\upplus\subseteq A\upcirc$.
+We can always choose $A\upplus=A\upcirc$.
+Consider now the following proposition:
+
+\begin{prop}\label{inttiltprop}
+Let $A$ be a perfectoid ring. If $A\upplus\subseteq A$ is a ring of integral elements, then $A\tilt\upplus\coloneqq\varprojlim_{a\mapsto a^p}A\upplus\subseteq A\tilt$
+is a ring of integral elements.
+\end{prop}
+\begin{proof}
+We have that $A\tilt\upplus\subseteq A\tilt\upcirc$ and that $A\tilt\upplus$ is an open subring of $A\tilt$, since the canonical map
+$\varprojlim_{a\mapsto a^p}A\upplus\to\varprojlim_{a\mapsto a^p}A$ is continuous.
+Now let $(a_n)_{n\geq 0}\in A\tilt\upcirc$ be integral over $A\tilt\upplus$, then $(\ovl{a_n})_{n\geq0}\in A\tilt\upcirc/\pu\tilt A\tilt\upcirc$ is integral over
+$A\tilt\upplus/\pu\tilt A\tilt\upplus$.
+Hence $\ovl{a_0}\in A\upcirc/\pu A\upcirc$ is integral over $A\upplus/\pu A\upplus$. 
+Notice that $\pu A\upcirc\subseteq A\upplus$, since $\pu A\upcirc\subseteq A\twocirc$. Hence
+$a_0\in A\upcirc$ is integral over $A\upplus$, then it follows immediately that $a_n\in A\upcirc$ is integral over $A\upplus$ for any $n\geq 0$.
+This means $a_n\in A\upplus$ for any $n\geq 0$.
+But then $(a_n)_{n\geq0}\in A\tilt\upplus$.
+More generally one can prove that there is a bijective correspondence between rings of integral elements in $A$ and $A\tilt$.
+Moreover one can prove that the isomorphism
+$A\tilt\upcirc/\pu\tilt A\tilt\upcirc\xrightarrow{\sim} A\upcirc/\pu A\upcirc$
+induces
+$A\tilt\upplus/\pu\tilt A\tilt\upplus\xrightarrow{\sim} A\upplus/\pu A\upplus$.
+See for example \cite[proposition V.1.2.5]{Morel19}.
+\end{proof}
+
+The previous proposition shows that it makes sense to define the tilt $(A\tilt,A\tilt\upplus)$ of a perfectoid pair $(A,A\upplus)$. We consider the category of perfectoid pairs over $(A,A\upplus)$ and over $(A\tilt,A\tilt\upplus)$ respectively.
+We introduce the \emph{tilting equivalence} for perfectoid rings, or more generally for perfectoid pairs.
+\begin{theorem}\label{tiltequivthm1}
+Let $(A,A\upplus)$ be a perfectoid pair. Then tilting induces an equivalence of categories:
+\[\textrm{Perfectoid pairs over } (A,A\upplus)\cong\textrm{Perfectoid pairs over } (A\tilt,A\tilt\upplus).\]
+\end{theorem}
+\begin{cor}
+Let $A$ be a perfectoid ring. Then tilting induces an equivalence of categories:
+\[\textrm{Perfectoid } A\textrm{-algebra }\cong \textrm{ Perfectoid } A\tilt\textrm{-algebra}.\]
+\end{cor}
+\begin{proof}
+Immediate.
+%Let $B$ be a perfectoid $A$-algebra, $\varphi\colon A\to B$. Necessarily $\varphi(A\upcirc)\subseteq B\upcirc$. Hence perfectoid $A$-algebras are the same
+%as perfectoid pairs over $(A,A\upcirc)$. Then we apply the previous theorem.
+\end{proof}
+
+
+In order to prove theorem \ref{tiltequivthm1}, we have to understand the inverse functor, i.e. how to \emph{untilt} perfectoid rings of characteristic $p$.
+This can be achieved using Witt vectors. In fact we will describe all possible untilts $A\shrp$ of a given perfectoid ring $A$ in characteristic $p$.
+See also \cite[lemma 3.14]{Scholzeetcoh21} and \cite[proposition 1.1]{Fontaine13}.
+Recall that there is an equivalence of categories between the category of perfect rings $A$ of characteristic $p$ and the category of $p$-torsion free, $p$-adically complete rings 
+$B$ for which $B/pB$ is perfect. The inverse functor is realized by the ring of Witt vectors, sending $A\mapsto W(A)$ and satisfies $W(A)/pW(A)=A$.
+For example the initial objects in both categories are given by $\Fp$ and $\Zp=W(\Fp)$ respectively.
+There is a unique section of the reduction map, i.e. a map $A\to W(A)$, $a\mapsto[a]$, such that $a=\ovl{[a]}.$
+We will call this section \textit{Teichmüller lift}, it is multipliactive. In particular every element $a\in W(A)$ can be written as a converging series $\sum_{n\geq0}[a_n]p^n$ 
+with $a_n\in A$ uniquely determined.  For $m\geq 0$ we can define the $m$-th \emph{ghost component map}:
+$W_m\colon\: W(A)\to A, \:(a_n)_{n\geq0}\mapsto \sum_{n=0}^{m}a_n^{p^{m-n}}p^n$.
+
+\begin{lemma}\label{fontainemaplemma}
+Let $(A,A\upplus)$ be a perfectoid pair, let $(A\tilt,A\tilt\upplus)$ denote its tilt.
+Then we have the following result:
+\begin{enumerate}
+\item There is a canonical surjective ring morphism:
+	\[\theta\colon\: W(A\tilt\upplus)\to A\upplus\!,\:\:\sum_{n\geq0}[a_n]p^n\mapsto\sum_{n\geq0}a_n\shrp p^n.\]
+\item $\ker(\theta) = (p+[\pu\tilt]\alpha)\subseteq W(A\tilt\upplus)$, where $\pu\tilt\in A\tilt$ is a pseudo-uniformizer and such that $\alpha\in W(A\tilt\upplus)$.
+	These ideals are also called \emph{primitive of degree 1}.
+\item The element $\xi\coloneqq p+[\pu\tilt]\alpha\in W(A\tilt\upplus)$ is not a zero-divisor.
+\end{enumerate}
+
+\end{lemma}
+
+\begin{proof}
+%See \cite[theorem V.1.4.3]{Morel19} or \cite[lemma 3.14]{Scholzeetcoh21}.
+Choose a pseudo-uniformizer $\pu\tilt\in A\tilt$ such that $\pu\coloneqq (\pu\tilt)\shrp$ is a pseudo-uniformizer of $A$ and $p\in\pu^pA\upplus$.
+We can do this since $A\upplus\subseteq A$, $A\tilt\upplus\subseteq A\tilt$ are open.
+
+First let $a=(a_n)_{n\geq0}\in W(A\tilt\upplus)$. Write $a_n = (a_n^{(i)})_{i\geq0}$ for every $n\geq0$. 
+We then have $a=\sum_{n\geq0}[a_n^{\frac{1}{p^n}}]p^n.$
+Hence we have:
+\[\theta(a)=\sum_{n\geq0}a_n^{(n)}p^n.\]
+
+
+First we need to prove that the map $\theta\colon W(A\tilt\upplus)\to A\upplus$ is a ring morphism.
+Since $A\upplus$ is $\pu$-adically complete (it is a closed subring of $A$), i.e. $A\upplus=\varprojlim_{m\geq1}A\upplus/\pu^m A\upplus$, it is enough to check that the composition with the projection $W(A\tilt\upplus)\to A\upplus\to A\upplus/\pu^m A\upplus$ is a ring morphism for every $m\geq1$. Hence fix $m\geq1$.
+For this we use that the $m$-th ghost map factorizes to give a map:
+\[W(A\upplus/\pu A\upplus)\to A\upplus/\pu^mA\upplus,\:\:(a_n+\pu A\upplus)_{n\geq0}\mapsto\sum_{n=0}^{m}a_n^{p^{m-n}}p^n + \pu^mA\upplus.\]
+This is a ring morphism.
+Now consider the map:
+\[A\tilt\upplus\to A\upplus/\pu A\upplus,\:\:(a^{(j)})_{j\geq0}\mapsto a^{(m)} + \pu A\upplus.\]
+
+Hence we get a morphism of rings by composition:
+\[W(A\tilt\upplus)\to W(A\upplus/\pu A\upplus)\to A\upplus/\pu^mA\upplus,\]
+\[(a_n)_{n\geq0}\mapsto (a_n^{(m)}+\pu A\upplus)_{n\geq0}\mapsto \sum_{n=0}^{m}(a_n^{(m)})^{p^{m-n}}p^n +\pu^mA\upplus = 
+\sum_{n=0}^{m}a_n^{(n)}p^n + \pu^mA\upplus.\]
+This proves the claim since 
+\[\sum_{n=0}^{m}a_n^{(n)}p^n + \pu^mA\upplus = \sum_{n\geq0}a_n^{(n)}p^n + \pu^mA\upplus.\]
+
+
+To prove surjectivity of the map $\theta\colon W(A\tilt\upplus)\to A\upplus$, it is enough to prove that the map
+\[\theta\colon W(A\tilt\upplus)/[\pu\tilt]W(A\tilt\upplus) \to A\upplus/\pu A\upplus\]
+is surjective. This uses that $W(A\tilt\upplus)$ is $[\pu\tilt]$-adically complete, $A\upplus$ is $\pu$-adically complete and $\theta([\pu\tilt])=\pu$. See \cite[{Tag 0315}]{stacks-project}.
+However consider the following compositions of reduction maps:
+\[W(A\tilt\upplus)\to A\tilt\upplus\to A\tilt\upplus/\pu\tilt A\tilt\upplus = A\upplus/\pu A\upplus.\]
+One can prove that this is the composition of the map $\theta\colon\: W(A\tilt\upplus)\to A\upplus$ with the reduction map $ A\upplus\to A\upplus/\pu A\upplus$.
+This proves the claim.\\
+For the second claim, notice that $\frac{p}{\pu}\in A\upplus$.
+We can find $\beta\in A\tilt\upplus$ with $\beta\shrp-\frac{p}{\pu}\in pA\upplus$.
+Hence
+$(\pu\tilt\beta)\shrp-p\in p\pu A\upplus.$
+Write
+$p = (\pu\tilt\beta)\shrp +p\pu\sum_{n\geq0}a_n\shrp p^n$ with $a_n\in A\tilt\upplus$.
+Using surjectivity as proven before, we can define:
+\[\xi\coloneqq p-[\pu\tilt][\beta] - [\pu\tilt]\sum_{n\geq0}[a_n]p^{n+1}\in W(A\tilt\upplus).\]
+We immediately have $\xi\in\ker(\theta)$ and $(\xi)\subseteq W(A\tilt\upplus)$ is primitive of degree 1. 
+It remains to prove that $\xi$ generates $\ker(\theta)$.
+First notice that we have a surjective map induced by $\theta$:
+\[W(A\tilt\upplus)/\xi W(A\tilt\upplus)\to A\upplus.\]
+
+It is enough to prove that the map is an isomorphism modulo $[\pu\tilt]$, since $W(A\tilt\upplus)/\xi W(A\tilt\upplus)$
+is $[\pu\tilt]$-torsion free and $[\pu\tilt]$-adically complete.
+Notice the following:
+\[W(A\tilt\upplus)/(\xi,[\pu\tilt]) = W(A\tilt\upplus)/(p,[\pu\tilt]) = A\tilt\upplus/\pu\tilt A\tilt\upplus = A\upplus/\pu A\upplus.\]
+To prove that $W(A\tilt\upplus)/\xi W(A\tilt\upplus)$ is $[\pu\tilt]$-adically complete, we need the third claim. We then get a short exact sequence of
+$W(A\tilt\upplus)$-modules:\\
+
+\scaleto{%
+$$\begin{CD}
+0    @>>>   	\xi W(A\tilt\upplus)	@>>>  W(A\tilt\upplus)	@>>> W(A\tilt\upplus)/\xi W(A\tilt\upplus)	@>>>   0.
+\end{CD}$$
+}{12pt}\\
+
+The third claim then says that the $W(A\tilt\upplus)$-module $\xi W(A\tilt\upplus)$ is flat, hence again by applying \cite[{Tag 0315}]{stacks-project}
+one can deduce that $W(A\tilt\upplus)/\xi W(A\tilt\upplus)$ is $[\pu\tilt]$-adically complete. For the remaining proof, see \cite[lemma V.1.4.2]{Morel19} or \cite[lemma 3.16]{Scholzeetcoh21}.
+\end{proof}
+
+
+
+\begin{cor}
+There is an equivalence of categories between:
+\begin{enumerate}
+\item Perfectoid pairs $(S,S\upplus)$,
+\item Triples $(R,R\upplus,I)$, where $(R,R\upplus)$ is a perfectoid pair of characteristic $p$ and where $I\subseteq W(R\upplus)$  is an ideal of the form
+$(p+[\pu]\alpha)\subseteq W(R\upplus)$ where $\pu\in R$ is a pseudo-uniformizer and $\alpha\in W(R\upplus)$. I.e. it is \emph{primitive of degree 1}. 
+Morphisms send ideals primitive of degree 1 to ideals primitive of degree 1.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+Let $(S,S\upplus)$ be a perfectoid pair.
+The first functor sends 
+\[(S,S\upplus)\mapsto (S\tilt, S\tilt\upplus, \ker(\theta)),\]
+where  $\theta\colon\: W(S\tilt\upplus)\to S\upplus$ denotes the map from lemma \ref{fontainemaplemma}.
+Let $(R,R\upplus,I)$ be a perfectoid triple.
+The candidate for the inverse functor sends 
+\[(R,R\upplus,I)\mapsto ((W(R\upplus)/I)[\tfrac{1}{[\pu]}] ,W(R\upplus)/I),\] 
+where $\pu\in R$ is a pseudo-uniformizer.
+
+By lemma \ref{fontainemaplemma} and using that
+$W(S\tilt\upplus)[\tfrac{1}{[\pu\tilt]}] = W(S\tilt)$ we have for any perfectoid pair $(S,S\upplus)$ the following:
+\[((W(S\tilt\upplus)/\ker(\theta))[\tfrac{1}{[\pu\tilt]}] ,W(S\tilt\upplus)/\ker(\theta)) = (S,S\upplus).\]
+
+Let $(R,R\upplus,I)$ be a perfectoid triple. It remains to prove that
+$((W(R\upplus)/I)[\tfrac{1}{[\pu]}] ,W(R\upplus)/I)$ is indeed a perfectoid pair with tilt $(R,R\upplus)$ and $I=\ker(\theta)$.
+In the proof of lemma \ref{fontainemaplemma} we have already seen that $W(R\upplus)/I$ is complete for the $[\pu]$-adic topology, where $\pu\in R$ is a pseudo-uniformizer.
+\end{proof}
+
+
+%We are now ready to prove the \emph{tilting equivalence} for perfectoid pairs:
+
+\begin{proof}[Proof of Theorem \ref{tiltequivthm1}]
+Let $(B,B\upplus)$ be a perfectoid pair over $(A,A\upplus)$. Tilting we get  $(B\tilt,B\tilt\upplus)$, a perfectoid pair over $(A\tilt,A\tilt\upplus)$.
+For the other direction, let $(C,C\upplus)$ be a perfectoid pair of characteristic $p$ over $(A\tilt,A\tilt\upplus)$. This induces a map by functoriality:
+\[f\colon\: W(A\tilt\upplus)\to W(C\upplus).\]
+Let $I\coloneqq\ker(\theta)\subseteq W(A\tilt\upplus).$ and set $J\coloneqq f(I)\subseteq W(C\upplus)$, an ideal primitive of degree 1.
+Recall that 
+$((W(A\tilt\upplus)/I)[\tfrac{1}{[\pu\tilt]}] ,W(A\tilt\upplus)/I) = (A,A\upplus)$.
+We then get a perfectoid pair $((W(C\upplus)/J)[\tfrac{1}{[\pu\tilt]}] ,W(C\upplus)/J)$ over $(A,A\upplus)$ which tilts back to $(C,C\upplus)$.
+\end{proof}
+
+
+
+
+The main point of the previous discussion is that fixing a perfectoid ring $A\tilt$ and an \emph{untilt} $A$, then any perfectoid ring $B\tilt$ over $A\tilt$ has only one untilt to a perfectoid ring $B$ over $A$. 
+However if we do not fix such a base, then there could be
+multiple \emph{untilts} with the obvious definition of an untilt of a perfectoid ring in characteristic $p$.
+
+
+
+
+
+
+
+
+
+
+
+

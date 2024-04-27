@@ -1,0 +1,74 @@
+\subsubsection{Almost Mathematics}
+We want to introduce now some \emph{almost mathematics}. See \cite{GR03} for a full reference. We include only the minimum terminology and willl not use any of it in the next chapters.\\
+
+Let $A$ be a perfectoid ring with pseudo-uniformizer $\pu\in A$ which admits all $p$-power roots. Inverting the pseudo-uniformizer gives a functor:
+\[A\upcirc-\catname{Mod}\longrightarrow A-\catname{Mod}.\]
+
+We want to construct a category $A\upcirca-\catname{Mod}$ which sits between the category $A\upcirc-\catname{Mod}$ and $A-\catname{Mod}$, i.e.
+for which there is a factorization:
+\[A\upcirc-\catname{Mod}\longrightarrow A\upcirca-\catname{Mod}\longrightarrow A-\catname{Mod}.\]
+
+
+The category $A\upcirca-\catname{Mod}$ is constructed as a quotient category of $A\upcirc-\catname{Mod}$ with respect to 
+a dense subcategory. See \cite[chapter 4]{Popescu73} for a discussion of the more general notion of localization of categories and of quotient categories of an abelian category with respect to a dense subcategory.
+Explicitely, the objects in $A\upcirca-\catname{Mod}$ correspond to objects in $A\upcirc-\catname{Mod}$. 
+Morphisms $f\colon M\to N$ in $A\upcirc-\catname{Mod}$ become isomorphisms in $A\upcirca-\catname{Mod}$  if
+$\Ker f$ and $\Coker f$ are \emph{almost zero}, where an $A\upcirc$-module $M$ will be called almost zero if $A\twocirc M=0$. Equivalently if $\pu^{\slfrac{1}{p^n}}M=0$ for all $n\geq 0$.
+We denote the class of these morphisms by $\Sigma$. We then set:
+\[A\upcirca-\catname{Mod} =  A\upcirc-\catname{Mod}\:[\:\Sigma^{-1}].\]
+
+This is the category of \emph{almost} $A\upcirc$-\emph{modules}.
+Objects $M$ in $A\upcirc-\catname{Mod}$ will be denoted by $M^{a}$ when considered as objects in $A\upcirca-\catname{Mod}$,
+morphisms $f\colon M\to N$ in $A\upcirc-\catname{Mod}$ will be denoted by $f^a\colon M^a\to N^a$.
+The full subcategory of $A\upcirc-\catname{Mod}$ consisting of almost zero objects is \emph{dense} (or \emph{thick} in other sources). Explicitely we must prove that
+for every exact sequence in $A\upcirc-\catname{Mod}$, 
+$$\begin{CD}
+0 @>>> M_1 @>>> M_2 @>>> M_3 @>>> 0,	
+\end{CD}$$
+
+$M_2$ is almost zero if and only if $M_1$ and $M_3$ are almost zero. Moreover one can prove that
+a morphism $f^a\colon M^a\to N^a$ in $A\upcirca-\catname{Mod}$ is an isomorphism if and only if $\Ker f$ and $\Coker f$ are almost zero. 
+In particular an $A\upcirc$-module $M$ is almost zero if and only if $M^a\simeq 0$ in $A\upcirca-\catname{Mod}$.
+There is an exact localization functor $A\upcirc-\catname{Mod}\longrightarrow A\upcirca-\catname{Mod}$.
+Moreover there is a factorization $A\upcirca-\catname{Mod}\longrightarrow A-\catname{Mod}$ following from the universal property of localization, explicitely 
+we must prove that morphisms in $\Sigma$ become isomorphisms in $A-\catname{Mod}$ when we invert the pseudo-uniformizer $\pu\in A$.\\
+
+
+ $A\upcirca-\catname{Mod}$ is an abelian tensor category with tensor product inherited from $A\upcirc-\catname{Mod}$ and one can define categorically the notion of an $A\upcirca$-algebra.
+The internal $\Hom$-functor of $A\upcirca-\catname{Mod}$ is denoted by $\mathrm{alHom}$ and is also called the \emph{functor of almost homomorphisms}.
+We can then define almost flat, almost projective and almost finitely presented modules and almost finite \'{e}tale algebras. See for example \cite[chapter 4]{Scholze12}.
+%\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

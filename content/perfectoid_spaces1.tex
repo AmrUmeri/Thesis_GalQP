@@ -1,0 +1,131 @@
+\chapter{Perfectoid spaces}
+Fix a prime number $p$.
+In this chapter we introduce \emph{perfectoid spaces}, which is a full subcategory of the category of analytic adic spaces and which admit a \emph{tilting functor} to perfectoid spaces in characteristic $p$. We also give an exposition of the \emph{tilting equivalence} and the \emph{almost purity theorem}. We will discuss under which assumptions the adic generic fibre, which has been introduced in the previous chapter, is a perfectoid space and determine its \emph{tilt}. This will provide us with additional examples of non-affinoid adic spaces. In later sections we will focus on sheaves for the  pro-\'{e}tale topology, the so-called \emph{pro-\'{e}tale topos} on the category of perfectoid spaces. In particular we will study \emph{diamonds} which we will define as sheaves for the pro-\'{e}tale topology which admit a pro-\'{e}tale cover from a representable sheaf. We state a descent theorem and prove some corollaries.
+
+
+\section{Perfectoid rings}
+In this section we want to study \emph{perfectoid rings}. The main references are \cite{Scholze12}, \cite{Scholzeetcoh21} and \cite{Fontaine13}.
+The exposition follows \cite{Morel19} very closely. Fix a prime number $p$.
+
+\subsection{Perfectoid rings: Definition and properties}
+We start with the definition of  \emph{perfectoid rings}, heuristically these are uniform Tate rings with enough $p$-power roots. Recall that a Tate ring $A$ is uniform if and only if $A\upcirc$ is a ring of definition of $A$ if and only if
+$A\upcirc\subseteq A$ is bounded.
+
+\begin{definition}\label{defperfectoidring}
+Let $A$ be a Tate ring. Then $A$ is a \emph{perfectoid ring} if it is complete, uniform and if there exists a pseudo-uniformizer $\pu\in A$ with the following properties:
+\begin{enumerate}
+\item $p\in\pu^{p}A\upcirc$.
+\item The Frobenius map $\varphi\colon A\upcirc/\pu\to A\upcirc/\pu^p$, $a\mapsto a^p$, is bijective.
+\end{enumerate}
+\end{definition}
+In particular, the above Frobenius map is a ring isomorphism.
+Notice also that if $A$ is a perfectoid ring of characteristic $0$, then $p$ is topologically nilpotent.
+Hence if $p$ is a unit in $A$, then the topology on $A\upcirc$ is the $p$-adic topology and $A=A\upcirc[\frac{1}{p}]$.
+%by corollary \ref{cortatering1}.\\
+
+The next lemma shows that it is enough to assume that the Frobenius map is surjective in the above definition.
+
+\begin{lemma}
+Let $A$ be a Tate ring and assume we have a pseudo-uniformizer $\pu\in A$ such that $p\in\pu^{p}A\upcirc$. Then the Frobenius map 
+$\varphi\colon A\upcirc/\pu\to A\upcirc/\pu^p$ is injective.
+\end{lemma}
+\begin{proof}
+Let $a\in A\upcirc$ such that $a^p\in\pu^{p}A\upcirc$. Then $\frac{a^p}{\pu^p}\in A\upcirc$, hence $\frac{a}{\pu}\in A\upcirc$ since $A\upcirc$ is integrally closed in $A$.
+Thus $a\in\pu A\upcirc$.
+\end{proof}
+
+We now want to prove that the definition of a perfectoid ring does not depend on the choice of pseudo-uniformizer. The following lemma makes this precise:
+\begin{lemma}\label{perfringequivdeflemma}
+Let $A$ be a complete and uniform Tate ring. Assume we have a pseudo-uniformizer $\pu\in A$ with $p\in\pu^pA\upcirc$.
+Then we have the following result:\\
+The Frobenius $A\upcirc/\pu A\upcirc\to A\upcirc/\pu^pA\upcirc$ is surjective if and only if the Frobenius\\ $A\upcirc\to A\upcirc/pA\upcirc$ is surjective.
+In particular this means that $A$ is a perfectoid ring if and only if every element in $A\upcirc/pA\upcirc$ is a $p$-th power.
+\end{lemma}
+\begin{proof}
+For the easy direction, let $a\in A\upcirc$. Then we can find $b\in A\upcirc$ with $a-b^p\in pA\upcirc\subseteq\pu^pA\upcirc.$ 
+For the other direction, we need the following successive approximation lemma:
+There exists a sequence $(a_n)_{n\geq0}$ of elements in $A\upcirc$ such that for every $n\geq0$, $a-\sum_{i=0}^{n}a_i^p\pu^{pi}\in\pu^{p(n+1)}A\upcirc$. Hence $a=\sum_{i\geq0}a_i^p\pu^{pi}$.
+By induction and the binomial formula one shows: For every $n\geq0$, $\sum_{i=0}^{n}a_i^p\pu^{pi}-(\sum_{i=0}^{n}a_i\pu^{i})^p\in pA\upcirc$. Hence $a-(\sum_{i=0}a_i\pu^{i})^p\in pA\upcirc$.
+\end{proof}
+
+
+We needed the following successive approximation lemma for the previous proof, which we want to state and prove now:
+
+\begin{lemma}
+Let $A$ be a Tate ring and let $\pu\in A$ be a pseudo-uniformizer such that $p\in\pu^{p}A\upcirc$. Let $a\in A\upcirc$ and suppose that the Frobenius $A\upcirc/\pu A\upcirc\to A\upcirc/\pu^pA\upcirc$ is surjective.
+Then there exists a sequence $(a_n)_{n\geq0}$ of elements in $A\upcirc$ such that  for every $n\geq0$,
+ $a-\sum_{i=0}^{n}a_i^p\pu^{pi}\in\pu^{p(n+1)}A\upcirc$. 
+If $A$ is separated and uniform, we can write $a=\sum_{i\geq0}a_i^p\pu^{pi}$.
+\end{lemma}
+\begin{proof}
+This is by induction on $n\geq0$. By assumption we can find $a_0\in A\upcirc$ with $a-a_0^p\in\pu^pA\upcirc$.
+Assume we have found $a_0\dots a_{n-1}\in A\upcirc$ such that $a-\sum_{i=0}^{n-1}a_i^p\pu^{pi}\in\pu^{pn}A\upcirc$. Let $b\in A\upcirc$ with $a-\sum_{i=0}^{n-1}a_i^p\pu^{pi} = \pu^{pn}b$.
+By assumption we can find $a_n\in A\upcirc$ such that $b-a_n^p\in\pu^pA\upcirc$.
+Hence $a-\sum_{i=0}^{n}a_i^p\pu^{pi}\in\pu^{p(n+1)}A\upcirc$.
+The last claim uses the fact that the topology on $A\upcirc$
+is the $\pu$-adic topology.
+\end{proof}
+
+Before continuing with perfectoid rings, we state and prove a lemma, which is used in many key constructions. We will refer to it as key lemma.
+Let $S$ be any ring. We can consider the Frobenius as a multiplicative map $S\to S$, $s\mapsto s^p$. Iterating Frobenius gives a projective system. The projective limit is only a multiplicative monoid in general, however it is a ring if the Frobenius map is a ring morphism.
+
+\begin{lemma}\label{keylemma}
+Let $S$ be a ring, $\pu\in S$ an element with $p\in\pu S$ and $S$ is complete for the $\pu$-adic topology. Then we have an isomorphism of multiplicative monoids induced by the canonical map $S\to S/\pu S$,
+\[\varprojlim_{s\mapsto s^p}S\xrightarrow{\sim}\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S,\]
+\[(s_n)_{n\geq0} \mapsto (\ovl{s_n})_{n\geq0}.\]
+In particular there is a perfect ring structure of characteristic $p$ on $\displaystyle\varprojlim_{s\mapsto s^p}S$.
+\end{lemma} 
+\begin{proof}
+First we construct a multiplicative map: 
+\[\displaystyle\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S\to S.\]
+Let $ (\ovl{s_n})_{n\geq0}\in\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S$ and choose arbitrary lifts
+$s_n\in S$, $n\geq0$. Notice that by construction we have $s^p_{n+1}-s_n\in\pu S$.
+This implies $s^{p^{n+1}}_{n+1}-s^{p^n}_n\in\pu^{n+1}S$ by induction and the binomial formula. In particular $(s_n^{p^n})_{n\geq0}$ is a Cauchy sequence and converges to an element in $S$, which we will denote by $\lim_{n\to\infty}s_n^{p^n}$.
+One shows that the limit does not depend on the choice of lifts, 
+meaning that if $s_n-t_n\in\pu S$, then $s_n^{p^n}-t_n^{p^n}\in\pu^{n+1}S.$ This then defines the map in an evident way:
+\[f\colon\displaystyle\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S\to S, \:\:(\ovl{s_n})_{n\geq0}\mapsto \lim_{n\to\infty}s_n^{p^n}.\]
+We then define the multiplicative map, which is an inverse to the map stated in the lemma:
+\[\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S\rightarrow\varprojlim_{s\mapsto s^p}S,\:\: (\ovl{s_n})_{n\geq0} \mapsto (f((\ovl{s_{n+r}})_{n\geq0}))_{r\geq0}.\]
+One checks that this indeed defines the inverse. The isomorphism does not depend on the choice of $\pu\in S$.
+Notice that if $(\ovl{s_n})_{n\geq0}\in\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S$, then this element has a $p$-th root, namely we just choose
+$(\ovl{s_{n+1}})_{n\geq0}\in\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S$. In particular $\varprojlim_{\ovl{s}\mapsto\ovl{s}^p}S/\pu S$ is perfect.
+
+\end{proof}
+
+We used the following basic lemma for the proof:
+\begin{lemma}
+Let $S$ be a ring, $\pu\in S$ with $p\in\pu S$. Let $a,b\in S$ with $a-b\in\pu S$. Then $a^{p^n}-b^{p^n}\in\pu^{n+1}S$ for $n\geq 0$.
+\end{lemma}
+\begin{proof}
+It is enough to prove that if $a-b\in\pu^n S$, then $a^p-b^p\in\pu^{n+1} S$.  
+Let $a=b+\pu^nc$ for some $c\in S$ and apply the binomial formula.
+\end{proof}
+
+
+We now want to describe explicitely the additive structure on $\varprojlim_{s\mapsto s^p}S$. Consider the following:\\
+
+Let $(a_n)_{n\geq0}, (b_n)_{n\geq0}\in\varprojlim_{s\mapsto s^p}S$. Clearly $a_n+b_n\in S$ is a lift of $\ovl{a_n+b_n}\in S/\pu S$.
+Hence we have the following addition rule:
+\[(a_n)_{n\geq0}+(b_n)_{n\geq0} = (\lim_{k\to\infty}(a_{k+n}+b_{k+n})^{p^k})_{n\geq0}\in\varprojlim_{s\mapsto s^p}S.\]
+For each ${n\geq0}$, $((a_{k+n}+b_{k+n})^{p^k})_{k\geq0}$ is a Cauchy sequence.\\
+
+
+We can describe perfectoid rings of characteristic $p$ in the following way:
+\begin{lemma}\label{perfringplemma}
+Let $A$ be a Tate ring of characteristic $p$. Then $A$ is perfectoid if and only if $A$ is complete and perfect.
+\end{lemma}
+\begin{proof}
+The difficult part is to prove that perfect complete Tate rings of characteristic $p$ are uniform.
+This is a technical result, see for example \cite[theorem IV.1.3.5]{Morel19}.
+For the proof of the lemma see \cite[proposition V.1.1.8]{Morel19}.
+\end{proof}
+
+
+
+
+
+
+
+
+
+

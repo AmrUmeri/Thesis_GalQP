@@ -1,0 +1,282 @@
+\section{Huber-Tate pairs and the adic spectrum}
+
+$A$ denotes a topological ring. We want to define \emph{Huber-Tate pairs}.
+
+\begin{definition}
+Let $A$ be a topological ring.
+A subset $B\subseteq A$ is called \emph{bounded} if for every open $U\subseteq A$ around $0$ there exists an open $V\subseteq A$ around $0$
+such that $ax\in U$ for every $a\in B$, $x\in V$.
+An element $a\in A$ is called \emph{power-bounded} if the subset $\{a^n\in A\:\vert\: n\geq1\}$ is bounded.
+An element $a\in A$ is called \emph{topologically nilpotent} if for every open $U\subseteq A$ around $0$ there exists $n_0\geq0$ such that
+$a^n\in U$ for every $n\geq n_0$.
+\end{definition}
+
+\begin{definition}
+Let $A$ be a topological ring.
+$A\upcirc\subseteq A$ denotes the subset of power-bounded elements and
+$A\twocirc\subseteq A$ denotes the subset of topologically nilpotent elements.
+\end{definition}
+
+
+\begin{definition}
+Let $A$ be a topological ring. 
+We will call $A$ \emph{adic}, if there exists an ideal $I\subseteq A$ such that $\{I^n\subseteq A\:\vert\: n\geq 0\}$ is a fundamental system of open subsets
+around $0$.
+We will call $A$ \emph{adic of finite type}, if additionaly the ideal $I\subseteq A$ can be chosen to be finitely generated.
+In both cases we will say that $A$ is $I$-adic or that the topology on $A$ is $I$-adic if a choice of ideal has been made and we will say that
+$I\subseteq A$ is an \emph{ideal of definition}.
+\end{definition}
+
+Recall that if $A$ is adic with ideal of definition $I\subseteq A$, then then the canonical map $A\to\varprojlim_{n>0}A/I^n$ is an injection if and only if $A$ is separated.
+If $A$ is adic of finite type and separated, then the completion of $A$ for the $I$-adic topology is $\hat{A}=\varprojlim_{n>0}A/I^n$ and $\hat{A}=\varprojlim_{n>0}\hat{A}/I^n\hat{A}$.
+In particular if $A$ is adic of finite type and complete, then $A=\varprojlim_{n>0}A/I^n$. The completion does not depend on the choice of ideal of definition.
+
+
+
+\begin{definition}
+Let $A$ be a topological ring.
+$A$ will be  called \emph{Huber ring} if there exists an open subring $A\lowcirc\subseteq A$ such that
+the induced topology on $A\lowcirc$ is adic of finite type.
+We then call $A\lowcirc$ a \emph{ring of definition} of $A$.
+\end{definition}
+
+
+
+\begin{prop} \label{firstprop}
+Let $A$ be a Huber ring,  $B\subseteq A$ a subring with the induced topology.
+Then $B$ is a ring of definition of $A$ if and only if $B\subseteq A$ is open and bounded.
+\end{prop}
+\begin{proof} 
+Assume $B$ is a ring of definition of $A$. Then $B\subseteq A$ is open by definition. Let $I\subseteq B$ be an ideal of definition. Let $U\subseteq A$ be any open subset around $0\in A$.
+Then $I^n\subseteq  U$ for some $n\geq0$. Hence $I^nB\subseteq I^n\subseteq U$,
+hence $B\subseteq A$ is bounded in $A$.\\
+Assume now $B\subseteq A$ is open and bounded. Let $A\lowcirc\subseteq A$ be any ring of definition with ideal of definition $I\lowcirc\subseteq A\lowcirc$.
+Let $T=\{f_1,\dots,f_n\}\subseteq A\lowcirc$ be a finite subset of generators for the ideal.
+Since $B\subseteq A$ is open, we can assume $T^r\subseteq B$ for some $r\geq0$,
+hence generate an ideal $I\subseteq B$.
+Using boundedness of $B\subseteq A$ one shows that the induced topology on $B$ is the $I$-adic topology.
+%We have to show that the subspace topology on $B$ is adic for a finitely generated ideal $J\lowcirc\subseteq B$.
+%Since $B$ is open, we have $I\lowcirc\!\!^n\subseteq B$, where now $I\lowcirc\!\!^n$ is an ideal of definition of a ring of definition of $A$. Since $B$ is bounded, we have that $I\lowcirc\!\!^mB\subseteq I\lowcirc\!\!^n$. Then we put $J\lowcirc = I\lowcirc\!\!^mB$.
+%Hence we have that $I\lowcirc\!\!^{n+m}B\subseteq I\lowcirc\!\!^nJ\lowcirc \subseteq J\lowcirc$.
+\end{proof}
+
+
+\begin{cor}
+Let $A$ be a Huber ring. If $A_1$, $A_2$ are rings of definition of $A$, then $A_1\cap A_2$, $A_1\cdot A_2$ are rings of definition of $A$.
+\end{cor}
+\begin{proof}
+Immediate by proposition \ref{firstprop}.
+\end{proof}
+
+\begin{prop}
+Let $A$ be a Huber ring. Then we have the following result:
+\begin{enumerate}
+\item $A\upcirc$ is the union of all rings of definition  $A\lowcirc$ of $A$,
+\item $A\upcirc$  is integrally closed in $A$,
+\item $A\twocirc$ is a radical ideal of $A\upcirc$.
+\end{enumerate}
+In particular $A\upcirc$ is an open and integrally closed subring of $A$.
+\end{prop}
+\begin{proof}
+Let $a\in A\upcirc$. Let $A\lowcirc\subseteq A$ be any ring of definition. Then $A\lowcirc[a]$ is a ring of definition. The other inclusion is immediate.
+Let $a\in A$ be integral over $A\upcirc$. We can assume that $a\in A$ is integral over $A\lowcirc$ for some ring of definition $A\lowcirc\subseteq A$.
+Since $A\lowcirc[a]$ is a finitely generated $A\lowcirc$-module and bounded in $A$, we have that $a\in A\upcirc$.
+\end{proof}
+
+
+\begin{definition}
+Let $A$, $B$ be Huber rings, $f\colon A\to B$ a morphism of rings. The ring morphism is called \emph{adic} if there exists rings of definition $A\lowcirc\subseteq A$, $B\lowcirc\subseteq B$ 
+and an ideal of definition $I\subseteq A\lowcirc$ such that $f(A\lowcirc)\subseteq B\lowcirc$ and $f(I)B\lowcirc\subseteq B\lowcirc$ is an ideal of definition.
+\end{definition}
+
+
+\begin{prop}
+Let $A$, $B$ be Huber rings, $f\colon A\to B$ an adic morphism of rings. Then we have the following:
+\begin{enumerate}
+\item $f\colon A\to B$ is continuous,
+\item $f\colon A\to B$ is bounded (i.e. for every bounded subset $E\subseteq A$, $f(E)\subseteq B$ is bounded).
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Write $J=f(I)B\lowcirc$. For $n\geq1$ we have $I^n\subseteq f^{-1}(J^n)$. Hence $f\colon A\to B$ is continuous.
+Let now $U=J^n\subseteq B$ be an open subset around $0$.
+Let $E\subseteq A$ be a bounded subset. Then we can find some $m\geq 1$ such that $EI^m\subseteq I^n$ by boundedness.
+Hence $f(E)J^m\subseteq J^n$.
+This proves the claim.
+\end{proof}
+
+
+We give here the definition of a \emph{Tate ring}. We will encounter Tate rings again when we define \emph{perfectoid rings}, see definition \ref{defperfectoidring}. Tate rings can be understood as generalization of non-Archimedean fields.
+
+\begin{definition}
+Let $A$ be a Huber ring.
+We say that $A$ is a \emph{Tate ring} if it contains a unit $\pu\in A$ which is topologically nilpotent. We will call such elements also \emph{pseudo-uniformizer}.
+\end{definition}
+
+
+Here we collect some basic results on Tate rings which will be used in the upcoming chapter.
+
+\begin{prop}\label{proptatering1}
+Let $A$ be a Tate ring and $A\lowcirc$ a ring of definition of $A$. We have the following result:
+\begin{enumerate}
+\item $A\lowcirc$ contains a topologically nilpotent unit (pseudo-uniformizer) of $A$.
+\item Let $\pu\in A\lowcirc$  be a topologically nilpotent unit of $A$. Then $A=A\lowcirc[\frac{1}{\pu}]$ and $\pu A\lowcirc\subseteq A\lowcirc$ is an ideal of definition of $A\lowcirc$. In particular $A\lowcirc$ is $\pu$-adic.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Choose any topologically nilpotent unit $t\in A$. Since $A\lowcirc\subseteq A$ is open, we have $t^n\in A\lowcirc$ for some $n\geq 1$. This proves the first claim by setting $\pu = t^n$.
+Now let $\pu\in A\lowcirc$  be a topologically nilpotent unit of $A$. First we show that $\{\pu^n A\lowcirc\:\vert\: n\geq 1\}$ is a basis around 0. Then this proves that $\pu A\lowcirc$ is an ideal of definition of $A\lowcirc$. 
+$\pu^n A\lowcirc$ is homeomorphic to $A\lowcirc$ for any $n\geq 1$, hence open. Let $U\subseteq A$ be any open subset around 0. Since $A\lowcirc\subseteq A$ is bounded, we can find $n\geq1$ such that $\pu^n A\lowcirc\subseteq U$. Here we use that $\pu\in A\lowcirc$ is topologically nilpotent.
+Finally let $a\in A$ fixed. The map $A\to A$, $ x\mapsto ax$ is continuous. Since $A\lowcirc$ is open, we can find $n\geq 1$ such that $\pu^na\in A\lowcirc$. Hence $a\in A\lowcirc[\frac{1}{\pu}]$.
+\end{proof}
+
+
+\begin{definition}
+Let $A$ be a  Tate ring. Then we say that $A$ is \emph{uniform} if $A\upcirc$ is a ring of definition of $A$. Equivalently if $A\upcirc$ is bounded in $A$.
+\end{definition}
+
+\begin{cor}\label{cortatering1}
+Let $A$ be a uniform Tate ring and let $\pu\in A\upcirc$ be a topologically nilpotent unit. Then
+$\pu A\upcirc\subseteq A\upcirc$ is an ideal of definition and  $A=A\upcirc[\frac{1}{\pu}]$.
+\end{cor}
+
+\begin{prop}
+Let $B$ be a ring, $\pu\in B$. Let $\varphi\colon B\to B[\frac{1}{\pu}]$ be the localization. Endow $B[\frac{1}{\pu}]$ with the group topology such that $\{\varphi(\pu^n B)\:\vert\: n\geq 1\}$ is a fundamental system of neighbourhoods around 0. Then this defines a ring topology making $B[\frac{1}{\pu}]$ a Tate ring. In particular if $\pu\in B$ is not a zero-divisor, then $B$ is a ring of definition with ideal of definition $\pu B\subseteq B$.
+\end{prop}
+\begin{proof}
+Immediate.
+\end{proof}
+
+\begin{prop}
+Let $A$, $B$ be Huber rings and let $f\colon A\to B$ be a continuous morphism of rings. If $A$ is a Tate ring, then $B$ is a Tate ring as well and the morphism $f\colon A\to B$ is adic.
+\end{prop}
+\begin{proof}
+Let $\pu\in A$ be a topologically nilpotent unit. We can assume that $\pu\in A\lowcirc$. Since $f\colon A\to B$ is continuous, $f(\pu)\in B$ is a topologically nilpotent unit. 
+In particular $B$ is a Tate ring.
+By proposition \ref{proptatering1}, $I=\pu A\lowcirc\subseteq A\lowcirc$ is an ideal of definition and $f(I)B\lowcirc=f(\pu)B\lowcirc\subseteq B\lowcirc$ is an ideal
+of definition.
+Hence $f\colon A\to B$ is adic.
+\end{proof}
+\clearpage
+
+
+Here we give the definition of \emph{Huber pairs} and \emph{Huber-Tate pairs}.
+
+\begin{definition}
+Let $A$ be a Huber ring. A \emph{ring of integral elements} in $A$ is an open and integrally closed subring $A\upplus\subseteq A$ such that $A\upplus\subseteq A\upcirc$.
+We then say that $(A,A\upplus)$ is a \emph{Huber pair}. If $A$ is a Tate ring, we will say that  $(A,A\upplus)$ is a \emph{Huber-Tate pair}.
+A morphism of Huber pairs $\phi\colon (A, A\upplus)\to(B, B\upplus)$ is a continuous ring morphism $\phi\colon A\to B$ with $\phi(A\upplus)\subseteq B\upplus$. We can also define adic morphisms of Huber pairs.
+\end{definition}
+
+We define now the \emph{adic spectrum} of a Huber pair $(A,A\upplus)$. First we define it as a set. Then we put a topology on it and a structure presheaf. In general the structure presheaf on  $\spa{A}{A\upplus}$ is not a sheaf. All statements are proven in \cite{Huber94}. Under some conditions on the ring $A$ it is a sheaf and we will then call the Huber pair  $(A,A\upplus)$ \emph{sheafy}. These then form the affinoid subspaces of \emph{adic spaces} which will be defined in the next section.
+
+\begin{definition}
+Let $(A,A\upplus)$ be a Huber pair. We then define its \emph{adic spectrum} to be:
+\[\spa{A}{A\upplus} = \{x\in\cont{A}\:\vert\: \forall a\in A\upplus\!,\: \normx{a}\leq1\}.\]
+Let $(A,A\upplus)$ be a Huber pair. Let $f_1,\dots,f_n,g\in A$ be finitely many elements such that 
+$(f_1,\dots,f_n)\subseteq A$ is an open ideal. A \emph{rational subset} of $\spa{A}{A\upplus}$ is of the form:
+\[U(\tfrac{f_1,\dots,f_n}{g}) = \{x\in\spa{A}{A\upplus}\:\vert\: \forall i=1,\dots,n\: \normx{f_i}\leq\normx{g}\neq0\}.\]
+The rational subsets are stable under intersection and form a basis for a topology on $\spa{A}{A\upplus}$ for which they are quasi-compact.
+\end{definition}
+
+The following construction is also called \emph{rational localization} and will be later used to define the structure presheaf on the adic spectrum of a Huber pair $(A, A\upplus)$.
+
+\begin{prop}\label{localizationprop1}
+Let $(A,A\upplus)$ be a Huber pair. Let $f_1,\dots,f_n,g\in A$ be finitely many elements such that 
+$(f_1,\dots,f_n)\subseteq A$ is an open ideal.
+There exists a unique Huber ring structure on $A[\tfrac{1}{g}]$ that we will denote by $A(\tfrac{f_1,\dots,f_n}{g})$, satisfying the following properties:
+\begin{enumerate}
+\item The canonical morphism $A\to A(\tfrac{f_1,\dots,f_n}{g})$ is continuous and $\tfrac{f_1}{g},\dots,\tfrac{f_n}{g}\in A[\tfrac{1}{g}]$ are power-bounded in $A(\tfrac{f_1,\dots,f_n}{g})$.
+\item $A(\tfrac{f_1,\dots,f_n}{g})$ is initial among all Huber rings $B$ and continuous maps $A\to B$ for which $g\in B^\times$ and $\tfrac{f_1}{g},\dots,\tfrac{f_n}{g}\in B$ are power-bounded in $B$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We sketch the proof.  Let $I\subseteq A$ be an ideal of a ring of definition $A\lowcirc$ of $A$ defining its adic topology. In particular it is finitely generated.
+First we put a topology on the ring $A(\tfrac{f_1,\dots,f_n}{g})$. It will be topologized by declaring $A\lowcirc[\tfrac{f_1}{g},\dots,\tfrac{f_n}{g}]$ to be a ring of definition with the adic topology generated by the ideal $I\subseteq A\lowcirc$. 
+One checks that this is indeed a topological ring structure on $A(\tfrac{f_1,\dots,f_n}{g})$ and that the canonical morphism $\phi\colon A\to A(\tfrac{f_1,\dots,f_n}{g})$ is continuous. 
+It is then immediate that the elements $\tfrac{f_1}{g},\dots,\tfrac{f_n}{g}$ are power-bounded in $A(\tfrac{f_1,\dots,f_n}{g})$. 
+From the construction of the topology it even follows that the canonical morphism $\phi\colon A\to A(\tfrac{f_1,\dots,f_n}{g})$ is adic.
+The universal property of localization gives us a ring morphism $A(\tfrac{f_1,\dots,f_n}{g})\to B$.
+It remains to prove that this map is continuous.
+\end{proof}
+
+\begin{prop}\label{localizationprop2}
+Let $(A,A\upplus)$ be a Huber pair. Let $U(\tfrac{f_1,\dots,f_n}{g})\subseteq \spa{A}{A\upplus}$ be a rational subset.
+Denote by $A(\tfrac{f_1,\dots,f_n}{g})$ the Huber ring constructed in proposition \ref{localizationprop1}.
+Denote by  $A(\tfrac{f_1,\dots,f_n}{g})\upplus$ the integral closure of $A\upplus[\tfrac{f_1}{g},\dots,\tfrac{f_n}{g}]$
+in $A(\tfrac{f_1,\dots,f_n}{g})$. Then $(A(\tfrac{f_1,\dots,f_n}{g}), A(\tfrac{f_1,\dots,f_n}{g})\upplus)$ is a Huber pair.
+
+The construction does not depend on the elements $f_1,\dots,f_n\in A$ generating the rational subset.
+Moreover the canonical map $\phi\colon(A,A\upplus)\to(A(\tfrac{f_1,\dots,f_n}{g}), A(\tfrac{f_1,\dots,f_n}{g})\upplus)$
+induces a homeomorphism 
+$\spaa{(\phi)}\colon\spa{A(\tfrac{f_1,\dots,f_n}{g})}{A(\tfrac{f_1,\dots,f_n}{g})\upplus}\simeq U(\tfrac{f_1,\dots,f_n}{g})$
+giving a canonical bijection between rational subsets of $\spa{A(\tfrac{f_1,\dots,f_n}{g})}{A(\tfrac{f_1,\dots,f_n}{g})\upplus}$
+and rational subsets of $\spa{A}{A\upplus}$  contained in $U(\tfrac{f_1,\dots,f_n}{g})$.
+\end{prop}
+\begin{proof}
+We give only the most basic arguments used in the proof. For full details, see \cite{Huber94} or \cite{Morel19} or any other reference introducing adic spaces.
+Notice that the underlying ring of $A(\tfrac{f_1,\dots,f_n}{g})$ is just $A[\tfrac{1}{g}]$.
+Let $x\in U(\tfrac{f_1,\dots,f_n}{g})$. Then in particular $\normx{g}\neq 0$ and $\normx{\cdot}\colon A\to\Gamma\cup\{0\}$ extends to a valuation $\normx{\cdot}\colon A(\tfrac{f_1,\dots,f_n}{g})\to\Gamma\cup\{0\}$.
+One checks easily that this is indeed a continuous valuation. 
+Moreover if the valuations $x_1, x_2\in \spa{A(\tfrac{f_1,\dots,f_n}{g})}{A(\tfrac{f_1,\dots,f_n}{g})\upplus}$ coincide when restricted to $A$, then they are equal proving injectivity of the map in the statement.
+\end{proof}
+
+
+Let $(A,A\upplus)$ be a Huber pair. Here is an interesting result, namely we can recover the ring $A\upplus$ in the following way:
+
+\begin{prop}\label{upplusprop}
+Let $(A,A\upplus)$ be a Huber pair. Then we have the following result:
+\[A\upplus = \{a\in A\:\vert\:\forall x\in\spa{A}{A\upplus}, \:\normx{a}\leq 1\}.\]
+\end{prop}
+\begin{proof}
+This is \cite[lemma 3.3]{Huber93}.
+\end{proof}
+The following lemma is useful when studying \emph{punctured adic spectra}, i.e. adic spectra where we remove for example non-analytic points.
+\begin{lemma}\label{lemmaforpuncturedspectra}
+Let $(A,A\upplus)$ be a complete Huber pair and let $g\in A$. Then $g\in A^{\times}$ if and only if $\normx{g}\neq 0$ for every $x\in\spa{A}{A\upplus}$.
+\end{lemma}
+\begin{proof}
+This is \cite[corollary III.4.4.4]{Morel19}.
+\end{proof}
+\clearpage
+
+
+
+
+Recall that a morphism of Huber pairs $\phi\colon(A, A\upplus)\to(B, B\upplus)$ is a continuous ring morphism $\phi\colon A\to B$ with $\phi(A\upplus)\subseteq B\upplus$. It induces a continuous map:\\
+$\spaa{(\phi)}\colon\:\spa{B}{B\upplus}\to\spa{A}{A\upplus},\:\: \norm{\cdot}\mapsto\norm{\cdot}\circ\phi.$
+If moreover the ring morphism is adic, then the induced morphism is \emph{spectral}, i.e. the inverse images of quasi-compact open subsets are quasi-compact.\\
+
+The completion of a Huber ring $A$ takes a particular form, 
+it is given by $\hat{A}=\hat{A\lowcirc}\tens_{A\lowcirc}A$, where $A\lowcirc$ is a ring of definition of $A$ and is again a Huber ring with ring of definition $\hat{A\lowcirc}$ and ideal of definition
+$I\hat{A\lowcirc}\subseteq\hat{A\lowcirc}$.
+See \cite[lemma 1.6]{Huber93} or \cite[corollary II.3.1.9]{Morel19}. Let $(A, A\upplus)$ be a Huber pair. We denote by 
+$(\hat{A}, \hat{A}\upplus)$ its completion where $\hat{A}\upplus$ is the closure of $A\upplus$ in $\hat{A}$, this is again a Huber pair. The canonical morphism $(A, A\upplus)\to(\hat{A}, \hat{A}\upplus)$ induces a homeomorphism 
+$\spa{\hat{A}}{\hat{A}\upplus}\simeq\spa{A}{A\upplus}$ which gives a bijection between rational subsets.
+See for example \cite[proposition 3.9]{Huber93} or \cite[corollary II.3.1.12, corollary III.4.2.2]{Morel19}. This is in fact an isomorphism of adic spaces if
+$(A, A\upplus)$ is sheafy. Adic spaces will be defined in the next section.
+We will denote the completion of $(A(\tfrac{f_1,\dots,f_n}{g}), A(\tfrac{f_1,\dots,f_n}{g})\upplus)$
+by $(A\langle\tfrac{f_1,\dots,f_n}{g}\rangle, A\langle\tfrac{f_1,\dots,f_n}{g}\rangle\upplus)$. This is again a Huber pair and satisfies the obvious universal property. Hence we have a homeomorphism
+$\spa{A\langle\tfrac{f_1,\dots,f_n}{g}\rangle}{ A\langle\tfrac{f_1,\dots,f_n}{g}\rangle\upplus}\simeq\spa{A(\tfrac{f_1,\dots,f_n}{g})}{A(\tfrac{f_1,\dots,f_n}{g})\upplus}$.
+Moreover one can prove that 
+$(A\langle\tfrac{f_1,\dots,f_n}{g}\rangle, A\langle\tfrac{f_1,\dots,f_n}{g}\rangle\upplus)$ 
+is initial among all complete Huber pairs $(B, B\upplus)$ and morphisms $\phi\colon(A, A\upplus)\to (B, B\upplus)$ for which $\spaa{(\phi)}(\spa{B}{B\upplus})\subseteq U(\tfrac{f_1,\dots,f_n}{g})$.
+In particular given rational subsets $U, U'\subseteq\spa{A}{A\upplus}$ with $U\subseteq U'$ we get morphisms of complete Huber pairs in the opposite direction.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

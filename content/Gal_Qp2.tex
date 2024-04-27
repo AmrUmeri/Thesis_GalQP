@@ -1,0 +1,99 @@
+\section{Punctured perfectoid open unit disk: Tilting the punctured unit disk}
+
+We write 
+$\tilde{H}^{ad}_{C}$ for the perfectoid generic fibre of  $\spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}$ over $C$.
+In particular:
+$$\tilde{H}^{ad}_{C} = \spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}-\{\pu_C=0\}.$$
+This is a perfectoid space by proposition \ref{punitdiskfibre}.
+We consider now the so-called \emph{punctured perfectoid open unit disk} which we will denote by $\tilde{H}^{ad, *}_{C}$.
+It is defined as the following open subset of the perfectoid space $\tilde{H}^{ad}_{C}$,
+\[\tilde{H}^{ad, *}_{C}\coloneqq \tilde{H}^{ad}_{C}-\{X=0\} = \spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}-\{X\pu_C=0\}.\]
+Indeed $\tilde{H}^{ad, *}_{C}$ is a union of rational subsets of $\tilde{H}^{ad}_{C}$.
+Moreover $\tilde{H}^{ad, *}_{C}$ admits an action of $E^{\times}$. %, see also \ref{vobjprop}. 
+The action of the uniformizer $\pi\in\Oo_E$ induces a 
+free and totally discontinuous action on the perfectoid space $\tilde{H}^{ad, *}_{C}$ since the action leaves the pseudo-uniformizer $\pu_C\in\Oo_C$ fixed. 
+In particular $\tilde{H}^{ad, *}_{C}/\pi^{\Z}$ is a perfectoid space as well. 
+%In fact the perfectoid space 
+%$\tilde{H}^{ad, *}_{C}$ is constructed by removing the non-analytic points of  $\spaa{\Oo_C[[X^{\frac{1}{q^\infty}}]]}$.\\
+The construction of the punctured perfectoid open unit disk resembles the construction of the adic Fargues-Fontaine curve. The curve and the punctured disk are related via the following proposition:
+
+\begin{prop}\label{tiltmainprop}
+There is an isomorphism of perfectoid spaces over $\spa{C\tilt}{\Oo_{C\tilt}}$,
+\[(\tilde{H}^{ad, *}_{C})\tilt\simeq(\Y_{C\tilt,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt.\]
+%which is $E^{\times}$-equivariant.
+The action of $\pi\in\Oo_E$ on $\tilde{H}^{ad, *}_{C}$ corresponds to the action of $\varphi^{-1}$ on 
+$\Y_{C\tilt,E}$ via this isomorphism up to composition with the absolute Frobenius morphism. The action of $\pi\in\Oo_E$ on $\tilde{H}^{ad, *}_{C}$ corresponds to the action $\pi\in\Oo_E$ on $\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}}$ under the tilt.
+\end{prop}
+\begin{proof}
+Let $(A, A\upplus)$ be a perfectoid pair in characteristic $p$ over the base point $(C\tilt, \Oo_{C\tilt})$. A morphism
+$$\spa{A}{A\upplus}\to (\tilde{H}^{ad, *}_{C})\tilt = \spaa{\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]}-\{X\pu_{C\tilt}=0\}$$
+corresponds to a pseudo-uniformizer $\pu\in A$. To prove this claim, cover $(\tilde{H}^{ad, *}_{C})\tilt$
+by an increasing union of rational subsets, for example by anuli - similarly to how the adic Fargues-Fontaine curve was constructed. By compactness of $\spa{A}{A\upplus}$ it will land in one of these rational subsets. Via rational localization we get a morphism to $(A, A\upplus)$
+in which the image of $X\in A$ becomes invertible, it is necessarily topologically nilpotent. Conversely any pseudo-uniformizer defines a morphism
+$\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]\to A\upplus$ in which $X\in A$ becomes invertible. Notice that $\pu_{C\tilt}\in A$ is always invertible.
+Hence 
+$$\Hom_{\perfctilt}(\spa{A}{A\upplus}, (\tilde{H}^{ad, *}_{C})\tilt) = A\twocirc\cap A^{\times}$$ 
+and the uniformizer $\pi\in\Oo_E$ acts via $a\mapsto a^q$. In particular what we have proven is that a morphism 
+$\spa{A}{A\upplus}\to (\tilde{H}^{ad, *}_{C})\tilt$ corresponds canonically to a morphism $\Oo_{C\tilt}[[X^{\frac{1}{q^\infty}}]]\to A\upplus$ in which $X\in A$ becomes invertible.
+Let us study now morphisms 
+$$\spa{A}{A\upplus}\to (\Y_{C\tilt,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt.$$
+Recall proposition \ref{tiltcurveprop}. We set $K=\hat{E}_{\infty}$ and $F=C\tilt$ and the proposition gives us the following isomorphism of perfectoid spaces:
+\[(\Y_{C\tilt,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt\simeq \spa{C\tilt}{\Oo_{C\tilt}}\times\!\!_{\spa{\!\Fq}{\Fq}}\spa{\hat{E}_{\infty}\tilt}{\Oo_{\hat{E}_{\infty}\tilt}}.\]
+The Frobenius automorphism on $\Y_{C\tilt,E}$ corresponds to the Frobenius automorphism on $\spa{C\tilt}{\Oo_{C\tilt}}$. 
+Moreover we have by applying proposition \ref{ehatprop}
+\[\spa{\hat{E}_{\infty}\tilt}{\Oo_{\hat{E}_{\infty}\tilt}} \simeq\spa{\Fq((X^{\frac{1}{q^\infty}}))}{\Fq[[X^{\frac{1}{q^\infty}}]]}.\]
+Hence a morphism $$\spa{A}{A\upplus}\to (\Y_{C\tilt,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt$$ corresponds to a morphism 
+ $$\spa{A}{A\upplus}\to \spa{\Fq((X^{\frac{1}{q^\infty}}))}{\Fq[[X^{\frac{1}{q^\infty}}]]}$$
+and thus to a morphism $\Fq((X^{\frac{1}{q^\infty}}))\to A$ such that $\Fq[[X^{\frac{1}{q^\infty}}]]$ is mapped to $A\upplus$. Using again that $A$ is perfect, this is just a morphism
+$\Fq[[X]]\to A$ such that $X\in A$ is invertible and topologically nilpotent. Hence the morphism corresponds to a pseudo-uniformizer  $\pu\in A\twocirc\cap A^{\times}$ as well. Since the functor of points of both tilts are identified, they must be the same. The claim on the action is then verified by chasing all isomorphisms above or by studying the actions on rational subsets. Notice that composing both actions is just the identity on the topological spaces, but the sections on rational subsets will be different up to absolute Frobenius automorphism, similarly as in the case of perfect schemes in characteristic $p$. This proves the proposition.
+
+
+
+
+%Let $R=\Oo_C[[X^{\frac{1}{q^\infty}}]]$. 
+%From proposition \ref{punitdiskfibre} we know that $$R\tilt\simeq\Oo_{C\tilt}\ctens_{\Fq}\Fq[[X^{\frac{1}{q^\infty}}]],$$ $E^{\times}$-equivariant.
+%In particular $R\tilt\simeq\Oo_{C\tilt}\ctens_{\Fq}\Oo_{\hat{E}_{\infty}\tilt}$ by the $E^{\times}$-equivariant isomorphism from proposition
+%\ref{ehatprop}.\\
+%Hence 
+%\[(\tilde{H}^{ad, *}_{C})\tilt\simeq\spaa{(\Oo_{C\tilt}\ctens_{\Fq}\Oo_{\hat{E}_{\infty}\tilt})}-\{\pu\tilt_C=0\},\]
+%\[(\tilde{H}^{ad}_{C})\tilt\simeq\spaa{(\Oo_{C\tilt}\ctens_{\Fq}\Oo_{\hat{E}_{\infty}\tilt})}-\{z\pu\tilt_C=0\}.\]
+
+
+
+
+%In particular the above isomorphism is $E^{\times}$-equivariant.
+%The action of $\pi\in\Oo_E$ is just the Frobenius on $\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt$. Composing it with the Frobenius on $\spa{C\tilt}{\Oo_{C\tilt}}$ we get the absolute Frobenius.
+%This proves the last claim of the proposition.
+%From the proof of  \ref{tiltcurveprop} we know that 
+%\[(\Y_{C\tilt,E}\times\!\!_{\spa{E}{\Oo_E}}\spa{\hat{E}_{\infty}}{\Oo_{\hat{E}_{\infty}}})\tilt \simeq \spaa{(\Oo_{C\tilt}\ctens_{\Fq}\Oo_{\hat{E}_{\infty}\tilt})}-\{z\pu\tilt_C=0\}.\]
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
